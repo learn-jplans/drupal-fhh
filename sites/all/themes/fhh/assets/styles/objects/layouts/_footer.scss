@@ -1,0 +1,119 @@
+.footer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  transform: translateX(0);
+  transition: opacity .2s $ease-in-out, visibility .2s $ease-in-out, transform .2s $ease-in-out 0s;
+
+  @include breakpoints(small) {
+    z-index: 0;
+  }
+  @include breakpoints(medium) {
+    visibility: hidden;
+    opacity: 0;
+    bottom: 0;
+    left: 0;
+    position :fixed;
+    z-index: -1;
+  }
+
+
+  &.is-visible {
+
+    visibility: visible;
+    opacity: 1;
+    position: relative;
+    @include breakpoints(medium) {
+      position: fixed;
+    }
+  }
+
+  .page-unsubscribe & {
+    visibility: visible;
+    opacity: 1;
+    position: relative;
+  }
+
+  // &.is-footer--move {
+  //   left: rem(-268);
+  //   @include breakpoints(small) { left: rem(-473); }
+  // }
+
+  .footer__bottom {
+    @include font(tiempos);
+    background: color(red);
+    width: 100%;
+
+    .o-container {
+      border-top: rem(1) solid #af2525;
+      color: color(white);
+      position: relative;
+    }
+
+    .footer__box {
+      width: 100%;
+      @include breakpoints(small) {
+        width: auto;
+      }
+    }
+
+    .footer__links {
+      padding: rem(12) 0;
+      width: 100%;
+
+      .c-menu__link {
+        color: color(white);
+      }
+    }
+
+    .footer__copy {
+      @include font-sizing(rem(14),rem(24));
+      text-align: center;
+      width: 100%;
+
+      @include breakpoints(medium) {
+        @include valign();
+        position: absolute;
+        left: rem(34);
+        width: 25%;
+        @include font(tiempos,italic);
+        text-align: left;
+      }
+
+      @media (min-width: 1220px) {
+        width: 40%;
+      }
+    }
+  }
+
+  &.fixed {
+    @include breakpoints(small) {
+      position: fixed!important;
+    }
+    @include breakpoints(medium) {
+      position: relative!important;
+    }
+  }
+}
+
+.js-body.is-on-top {
+  @include breakpoints(small) {
+    padding-bottom: 0!important;
+  }
+  @include breakpoints(medium) {
+    padding-bottom: 538px!important;
+  }
+
+  &.page-unsubscribe {
+    padding-bottom: 0!important;
+  }
+}
+
+.js-body.has-footer {
+  @include breakpoints(small) {
+    padding-bottom: 0!important;
+  }
+  @include breakpoints(medium) {
+    padding-bottom: 538px!important;
+  }
+}

@@ -1,0 +1,17 @@
+.o-valign {
+  height: 100%;
+  > * {
+    @include valign();
+  }
+}
+
+.o-float-l { float: left }
+.o-float-r { float: right; }
+
+.o-pos-l { left: 0; }
+.o-pos-r { right: 0; }
+
+
+.o-align-l { text-align: left; }
+.o-align-r { text-align: right; }
+.o-align-c { text-align: center; }

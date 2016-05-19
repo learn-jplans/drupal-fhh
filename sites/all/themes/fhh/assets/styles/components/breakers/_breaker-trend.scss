@@ -1,0 +1,102 @@
+// block
+.c-breaker--trend {
+  background-color: color(gray,lighter);
+  .o-container {
+    // padding-top: rem(80);
+    @include breakpoints(small) { @include valign(); }
+  }
+
+  // block override
+  .c-block {
+    @include breakpoints(small) { height: rem(510); }
+    @include breakpoints(medium) { height: rem(716); }
+    &:last-child {
+      .c-breaker__content { max-width: 100%; }
+    }
+  }
+  .c-block--half {
+    @include breakpoints(small) {
+      display: block !important;
+      float: left;
+    }
+  }
+
+  // breaker override
+  .c-breaker__container {
+    display: block;
+    padding: rem(40) 0 rem(20);
+    @include breakpoints(small) {
+      padding: 0;
+    }
+  }
+  .c-breaker__image {
+    display: none;
+    overflow: hidden;
+    @include breakpoints(small) {
+      display: block;
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      padding-bottom: 0;
+      img { width: auto; }
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: color(gray);
+
+    a { color: color(gray); }
+
+    @include breakpoints(small) {
+      color: color(white);
+
+      a { color: color(white); }
+    }
+  }
+
+  h6 { margin-bottom: rem(9); }
+
+  .c-article {
+    max-width: rem(440);
+    margin: 0 auto;
+  }
+  .o-meta__date {
+    margin-bottom: rem(1);
+    color: color(gray);
+    @include breakpoints(small) {
+      margin-bottom: rem(-1);
+      color: color(white);
+    }
+    @include breakpoints(medium) { margin-bottom: rem(-3); }
+  }
+  .o-meta__type {
+    color: color(red);
+    & > * { color: color(red); }
+    @include breakpoints(small) {
+      color: color(white);
+      & > * { color: color(white); }
+    }
+  }
+
+  .c-article__title { margin-bottom: rem(15); }
+  .c-article__icon {
+    margin-top: rem(51);
+    svg {
+      fill: color(gray);
+      & + span { color: color(white) !important; }
+    }
+    @include breakpoints(small) {
+      margin-top: rem(3);
+      svg {
+        fill: color(white);
+        & + span { color: color(gray) !important; }
+      }
+    }
+    @include breakpoints(medium) { margin-top: rem(7); }
+  }
+  .c-watch {
+    // margin-top: rem(-20);
+    margin-top: rem(-8);
+    @include breakpoints(small) { margin-top: 0; }
+  }
+}

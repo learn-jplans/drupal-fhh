@@ -1,0 +1,41 @@
+.c-loader {
+  width: 100%;
+  padding: rem(30) 0 0;
+}
+
+  
+
+  .c-loader__body {
+    display: inline-block;
+    cursor: pointer;
+  }
+  .c-loader__icon {
+    display: inline-block;
+    position: relative;
+    width: rem(28); height: rem(28);
+    // padding: rem(2);
+    // border: rem(1) solid color(gray);
+    // -webkit-border-radius: 100%;
+    // -moz-border-radius: 100%;
+    // border-radius: 100%;
+    img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+  }
+
+  .c-loader__copy {
+    // margin-top: rem(-7);
+    @include font(gotham,medium);
+    @include font-sizing(rem(14));
+    color: color(red);
+  }
+
+    .c-loader--gallery {
+      display: none;
+      &.is-show {
+        display: block;
+        @include breakpoints(medium) { display: none; }
+      }
+    }

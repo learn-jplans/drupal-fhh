@@ -1,0 +1,509 @@
+.c-contactform {
+  width: 100%;
+  margin: rem(50) auto;
+  @include breakpoints(small) {
+    margin: rem(50) auto;
+  }
+  @include breakpoints(medium) {
+    width: rem(870);
+    height: auto;
+    margin: rem(60) auto;
+  }
+  .c-textarea--container {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    clear: both;
+    span {
+      display: none;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
+    &.error {
+      textarea {
+        border-color: color(red);
+      }
+      span.empty {
+        display: block;
+        svg {
+          fill: color(red);
+        }
+      }
+    }
+    &.success {
+      span.checked {
+        display: block;
+        svg {
+          fill: #BABCB6;
+        }
+      }
+    }
+  }
+
+  textarea {
+    @include font(tiempos,light);
+    font-size: rem(18);
+    margin: 0 auto rem(40);
+    padding: rem(16);
+    height: rem(112);
+    display: block;
+    min-height: rem(112);
+    max-height: rem(112);
+    border: 1px color(grey,lighter) solid;
+    background: rgba(255,255,255,0.4);
+    @include calc(width,'100% - 20px');
+    @include calc(max-width,'100% - 20px');
+    @include calc(min-width,'100% - 20px');
+
+    @include breakpoints(small) {
+      @include calc(width,'100% - 16px');
+      @include calc(max-width,'100% - 16px');
+      @include calc(min-width,'100% - 16px');
+    }
+
+    @include breakpoints(medium) {
+      @include calc(width,'100% - 20px');
+      @include calc(max-width,'100% - 20px');
+      @include calc(min-width,'100% - 20px');
+    }
+    &::-moz-placeholder {
+      color: color(grey);
+      opacity: 1;
+    }
+    &::-webkit-input-placeholder {
+      color: color(grey);
+      opacity: 1;
+    }
+
+
+
+  }
+
+  .c-contactform__container {
+    width: 100%;
+    float: none;
+    overflow: visible;
+    position: relative;
+    @include breakpoints(small) {
+      width: 50%;
+      float: left;
+    }
+    @include breakpoints(medium) { margin-bottom: rem(10); }
+
+    &.right {
+      text-align: left;
+      &:after { display: none; }
+
+      @include breakpoints(small) {
+        &:after {
+          display: block;
+          content: '';
+          width: 1px;
+          @include calc(height,'100% - 40px');
+          position: absolute;
+          left: 1px;
+          top: rem(10);
+          background: color(grey,lighter);
+        }
+      }
+      @include breakpoints(medium) {
+        padding-left: rem(55);
+        &:after {
+          display: block;
+          content: '';
+          width: 1px;
+          @include calc(height,'100% - 40px');
+          position: absolute;
+          left: 0; top: rem(10);
+          background: color(grey,lighter);
+        }
+      }
+
+      p {
+        @include breakpoints(medium) {
+          margin: 10px 0 rem(40) 0;
+        }
+      }
+      .select-container {
+        @include breakpoints(medium) {
+          margin: 10px 10px rem(30) 0;
+        }
+      }
+    }
+
+    p {
+      display: block;
+      overflow: hidden;
+      position: relative;
+      height: rem(60);
+      width: 100%;
+      position: relative;
+      margin: 10px 10px rem(40) 10px;
+      @include breakpoints(small) {
+        margin: 10px 0 rem(40) 10px;
+      }
+      @include breakpoints(medium) {
+        @include calc(width,'100% - 10px');
+        margin: 10px 0 rem(40) 10px;
+      }
+      &.error {
+        input[type=text] {
+          border-color: color(red);
+        }
+        span.empty {
+          display: block;
+          svg {
+            fill: color(red);
+          }
+        }
+      }
+      &.success {
+        span.checked {
+          display: block;
+          svg {
+            fill: #BABCB6;
+          }
+        }
+      }
+
+      span {
+        display: none;
+        position: absolute;
+        top: 50%;
+        right: rem(35);
+        @include transform(translateY(-50%));
+        @include breakpoints(small) {
+          right: rem(31);
+        }
+        @include breakpoints(medium) {
+          left: 370px + 10px;
+          right: auto;
+        }
+
+      }
+
+      input[type=text] {
+        @include font(tiempos,light);
+        font-size: rem(16);
+        padding: 0 rem(16);
+        height: rem(60);
+        @include calc(width,'100% - 20px');
+        border: 1px color(grey,lighter) solid;
+        background: rgba(255,255,255,0.4);
+
+        @include breakpoints(small) {
+          width: rem(328);
+        }
+
+        @include breakpoints(medium) {
+          width: rem(370);
+          font-size: rem(18);
+        }
+
+        &::-webkit-input-placeholder {
+          color: color(grey);
+          opacity: 1;
+        }
+        &::-moz-placeholder {
+          color: color(grey);
+          opacity: 1;
+        }
+      }
+
+    }
+
+  }
+}
+.slide-submit {
+  position: relative;
+  // width: rem(212);
+  height: rem(54);
+  line-height: rem(54);
+  background: white;
+  padding: rem(2);
+  border: 1px solid color(grey,lighter);
+  float: right;
+  margin-right: 10px;
+
+  .buffer {
+    position: absolute;
+    top: 0; left: 0;
+    background: color(white);
+    z-index: 4;
+    height: 97%;
+    width: 0;
+  }
+
+  button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 5;
+    margin: rem(2);
+    width: rem(50);
+    height: rem(48);
+    background: color(red);
+    color: white;
+    border: none;
+    text-align: center;
+    line-height: rem(50);
+    transition: all 200ms linear;
+    cursor: pointer;
+    @include font(gotham);
+    font-size: rem(12);
+
+    &.submitted {
+      width: rem(206)!important;
+      opacity: 1;
+      @include font(gotham,bold);
+      font-size: rem(12);
+      text-transform: uppercase;
+      & + label { display: none; }
+    }
+
+    svg {
+      width: 23px;
+      height: 19px;
+      fill: #fff;
+      margin-left: 6px;
+    }
+  }
+
+  label {
+    display: block;
+    @include valign();
+    padding-left: 60px;
+    padding-right: 10px;
+    text-align: center;
+    @include font(gotham,bold);
+    font-size: rem(12);
+    color: color(gray);
+    text-transform: uppercase;
+    z-index: 3;
+  }
+}
+// .slide-submit button.submitted {
+//   width: rem(206)!important;
+//   opacity: 1;
+// }
+// .slide-submit button.submitted + label {
+//   display: none;
+// }
+// .slide-submit label {
+//   position: absolute;
+//   z-index: 3;
+//   top: 0px;
+//   right: 0px;
+//   width: rem(158);
+//   font-size: rem(12);
+//   text-align: center;
+//   color: color(grey);
+//   text-transform: uppercase;
+//   @include font(gotham,bold);
+// }
+
+
+
+
+
+.select-container {
+  display: block;
+  margin: 10px 0 rem(40) 10px;
+  overflow: visible;
+  position: relative;
+  height: rem(60);
+  @include calc(width,'100% - 20px');
+  position: relative;
+
+  @include breakpoints(small) { width: rem(328); }
+  @include breakpoints(medium) { width: rem(370); }
+
+  span {
+    display: none;
+    position: absolute;
+    padding: 1px;
+    top: 50%;
+    right: rem(15);
+    z-index: 6;
+    background: color(white);
+    @include transform(translateY(-50%));
+
+    @include breakpoints(small) { right: rem(14); }
+    @include breakpoints(medium) {
+      left: 370px + 10px;
+      right: auto;
+    }
+
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    @include calc(width,'100% + 20px');
+    position: absolute;
+    left: -10px; top: -10px;
+    height: 0;//rem(220);
+    border: 1px transparent solid;
+    background: transparent;
+    z-index: 5;
+  }
+
+
+  a {
+    display: block;
+    height: rem(60);
+    width: 100%;
+    position: absolute;
+    left: 0; top: 0;
+    z-index: 6;
+    @include font(tiempos,light);
+    font-size: rem(16);
+    color: color(grey);
+    padding: 0 rem(16);
+    line-height: rem(60);
+    border: 1px color(grey,lighter) solid;
+    background: rgba(255,255,255,0.4);
+    opacity: 1;
+    cursor: pointer;
+
+    @include breakpoints(small) { width: rem(328); }
+    @include breakpoints(medium) { width: rem(370); font-size: rem(18); }
+
+    &:after {
+      content: '';
+      width: 0;
+      display: block;
+      height: 0;
+      border-style: solid;
+      border-width: 6px 5.5px 0 5.5px;
+      border-color: color(grey) transparent transparent ;
+      position: absolute;
+      right: rem(15);
+      top: 50%;
+      @include breakpoints(small) { right: rem(15); }
+      @include breakpoints(medium) { right: rem(20); }
+    }
+    &.opened {
+      border: 1px color(white) solid;
+      &:after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 5.5px 6px 5.5px;
+        border-color: transparent transparent color(grey);
+        position: absolute;
+        right: rem(20);
+        top: 50%;
+      }
+    }
+  }
+
+  input[type=text] {
+    background: transparent;
+    @include font(tiempos,light);
+    font-size: rem(16);
+    padding: 0 rem(16);
+    height: rem(60);
+    width: rem(370);
+    cursor: pointer;
+    border: 1px color(grey,lighter) solid;
+    position: relative;
+    opacity: 0;
+    @include breakpoints(medium) { font-size: rem(18); }
+
+    &::-webkit-input-placeholder {
+      color: color(grey);
+      opacity: 1;
+    }
+    &::-moz-placeholder {
+      color: color(grey);
+      opacity: 1;
+    }
+  }
+  ul {
+    display: block;
+    position: relative;//absolute;
+    overflow: hidden;
+    max-height: 0;
+    top: 0;//rem(60);
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 5;
+    @include opacity(0);
+    li {
+      display: block;
+      text-align: center;
+      @include font(gotham,bold);
+      cursor: pointer;
+    }
+    .mCustomScrollBox {
+      max-height: 120px!important;
+      position: relative;
+    }
+  }
+
+  &.error {
+    a {
+      border-color: color(red);
+    }
+    span.empty {
+      display: block;
+      svg {
+        fill: color(red);
+      }
+    }
+  }
+  &.success {
+    span.checked {
+      display: block;
+      svg {
+        fill: #BABCB6;
+      }
+    }
+  }
+
+
+  &.opened {
+    @include transition(all 0.1s linear);
+    &:before {
+      height: rem(220);
+      border-color: color(grey,lighter);
+      background: color(white);
+    }
+    input[type=text] {
+      border-color: color(white);
+    }
+    ul {
+      max-height: rem(120);
+      overflow: hidden;
+      @include opacity(100);
+      @include transition(opacity 500ms ease 100ms);
+    }
+  }
+
+}
+
+input[type=text],input[type=password] {
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+  &:focus {
+    outline: none!important;
+  }
+}
+textarea {
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+  &:focus {
+    outline: none!important;
+  }
+}

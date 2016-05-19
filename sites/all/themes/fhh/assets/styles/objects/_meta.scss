@@ -1,0 +1,297 @@
+// block
+.o-meta {
+  // snackable
+  .c-snackable &,.c-snackable-home & {
+    .o-meta__title {
+      overflow: hidden;
+      max-height: 40px;
+      // max-height: 100%;
+      line-height: rem(20);
+      letter-spacing: 0.01em;
+      color: color(gray);
+      font-size: rem(14);
+      margin-bottom: 8px;
+      @include transition(all 0.2s linear);
+      @include breakpoints(small) {
+        margin-bottom: 0;
+        max-height: rem(67);
+        font-size: rem(16);
+        line-height: rem(21);
+      }
+      &:hover {
+        @include breakpoints(medium) {
+          color: color(white);
+          text-decoration: underline;
+        }
+      }
+    }
+    .o-meta__date {
+      line-height: rem(16);
+    }
+    .o-meta__type {
+      color: color(gray, light);
+      line-height: rem(20);
+    }
+    .o-meta__duration {
+      margin-top: rem(14);
+      color: color(white);
+      @include breakpoints(small) {
+        margin-top: rem(7);
+      }
+      @include breakpoints(medium) {
+        margin-top: rem(10);
+      }
+    }
+  }
+}
+
+.c-article__link {
+  &:hover {
+    & +
+    .o-meta__title {
+      color: color(white);
+      text-decoration: underline;
+    }
+  }
+}
+
+
+// element
+.o-meta__category {
+  position: relative;
+  margin: rem(30) 0;
+  padding: 0 0 rem(16);
+  @include font(tiempos, light);
+  @include font-sizing(rem(18), rem(24), 25);
+  @extend .o-align-c;
+  z-index: 1;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: rem(130);
+    height: rem(1);
+    margin: 0 auto;
+    background-color: $base-color;
+  }
+  svg.o-icon {
+    top: rem(-1);
+    @include transform(scale(1));
+  }
+
+  &:hover {
+    svg {
+      fill: color(brown);
+      @include transform(scale(1.5));
+    }
+  }
+
+  &--light {
+    margin: 0 0 rem(15);
+    padding: 0;
+    @include font(gotham, bold);
+    font-size: rem(12);
+    color: color(gray, light-1);
+    text-transform: uppercase;
+    &:after {
+      display: none;
+    }
+  }
+  &--secondary {
+    // remove underline
+    margin-bottom: 0;
+    font-size: rem(20);
+    // @include
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.o-meta__date {
+  position: relative;
+  z-index: 1;
+  @include font(gotham, bold);
+  // font-size: rem(12);
+  @include font-sizing(rem(12), rem(24));
+  // @include font-sizing(rem(12), rem(16.29));
+  color: color(gray, light);
+  text-transform: uppercase;
+}
+
+.o-meta__type {
+  position: relative;
+  z-index: 1;
+  @include font(gotham, medium);
+  @include font-sizing(rem(14), rem(32));
+  color: color(red);
+  // remove if not applicable
+
+  @include breakpoints(small) {
+    @include font-sizing(rem(14), rem(30));
+  }
+
+  &:hover {
+    color: color(red, dark);
+  }
+}
+
+.o-meta__duration {
+  position: relative;
+  z-index: 1;
+  @include font(gotham, bold);
+  @include font-sizing(rem(12), rem(20), 10);
+  color: color(brown);
+  text-transform: uppercase;
+  display: block;
+  height: 20px;
+}
+
+.o-meta__title {
+  @include font(gotham, bold);
+  @include font-sizing(rem(16), rem(24),10);
+  @include breakpoints(medium) {
+    @include font-sizing(rem(20), rem(36));
+  }
+  q { width: 100%; }
+  &__product {
+    margin: rem(5) 0 rem(6);
+    @include font(tiempos,light);
+    @include font-sizing(rem(18), rem(24), 25);
+    color: color(brown);
+
+    @include breakpoints(small) {
+      margin: rem(15) 0;
+      @include font-sizing(rem(16),rem(19.2));
+    }
+    @include breakpoints(medium) {
+      margin: rem(9) 0;
+      @include font-sizing(rem(18),rem(24));
+    }
+  }
+  &__brand {
+    margin: rem(5) 0;
+    @include font(gotham, bold);
+    @include font-sizing(rem(18), rem(20),1);
+    color: color(red);
+    text-transform: uppercase;
+
+    @include breakpoints(small) {
+      margin: rem(5) 0;
+      font-size: rem(14);
+    }
+    @include breakpoints(medium) {
+      font-size: rem(18);
+    }
+
+    &__link {}
+
+  }
+  &--small {
+    @include font-sizing(rem(14), rem(24));
+    // @include ellips(72, 3);
+    // height: rem(72) !important;
+    max-height: rem(72);
+    @include breakpoints(medium) {
+      @include font-sizing(rem(16), rem(24));
+    }
+  }
+}
+
+.o-meta__tag {
+  //margin-bottom: rem(4);
+  // display: none;
+  @include font(gotham, bold);
+  @include font-sizing(rem(12), rem(22.4),10);
+  color: color(red);
+  text-transform: uppercase;
+  @include breakpoints(medium) {
+    display: block;
+  }
+}
+
+.o-meta__outbound {
+  @include font(gotham, medium);
+  @include font-sizing(rem(14), rem(48), 10);
+  color: color(brown);
+  a {
+    color: color(brown);
+    svg {
+      margin-left: rem(5);
+      @include transform(scale(1));
+      @include transition(all $speed-trans);
+    }
+    &:hover {
+      color: color(brown);
+      svg {
+        fill: color(brown);
+        @include transform(scale(1.2));
+      }
+    }
+  }
+}
+
+.o-meta__gallery__count {
+  position: relative;
+  max-width: rem(80);
+  margin: 0 auto;
+  &:before,
+  &:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: rem(11);
+    width: rem(20);
+    height: rem(1);
+    background-color: color(gray);
+  }
+
+  &:before { left: 0; }
+  &:after { right: 0; }
+  span {
+    display: block;
+    position: relative;
+    &:before {
+      content: '';
+      display: block;
+      width: rem(20); height: rem(20);
+      margin: 0 auto;
+      background-color: color(gray);
+      -webkit-border-radius: rem(10);
+      -moz-border-radius: rem(10);
+      border-radius: rem(10);
+    }
+    &:after {
+      content: attr(data-gallery-items);
+      display: block;
+      position: absolute;
+      left: 0; right: 0; top: rem(-6);
+      margin: auto;
+      @include font(gotham,bold);
+      font-size: rem(10);
+      color: color(white);
+    }
+  }
+}
+
+// modifier
+.o-meta--breaker {
+  .o-meta__date,
+  .o-meta__type {
+    @include font(gotham, medium);
+    @include font-sizing(rem(14), rem(32));
+    color: color(white);
+    > * {
+      color: color(white);
+    }
+  }
+  .o-meta__duration {
+    @include font(gotham, medium);
+    @include font-sizing(rem(12), rem(20));
+    color: color(brown);
+    text-transform: uppercase;
+  }
+}

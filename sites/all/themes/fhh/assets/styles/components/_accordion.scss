@@ -1,0 +1,19 @@
+// block
+.c-accordion {}
+
+  // element
+  .c-accordion__item {}
+  .c-accordion__content {}
+
+    // modifier
+    .is-accordion--active {
+
+      // for burger menu
+      .c-menu--sub {
+        max-height: rem(400) !important;
+        @include transition(all 1s);
+        @include breakpoints(medium) {
+          max-height: rem(100) !important;
+        }
+      }
+    }

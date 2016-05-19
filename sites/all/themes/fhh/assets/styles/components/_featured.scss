@@ -1,0 +1,24 @@
+// featured
+
+.c-featured {
+  overflow: hidden;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  // height: calc(100vh - 87px);
+  height: rem(580);
+  @include breakpoints(small) {
+    height: rem(725);
+  }
+}
+
+  .c-featured__banner {
+    width: 100%;
+    img {
+      position: absolute;
+      left: 50%;
+      @include transform(translateX(-50%));
+    }
+  }

@@ -1,0 +1,70 @@
+// block
+.o-button {
+  display: inline-block;
+  position: relative;
+  padding: rem(9) rem(25);
+  background-color: color(red);
+  border: none;
+  @include font(gotham,bold);
+  @include font-sizing(rem(12),rem(24),25);
+  color: color(white);
+  text-transform: uppercase;
+  outline: none;
+  &:hover {
+    @include breakpoints(medium) {
+      background-color: color(red,dark);
+      color: color(white);
+    }
+  }
+
+  @include breakpoints(medium) {
+    padding: rem(14) rem(24);
+  }
+}
+
+    // modifier
+    // .o-button--white {}
+    .o-button--icon {
+      width: rem(36); height: rem(36);
+      padding: 0;
+      .o-icon {
+        position: absolute;
+        top: 0; bottom: 0; right: 0; left: 0;
+        margin: auto;
+      }
+    }
+
+    .o-button--cancel {
+      background-color: color(gray,light-2);
+      &:hover {
+        @include breakpoints(medium) {
+          background-color: color(gray,light);
+        }
+      }
+    }
+
+    .o-button--brown {
+      background-color: color(brown);
+    }
+
+    .o-button--label {
+      color: color(gray);
+      background: none;
+      &:hover {
+        @include breakpoints(medium) {
+          background: none;
+          color: color(red);
+        }
+      }
+    }
+
+    .o-button--small {
+      padding: rem(9) rem(25);
+      @include breakpoints(small) {
+        padding: rem(9) rem(25);
+      }
+    }
+
+    .o-button--large {
+      padding: rem(14) rem(25);
+    }

@@ -1,0 +1,134 @@
+
+@font-face {
+    font-family: 'GothamBook';
+    src: url('../fonts/gotham-book-webfont.eot');
+    src: url('../fonts/gotham-book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/gotham-book-webfont.woff2') format('woff2'),
+         url('../fonts/gotham-book-webfont.woff') format('woff'),
+         url('../fonts/gotham-book-webfont.ttf') format('truetype'),
+         url('../fonts/gotham-book-webfont.svg#gothambook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'GothamBold';
+  src: url('../fonts/gotham-bold-webfont.eot');
+  src: url('../fonts/gotham-bold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/gotham-bold-webfont.woff2') format('woff2'),
+       url('../fonts/gotham-bold-webfont.woff') format('woff'),
+       url('../fonts/gotham-bold-webfont.ttf') format('truetype'),
+       url('../fonts/gotham-bold-webfont.svg#gothambold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GothamMedium';
+  src: url('../fonts/gotham-medium-webfont.eot');
+  src: url('../fonts/gotham-medium-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/gotham-medium-webfont.woff2') format('woff2'),
+       url('../fonts/gotham-medium-webfont.woff') format('woff'),
+       url('../fonts/gotham-medium-webfont.ttf') format('truetype'),
+       url('../fonts/gotham-medium-webfont.svg#gothammedium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GothamBlack';
+  src: url('../fonts/gotham-black-webfont.eot');
+  src: url('../fonts/gotham-black-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/gotham-black-webfont.woff2') format('woff2'),
+       url('../fonts/gotham-black-webfont.woff') format('woff'),
+       url('../fonts/gotham-black-webfont.ttf') format('truetype'),
+       url('../fonts/gotham-black-webfont.svg#gothambold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'GothamThin';
+  src: url('../fonts/Gotham-Thin.eot');
+  src: url('../fonts/Gotham-Thin.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Gotham-Thin.otf')  format('opentype'),
+       url('../fonts/Gotham-Thin.woff') format('woff'),
+       url('../fonts/Gotham-Thin.ttf')  format('truetype'),
+       url('../fonts/Gotham-Thin.svg#Gotham-Thin') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'TiemposLight';
+  src: url('../fonts/TiemposHeadlineWebLight.eot');
+  src: url('../fonts/TiemposHeadlineWebLight.eot') format('embedded-opentype'),
+       url('../fonts/TiemposHeadlineWebLight.woff2') format('woff2'),
+       url('../fonts/TiemposHeadlineWebLight.woff') format('woff'),
+       url('../fonts/TiemposHeadlineWebLight.ttf') format('truetype'),
+       url('../fonts/TiemposHeadlineWebLight.svg#TiemposHeadlineWebLight') format('svg');
+}
+
+@font-face {
+  font-family: 'TiemposLightItalic';
+  src: url('../fonts/TiemposHeadlineWebLightItalic.eot');
+  src: url('../fonts/TiemposHeadlineWebLightItalic.eot') format('embedded-opentype'),
+       url('../fonts/TiemposHeadlineWebLightItalic.woff2') format('woff2'),
+       url('../fonts/TiemposHeadlineWebLightItalic.woff') format('woff'),
+       url('../fonts/TiemposHeadlineWebLightItalic.ttf') format('truetype'),
+       url('../fonts/TiemposHeadlineWebLightItalic.svg#TiemposHeadlineWebLightItalic') format('svg');
+}
+
+@font-face {
+  font-family: 'TiemposRegular';
+  src: url('../fonts/TiemposHeadlineWebRegular.eot');
+  src: url('../fonts/TiemposHeadlineWebRegular.eot') format('embedded-opentype'),
+       url('../fonts/TiemposHeadlineWebRegular.woff2') format('woff2'),
+       url('../fonts/TiemposHeadlineWebRegular.woff') format('woff'),
+       url('../fonts/TiemposHeadlineWebRegular.ttf') format('truetype'),
+       url('../fonts/TiemposHeadlineWebRegular.svg#TiemposHeadlineWebRegular') format('svg');
+}
+
+@font-face {
+  font-family: 'TiemposRegularItalic';
+  src: url('../fonts/TiemposHeadlineWebRegularItalic.eot');
+  src: url('../fonts/TiemposHeadlineWebRegularItalic.eot') format('embedded-opentype'),
+       url('../fonts/TiemposHeadlineWebRegularItalic.woff2') format('woff2'),
+       url('../fonts/TiemposHeadlineWebRegularItalic.woff') format('woff'),
+       url('../fonts/TiemposHeadlineWebRegularItalic.ttf') format('truetype'),
+       url('../fonts/TiemposHeadlineWebRegularItalic.svg#TiemposHeadlineWebRegularItalic') format('svg');
+}
+
+@font-face {
+  font-family: 'TiemposMedium';
+  src: url('../fonts/TiemposHeadlineMedium-Regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/TiemposHeadlineMedium-Regular.otf')  format('opentype'),
+       url('../fonts/TiemposHeadlineMedium-Regular.woff') format('woff'),
+       url('../fonts/TiemposHeadlineMedium-Regular.ttf')  format('truetype'),
+       url('../fonts/TiemposHeadlineMedium-Regular.svg#TiemposHeadlineMedium-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TiemposMediumItalic';
+  src: url('../fonts/TiemposHeadlineMedium-Italic.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/TiemposHeadlineMedium-Italic.otf')  format('opentype'),
+       url('../fonts/TiemposHeadlineMedium-Italic.woff') format('woff'),
+       url('../fonts/TiemposHeadlineMedium-Italic.ttf')  format('truetype'),
+       url('../fonts/TiemposHeadlineMedium-Italic.svg#TiemposHeadlineMedium-Italic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Notera';
+  src: url('../fonts/Notera.eot');
+  src: url('../fonts/Notera.eot') format('embedded-opentype'),
+       url('../fonts/Notera.woff') format('woff'),
+       url('../fonts/Notera.ttf') format('truetype'),
+       url('../fonts/Notera.svg#2F3461_0_0') format('svg');
+}

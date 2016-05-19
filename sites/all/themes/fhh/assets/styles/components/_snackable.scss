@@ -1,0 +1,773 @@
+// block
+.snackspadding {
+  height: 281px;
+  width: 100%;
+  @include transition(all 0.8s linear);
+  @include breakpoints(small) {
+    height: 320px;
+  }
+  @include breakpoints(medium) {
+    height: 259px;
+
+  }
+  &.hiddenspan {
+    @include transition(all 0.8s linear);
+    height: 0;
+  }
+}
+.snackspadding-home {
+  @include transition(all 0.5s linear);
+  width: 100%;
+  height: 240px;
+  @include breakpoints(small) {
+    height: 290px;
+  }
+  @include breakpoints(medium) {
+    height: 253px;
+  }
+
+  &.slideUp {
+    @include transition(all 0.5s linear);
+    height: 0;
+  }
+}
+
+
+
+.c-snackable {
+  display: none;
+  width: 100vw;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  margin-bottom: -11px;
+  position: fixed;
+  @include transition(all 0.8s linear);
+  z-index: 11;
+  left: 50%;
+  @include transform(translateX(-50%));
+  top: rem(87);
+
+  @include breakpoints(small) {
+    top: rem(145);
+    min-height: rem(317);
+  }
+
+  @include breakpoints(medium) {
+    top: rem(115);
+    min-height: rem(0);
+
+  }
+
+  .c-snackable__container {
+    display: block;
+    width: 100vw;
+    background-color: color(red);
+    z-index: 6;
+    @include transition(all 1s linear);
+    margin-bottom: 11px;
+    margin-top: 0;
+    min-height: 249px;
+    //margin-top: - rem(285);
+
+    @include breakpoints(small) {
+      //margin-top: - rem(311);
+      min-height: 274px;
+    }
+
+
+    @include breakpoints(medium) {
+      //margin-top: - rem(270);
+      min-height: 259px;
+    }
+  }
+
+
+  &.slideDown {
+    //@include calc(max-height, '100vh - 90px');
+    height: auto;
+    @include transition(all 0.8s linear);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    max-height: 0;
+    visibility: hidden;
+
+    @include breakpoints(small) {
+      //@include calc(max-height, '100vh - 149px');
+    }
+    @include breakpoints(medium) {
+      //@include calc(max-height, '100vh - 118px');
+    }
+    .c-snackable__container {
+      //margin-top: 0;
+      @include transition(all 0.8s linear);
+      margin-top: - rem(285);
+
+      @include breakpoints(small) {
+        margin-top: - rem(311);
+      }
+
+
+      @include breakpoints(medium) {
+        margin-top: - rem(270);
+      }
+    }
+  }
+  &.loaded {
+    @include calc(height, '100vh - 90px');
+    @include transition(all 1s linear);
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: color(white);
+    @include breakpoints(small) {
+      @include calc(height, '100vh - 149px');
+    }
+    @include breakpoints(medium) {
+      @include calc(height, '100vh - 118px');
+    }
+  }
+
+
+
+
+  .slick-list {
+    overflow: visible;
+  }
+  .slick-dots {
+    @include breakpoints(small) {
+      bottom: 9px;
+    }
+  }
+  .slick-dots li.slick-active {
+    background: color(grey,light);
+  }
+
+  .o-container {
+    padding: 0 0;
+    @include breakpoints(small) {
+      padding: 0 rem(25);
+    }
+    @include breakpoints(medium) {
+      padding: 0 0;
+    }
+    overflow: visible;
+  }
+
+
+  .c-snackable__body {
+    z-index: 9;
+    @include breakpoints(large) {
+      max-width: rem(1320);
+      margin: 0 auto;
+
+    }
+    .c-tile {
+      width: 100vw;
+      padding: rem(24) rem(16) rem(40);
+
+      @include breakpoints(small) {
+        padding-top: 0;
+        padding-right: rem(42);
+        padding-left: rem(56);
+        padding-bottom: rem(50);
+        width: 358px;
+        height: 192px;
+        z-index: 9;
+      }
+      @include breakpoints(medium) {
+        padding-top: 0;
+        padding-right: rem(40);
+        padding-left: rem(56);
+        padding-bottom: rem(30);
+        width: 330px;
+        height: 165px;
+      }
+      @include breakpoints(large) {
+        padding-right: rem(40);
+        padding-left: rem(56);
+        padding-bottom: rem(30);
+        width: 330px;
+        height: 165px;
+      }
+      &:before {
+        height: rem(135);
+        bottom: auto;
+      }
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 11px 10.5px 0 10.5px;
+        border-color: color(red) transparent transparent;
+        @include transition(all 0.2s linear);
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        z-index: 11;
+      }
+      &.active {
+        &:after {
+          @include transition(all 0.2s linear);
+          bottom: -11px;
+        }
+
+      }
+      &.hover {
+        &:after {
+          @include breakpoints(medium) {
+            @include transition(all 0.2s linear);
+            bottom: -11px;
+          }
+        }
+
+      }
+      .c-article__container {
+        @include breakpoints(large) {
+          height: rem(135);
+        }
+      }
+
+
+    }
+  }
+  .o-meta__title {
+    @include breakpoints(medium) {
+      height: 72px!important;
+    }
+  }
+  .o-meta__duration {
+    @include breakpoints(medium) {
+    margin-top: 10px;
+    }
+  }
+  .active {
+    .o-meta__title {
+      color: color(white)!important;
+      text-decoration: underline;
+
+    }
+  }
+}
+
+  // element
+  .c-snackable__head {
+    @include font(tiempos,light);
+    @include font-sizing(rem(20),rem(24));
+    color: color(white);
+    text-align: center;
+    @extend .o-valign;
+    height: rem(72);
+    span { display: block; }
+
+    @include breakpoints(medium) {
+      height: auto;
+      padding-top: rem(15);
+      @include font-sizing(rem(28),rem(24));
+      span {
+        top: auto;
+        height: 24px;
+        @include transform(translateY(0));
+        line-height: rem(15);
+        letter-spacing: 0.01em;
+      }
+    }
+  }
+  .c-snackable__body {
+    padding: 0;
+    @include clearfix();
+    @include breakpoints(small) {
+      padding-right: 0;
+      padding-bottom: 0;
+      // padding-top: 5px;
+    }
+    @include breakpoints(medium) {
+      padding-right: 0;
+      padding-bottom: 0;
+      padding-top: 20px;
+    }
+
+
+
+  }
+  .c-snackable__arrow {
+    position: absolute;
+    top: 0; right: 0;
+    width: rem(53);
+    height: 100%;
+    background-color: color(red);
+    cursor: pointer;
+    @extend .o-valign;
+  }
+
+.c-snackable--close-carousel {
+  cursor: pointer;
+  position: absolute;
+  top: -14px;
+  right: 0;//rem(18);
+  z-index: 10;
+  padding: 20px;
+
+  @include breakpoints(small) { right: 0 } //rem(40);
+  @include breakpoints(medium) { right: rem(15); }//rem(34);
+
+  .o-icon,
+  svg.o-icon {
+    width: rem(15); height: rem(15);
+    fill: #fff;
+  }
+}
+
+.c-snackable--close {
+  width: 18px;
+  height: 18px;
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 35px;
+  overflow: hidden;
+  text-indent: 10000px;
+  cursor: pointer;
+  z-index: 9;
+  @include breakpoints(small) {
+    width: 20px;
+    height: 20px;
+    right: 35px;
+    top: 35px;
+  }
+  @include breakpoints(medium) {
+    width: 30px;
+    height: 30px;
+    right: 35px;
+    top: 35px;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: color(white);
+    transform: rotate(45deg);
+    position: absolute;
+    left: 0;
+    top: 50%;
+  }
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: color(white);
+    transform: rotate(-45deg);
+    position: absolute;
+    left: 0;
+    top: 50%;
+  }
+
+}
+
+.c-snackablecontent--close {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  right: 20px;
+  top: 35px;
+  overflow: hidden;
+  text-indent: 10000px;
+  cursor: pointer;
+  z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s $ease-in-out-cubic;
+  transform: translateZ(0); // force hw acceleration
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  @include breakpoints(small) {
+    width: 20px;
+    height: 20px;
+    right: 35px;
+    top: 35px;
+  }
+  @include breakpoints(medium) {
+    width: 30px;
+    height: 30px;
+    right: 35px;
+    top: 35px;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: color(grey);
+    transform: rotate(45deg);
+    position: absolute;
+    left: 0;
+    top: 50%;
+  }
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: color(grey);
+    transform: rotate(-45deg);
+    position: absolute;
+    left: 0;
+    top: 50%;
+  }
+
+  &.sticky {
+    position: fixed;
+    top: 105px;
+
+    @include breakpoints(small) {
+      top: 175px;
+    }
+    @include breakpoints(medium) {
+      top: 145px;
+    }
+  }
+
+}
+
+    // modifier
+    .is-snackable--open {
+      @include transform(translateY(0));
+    }
+
+
+.c-reopen--snackables {
+  display: none;
+}
+
+
+//SNACKABLE CONTENT
+.c-snackable-content {
+  @include transition(all 0.8s linear);
+  padding-top: 0;
+
+  &.slideDown {
+    @include transition(all 0.8s linear);
+  }
+}
+
+.c-snackable,.c-snackable-home {
+  .c-snackablecontent {
+    position: relative;
+    background: color(white);
+
+    /*.c-article__main {
+      padding: 0 18px;
+      @include breakpoints(small) {
+        padding: 0 40px;
+      }
+      @include breakpoints(medium) {
+        padding: 0 34px;
+      }
+    }*/
+  }
+  #c-snackable-content {
+    background: color(white);
+    margin-top: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-top: -11px;
+
+    .js-header--article {
+      display:none;
+    }
+
+  }
+  &.slideDown {
+    #c-snackable-content {
+      & > section {
+        padding-top: 30px!important;
+        background: #fff;
+
+      }
+    }
+  }
+}
+
+//.js-section-article.is-active
+.o-header__bottom {
+  cursor: pointer;
+}
+.js-section-article.is-active  {
+  .c-snackable {
+    display: block;
+  }
+}
+
+
+/*.js-section-article, .o-main {
+  overflow: hidden;
+  z-index: auto;
+}*/
+.o-section.has-overlay::before {
+  z-index: 5;
+}
+
+
+//Snackables Home
+.snackhomebox {
+  position: relative;
+  width: 100%;
+  height: 0;
+  overflow: visible;
+
+  .c-snackable__head,
+  .c-snackable--close-carousel {
+    transition: all 0.3s $ease-in-out-cubic;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .c-tile {
+    transition: all 0.3s $ease-in-out-cubic;
+    transform: translate(0, 15px);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &.show {
+
+    .c-snackable-home {
+      transform: none;
+      transition-delay: 0s;
+      visibility: visible;
+    }
+
+    .c-snackable__head,
+    .c-snackable--close-carousel,
+    .c-tile {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .c-snackable__head,
+    .c-snackable--close-carousel {
+      transition-delay: 0.3s;
+    }
+
+    .c-tile {
+      transition: all 0.5s $ease-in-out-cubic;
+
+      &:nth-of-type(1) {
+        transition-delay: 0.35s;
+      }
+
+      &:nth-of-type(2) {
+        transition-delay: 0.4s;
+      }
+
+      &:nth-of-type(3) {
+        transition-delay: 0.45s;
+      }
+
+      &:nth-of-type(4) {
+        transition-delay: 0.5s;
+      }
+
+    }
+  }
+
+}
+
+.c-snackable-home {
+  width: 100vw;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  margin-bottom: -11px;
+  margin-top: -5px;
+  position: absolute;
+  z-index: 11;
+  left: 0;
+  // height: 249px;
+  transition: all 0.3s $ease-in-out-cubic;
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition-delay: 0.3s;
+  visibility: hidden;
+
+  @include breakpoints(small) {
+    height: 264px;
+  }
+
+  @include breakpoints(medium) {
+    height: 239px;
+  }
+  &.slideUp {
+    @include transition(all 0.5s linear);
+    height: 0;
+  }
+
+  .c-snackable__container {
+    display: block;
+    width: 100vw;
+    background-color: rgba(195, 41, 41, 0.95);
+    z-index: 6;
+    @include transition(all 1s linear);
+    margin-bottom: 11px;
+    margin-top: 0;
+    min-height: 244px;
+    //margin-top: - rem(285);
+
+    @include breakpoints(small) {
+      //margin-top: - rem(311);
+      min-height: 284px;
+    }
+
+
+    @include breakpoints(medium) {
+      //margin-top: - rem(270);
+      min-height: 239px;
+    }
+  }
+  .slick-list {
+    overflow: visible;
+  }
+  .slick-dots {
+    @include breakpoints(small) {
+      bottom: 9px;
+    }
+  }
+  .slick-dots li.slick-active {
+    background: color(grey,light);
+  }
+
+  .o-container {
+    padding: 0 0;
+    @include breakpoints(small) {
+      padding: 0 rem(25);
+    }
+    @include breakpoints(medium) {
+      padding: 0 0;
+    }
+    overflow: visible;
+  }
+  &.loaded {
+    @include calc(height, '100vh - 85px');
+    transition: all .3s $ease-in-cubic;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: color(white);
+    @include breakpoints(small) {
+      @include calc(height, '100vh - 144px');
+    }
+    @include breakpoints(medium) {
+      @include calc(height, '100vh - 113px');
+    }
+  }
+
+  .c-snackable__body {
+    z-index: 9;
+    @include breakpoints(large) {
+      max-width: rem(1320);
+      margin: 0 auto;
+
+    }
+    .c-tile {
+      width: 100vw;
+      // padding: rem(24) rem(16) rem(40);
+      padding: 0 rem(16) rem(40);
+
+      @include breakpoints(small) {
+        padding-top: 0;
+        padding-right: rem(42);
+        padding-left: rem(56);
+        padding-bottom: rem(20);
+        width: 358px;
+        height: 192px;
+        z-index: 9;
+      }
+      @include breakpoints(medium) {
+        padding-top: 0;
+        padding-right: rem(40);
+        padding-left: rem(56);
+        padding-bottom: rem(10);
+        width: 330px;
+        height: 165px;
+      }
+      @include breakpoints(large) {
+        padding-right: rem(40);
+        padding-left: rem(56);
+        padding-bottom: rem(30);
+        width: 330px;
+        height: 165px;
+      }
+      &:before {
+        height: rem(135);
+        bottom: auto;
+      }
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        opacity: 0;
+        left: 50%;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 11px 10.5px 0 10.5px;
+        border-color: color(red) transparent transparent;
+        @include transition(all 0.2s linear);
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        z-index: 11;
+      }
+      &.active {
+        &:after {
+          @include transition(all 0.2s linear);
+          bottom: -6px;
+          opacity: 1;
+        }
+
+      }
+      &.hover {
+        &:after {
+          @include breakpoints(medium) {
+            @include transition(all 0.2s linear);
+            bottom: -11px;
+            opacity: 1;
+          }
+        }
+
+      }
+      .c-article__container {
+        @include breakpoints(large) {
+          height: rem(135);
+        }
+      }
+
+
+    }
+  }
+  .o-meta__title {
+    @include breakpoints(medium) {
+      height: 72px!important;
+    }
+  }
+  .o-meta__duration {
+    @include breakpoints(medium) {
+    margin-top: 10px;
+    }
+  }
+  .active {
+    .o-meta__title {
+      color: color(white)!important;
+      text-decoration: underline;
+
+    }
+  }
+
+}

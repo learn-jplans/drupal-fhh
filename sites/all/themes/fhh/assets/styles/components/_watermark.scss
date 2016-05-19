@@ -1,0 +1,47 @@
+
+.c-watermark {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+
+
+  // modifier
+  .c-watermark--daily {
+    height: 0;
+    padding-bottom: 23%;
+
+    @include breakpoints(small) { padding-bottom: 33%; }
+
+    svg {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    & + .o-section__sub-title {
+      @include breakpoints(small) {
+       top: 50%; 
+       bottom: auto;
+      }
+      @include breakpoints(medium) {
+        top: auto;
+        bottom: 30%; 
+      }
+    }
+  }
+
+  .c-watermark--short {
+    width: 100%;
+    height: 0;
+    padding-bottom: 20%;
+    svg {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      fill: color(gray,lighter);
+    }
+  }

@@ -1,0 +1,35 @@
+// block
+.c-breaker--video {
+	.o-container {
+		padding-top: rem(31);
+    	padding-bottom: rem(30);
+	}
+
+	h3 {
+		@include font-sizing(rem(30), rem(38));
+		margin-bottom: 0;
+	}
+
+	a {
+		color: color(white);
+		text-transform: capitalize;
+		@include font-sizing(rem(14), rem(36));
+		@include font(gotham, medium);
+	}
+	.c-breaker__body {
+		margin: 0 -30px;
+
+		.c-article__letter {
+			text-transform: uppercase;
+			word-break: break-word;
+			@include font-sizing(rem(80), rem(92));
+
+			@include breakpoints(small) { @include font-sizing(rem(150), rem(162)); }
+			@include breakpoints(medium) { @include font-sizing(rem(200), rem(212)); }
+		}
+	}
+	.c-breaker__foot {
+		margin-bottom: 0;
+	}
+	
+}

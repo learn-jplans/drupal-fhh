@@ -1,0 +1,20 @@
+.o-input,
+.o-textarea {
+  padding: rem(15);
+  // font-size: rem(18);
+  @include font-sizing(rem(16),rem(24));
+  border: rem(1) solid color(gray,light);
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  outline: 0;
+
+  @include breakpoints(medium) {
+    @include font-sizing(rem(18),rem(36),25);
+  }
+
+  &::-webkit-input-placeholder { color: color(white); }
+  &:-moz-placeholder { color: color(white); }
+  &::-moz-placeholder { color: color(white); }
+  &:-ms-input-placeholder { color: color(white); }
+}

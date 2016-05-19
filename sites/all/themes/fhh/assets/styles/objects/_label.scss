@@ -1,0 +1,67 @@
+// block
+.o-label {
+  @include font(gotham,bold);
+  font-size: rem(12);
+  letter-spacing: ls(25);
+  color: color(gray);
+  text-transform: uppercase;
+  @include transition(all $speed-trans);
+  a & {
+    &:hover {
+      color: color(red,dark);
+    }
+  }
+  &.is-active {
+    color: color(red);
+  }
+}
+
+    // modifiers
+    .o-label--gray-light { color: color(gray,light-1); }
+    .o-label--brown { color: color(brown); }
+    .o-label--red {
+      color: color(red);
+      a & {
+        &:hover { color: color(red,dark); }
+      }
+    }
+    .o-label--white { color: color(white); }
+    .o-label--normal { text-transform: inherit; }
+    .o-label--required {
+      &:after {
+        content: '*';
+        display: inline-block;
+        @include font(gotham,medium);
+        font-size: rem(24);
+        color: color(red);
+      }
+    }
+    .o-label--medium { @include font(gotham,medium); }
+    .o-label--font-m { @include font-sizing(rem(16),rem(24)); }
+    .o-label--dropdown {
+      &:after {
+        content: '';
+        display: inline-block;
+        @include valign();
+        margin-left: rem(6);
+        border-left: rem(3) solid transparent;
+        border-right: rem(3) solid transparent;
+        border-top: rem(4) solid color(gray);
+        @include transition(all $speed-trans);
+      }
+      &:hover {
+        &:after {
+          @include breakpoints(medium) {
+            border-top-color: color(red);
+          }
+        }
+      }
+    }
+    .o-label--input {
+      @include font(gotham,medium);
+      font-size: rem(14);
+      text-transform: inherit;
+    }
+    .o-label--small {
+      font-size: rem(9);
+    }

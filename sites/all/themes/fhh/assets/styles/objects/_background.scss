@@ -1,0 +1,129 @@
+// block
+
+// background colors
+.o-bg--white { background-color: color(white); }
+.o-bg--white-dirty { background-color: color(white,dirty); }
+.o-bg--gray-lighter { background-color: color(gray, trending); }
+.o-bg--red { background-color: color(red); }
+.o-bg--red-dark { background-color: color(red,dark-1); }
+.o-bg--blue-dark { background-color: color(blue); }
+.o-bg--blue-light { background-color: color(blue,light); }
+
+.parallaxbg {
+  display: none;
+  position: absolute;
+  left: 0; bottom: 0;
+  background: color(brown,light-1);
+  width: 100%;
+  @include calc(height,'100% - 280px');
+  z-index: 0;
+  @include transition(background 1600ms);
+
+  @include breakpoints(small) { height: 65%; }
+
+  &.glow {
+    @include transition(background 1600ms);
+    background: color(brown,light-1);
+
+  }
+}
+
+// background images
+.o-bg--texture {
+  color: color(brown);
+  background: transparent;
+  background: -webkit-linear-gradient(transparent,transparent), url('../images/bg-texture.jpg');
+  background: -o-linear-gradient(transparent,transparent);
+  background-position: center;
+  background-size: cover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  &--small {
+    background: -webkit-linear-gradient(transparent,transparent), url('../images/bg-texture-small.jpg');
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+.o-bg--tower {
+  background-image: url('../images/bg-tower.png');
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+.o-bg--dropdown {
+  background: color(gray,light-5);
+}
+
+// city background
+.o-bg--city-berlin {
+  background-image: url('../images/icons/city/berlin.svg');
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.o-bg--city-dubai {
+  background-image: url('../images/icons/city/dubai.svg');
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.o-bg--city-geneva {
+  background-image: url('../images/icons/city/geneva.svg');
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.o-bg--city-hong-kong {
+  background-image: url('../images/icons/city/hong-kong.svg');
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.o-bg--city-london {
+  background-image: url('../images/icons/city/london.svg');
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.o-bg--city-milan {
+  background-image: url('../images/icons/city/milan.svg');
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.o-bg--city-mexico {
+  background-image: url('../images/icons/city/mexico.svg');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.o-bg--city-new-york {
+  background-image: url('../images/icons/city/new-york.svg');
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.o-bg--city-paris {
+  background-image: url('../images/icons/city/paris.svg');
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.o-bg--city-shanghai {
+  background-image: url('../images/icons/city/shanghai.svg');
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.o-bg--city-singapore {
+  background-image: url('../images/icons/city/singapore.svg');
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.o-bg--city-tokyo {
+  background-image: url('../images/icons/city/tokyo.svg');
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: contain;
+}

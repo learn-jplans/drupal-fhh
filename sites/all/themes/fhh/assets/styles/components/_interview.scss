@@ -1,0 +1,17 @@
+.c-interview {}
+
+
+  .c-interview__question {
+    @include font(gotham,bold);
+    @include font-sizing(rem(14), rem(26));
+
+    @include breakpoints(small) {
+      @include font-sizing(rem(16),rem(28));
+    }
+    @include breakpoints(medium) {
+      @include font-sizing(rem(18),rem(32));
+    }
+  }
+  .c-interview__answer {
+    margin-bottom: 35px;
+  }

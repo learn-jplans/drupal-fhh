@@ -1,0 +1,52 @@
+// block
+.c-sort {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  width: 100%; max-width: rem(1178);
+  height: rem(60);
+  margin: 0 auto;
+  text-transform: uppercase;
+  &.c-sort--stories {
+    top: 0; right: rem(10); left: auto;
+    height: 57px;
+    padding: 0;
+    margin-top: 0;
+    max-width: 200px;
+    
+    @include breakpoints(small) {
+      right: rem(40);
+    }
+    @include breakpoints(medium) {
+      right: rem(80);
+    }
+
+    .is-dropdown--fixed & {
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.15);
+    }
+
+    .is-dropdown--active + & {
+      z-index: 3;
+    }
+
+    .is-current {
+        color: $hover-color;
+    }
+    
+  }
+  .sortvalue {
+    position: relative;
+    top: 50%;
+    @include transform(translateY(-50%));
+    &:after { border-width: 5px 6px 0 6px; }
+    &.opened:after { border-width: 0px 6px 5px 6px; }
+  }
+}
+
+  // element
+  .c-sort__container {
+    display: block;
+    @include valign();
+    width: 100%; height: rem(50);
+  }
+
+    

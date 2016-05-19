@@ -1,0 +1,44 @@
+// block
+  .o-thumbnail {
+    overflow: hidden;
+    position: relative;
+    height: 0;
+    img {
+      position: absolute;
+      top: 0; left: 0;
+      margin: auto;
+    }
+  }
+
+  // element
+
+
+    // modifier
+    .o-thumbnail--center {
+      img {
+        bottom: 0; left: 50%;
+        @include transform(translateX(-50%));
+      }
+    }
+    .o-thumbnail--ar-1x1 {
+      padding-bottom: 100%;
+      img {
+        width: 100%;
+        transition: transform 1s;
+      }
+
+      &:hover {
+        img {
+          @include transform(scale(1.25) translateX(-39.5%));
+        }
+      }
+    }
+    .o-thumbnail--ar-3x2 { // 3:2 aspect ratio
+      padding-bottom: 66.66%;
+      img { width: 100%; }
+    }
+
+    .c-tile--trend .o-thumbnail--ar-3x2 { // 3:2 aspect ratio
+      padding-bottom: 70.66%;
+      img { width: 100%; }
+    }

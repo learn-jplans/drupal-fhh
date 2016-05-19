@@ -1,0 +1,126 @@
+// block
+.c-shareline {
+  // overflow: hidden;
+  // padding: rem(20) rem(18);
+  // padding: 0 rem(24);
+  margin: rem(37) 0 rem(38);
+
+  @include breakpoints(small) { padding: 0 0; margin: rem(37) 0 rem(45); }
+  @include breakpoints(medium) { padding: 0 rem(24); }
+
+  .o-list {
+    margin: 0;
+    li {
+      margin: 0;
+      border-color: color(gray,lighter);
+      &:first-letter { margin-left: 0; }
+      &:before { display: none; }
+      &:after { background-color: color(gray,light-3); }
+    }
+  }
+
+  .c-shareline {
+    &__head { border-bottom-color: color(gray,light-3); }
+  }
+}
+
+
+  // element
+  .c-shareline__head {
+    width: 100%;
+    // padding-bottom: rem(20);
+    padding-bottom: rem(23);
+    border-bottom: rem(1) solid color(gray,lighter);
+
+    @include breakpoints(small) { padding-bottom: rem(14); }
+  }
+  .c-shareline__body {
+    padding: rem(21) 0 0;
+    @include font(tiempos,medium);
+    @include font-sizing(rem(18),rem(24),10);
+    p {
+      margin: 0 !important;
+      @include font(tiempos,medium);
+      @include font-sizing(rem(18),rem(24));
+
+      @include breakpoints(small) { @include font-sizing(rem(20),rem(32)); }
+      @include breakpoints(medium) { @include font-sizing(rem(18),rem(30)); }
+    }
+
+    @include breakpoints(small) {
+      padding: rem(11) 0 0;
+      @include font-sizing(rem(20),rem(32));
+    }
+    @include breakpoints(medium) { @include font-sizing(rem(18),rem(30)); }
+    h6 {
+      font-size: 26px;
+      color: color(gray,light-1);
+      margin-top: 5px;
+    }
+  }
+
+  .c-shareline__signature {
+    margin-top: rem(20);
+    @include font(notera);
+    @include font-sizing(rem(32),rem(32));
+
+    @include breakpoints(small) {
+      padding-bottom: 0;
+      margin-top: rem(21);
+      @include font-sizing(rem(36),rem(24));
+    }
+    @include breakpoints(medium) {
+      padding-bottom: rem(8);
+      margin-top: rem(39);
+      @include font-sizing(rem(48),rem(50));
+    }
+  }
+
+
+    // modifier
+    .c-shareline--quote {
+      position: relative;
+      padding-left: rem(18);
+      padding-bottom: rem(32);
+
+      @include breakpoints(small) {
+        padding-left: rem(40);
+      }
+      @include breakpoints(medium) {
+        left: 0;
+        padding-left: rem(30);
+        // margin-left: rem(178);
+        width: 100%; max-width: rem(590);
+      }
+
+      @media (min-width: 1080px) {
+        left: calc(100% - 555px);
+        max-width: rem(610);
+      }
+      @media (min-width: 1220px) { max-width: rem(690); }
+      @media (min-width: 1280px) { max-width: rem(720); }
+
+      .c-shareline__head {
+        position: absolute;
+        padding-top: rem(20);
+        padding-bottom: rem(12);
+        bottom: 0;
+        border-bottom: 0;
+        border-top: rem(1) solid color(gray,lighter);
+      }
+      .c-shareline__body { margin-bottom: rem(40); }
+
+      .o-quote {
+        left: 0;
+        padding-left: 0;
+        margin-left: 0;
+
+        &:before {
+          margin-right: rem(15);
+        }
+        &:after {
+          margin-left: rem(15);
+        }
+      }
+    }
+

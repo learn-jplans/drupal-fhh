@@ -1,0 +1,59 @@
+// block
+.c-breaker--no-image {
+
+  .o-container {
+    padding-top: rem(42);
+    padding-bottom: rem(44);
+
+    @include breakpoints(small) {
+      padding-top: rem(33);
+      padding-bottom: rem(24);
+    }
+
+    @include breakpoints(medium) { padding-top: rem(47); }
+  }
+
+  h3 {
+    margin-bottom: rem(26);
+    @include breakpoints(small) {
+      margin-bottom: rem(21);
+      line-height: rem(24);
+    }
+    @include breakpoints(medium) {
+      margin-bottom: rem(6);
+      line-height: rem(48);
+    }
+  }
+
+  h6 {
+    @include breakpoints(small) { margin-bottom: rem(5); }
+    @include breakpoints(medium) { margin-bottom: rem(3); }
+  }
+
+  .o-meta__date {
+    margin-bottom: rem(-2);
+    @include breakpoints(small) { margin-bottom: rem(-1); }
+    @include breakpoints(medium) { margin-bottom: rem(-4); }
+  }
+
+  .o-meta__type {
+    @include breakpoints(small) { @include font-sizing(rem(14),rem(32)); }
+    @include breakpoints(medium) { line-height: rem(30); }
+  }
+
+  .o-meta__duration { @include font(gotham,bold); }
+
+  .c-breaker__body {
+    padding: rem(36) 0;
+
+    @include breakpoints(small) { padding: rem(33) 0 rem(14); }
+    @include breakpoints(medium) { apdding: rem(19) 0 0; }
+  }
+
+  .c-breaker__foot { margin-bottom: 0; }
+}
+
+	// element
+
+
+		// modifier

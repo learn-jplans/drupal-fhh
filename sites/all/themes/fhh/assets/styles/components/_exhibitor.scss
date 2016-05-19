@@ -1,0 +1,77 @@
+// block
+.c-exhibitor {
+  float: left;
+  clear: both;
+  display: table;
+  width: 100%;
+  margin-top: rem(43);
+
+  @include breakpoints(small) { margin-top: rem(53); }
+  // @include breakpoints(medium) { margin-top: rem(53); }
+
+  .c-exhibitor__head {
+    margin-bottom: rem(33);
+    @include font(tiempos,light);
+    font-size: rem(24);
+
+    @include breakpoints(small) {
+      margin-bottom: rem(43);
+      font-size: rem(33);
+    }
+    @include breakpoints(medium) { margin-bottom: rem(40); }
+  }
+}
+
+  // element
+  .c-exhibitor__container {}
+  .c-exhibitor__item {
+    display: table-cell;
+    float: left;
+    position: relative;
+    width: 50%;
+    height: rem(55);
+    padding: 0 rem(25);
+    margin-bottom: rem(60);
+    vertical-align: middle;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0; bottom: 0; right: 0;
+      width: rem(1); height: 100%;
+      background-color: color(blue,light-s);
+    }
+
+    &:nth-child(2n) {
+      &:after { display: none; }
+    }
+
+    @include breakpoints(small) {
+      width: 33.3%;
+      margin-bottom: rem(90);
+      &:nth-child(2n) {
+        &:after { display: block; }
+      }
+      &:nth-child(3n) {
+        &:after { display: none; }
+      }
+    }
+    @include breakpoints(medium) {
+
+    }
+  }
+  .c-exhibitor__image {
+    @include valign();
+    img {
+      max-width: 100%;
+    }
+
+    p {
+      text-align: center;
+      margin: 0 auto;
+      @include font(tiempos,light);
+      font-size: rem(20);
+    }
+  }
+
+    // modifier

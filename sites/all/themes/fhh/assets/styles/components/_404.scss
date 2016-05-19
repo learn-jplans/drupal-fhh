@@ -1,0 +1,82 @@
+
+
+.c-404 {
+  width: 100vw;
+  position: relative;
+  @include calc( height, '100vh - 91px');
+
+  @include breakpoints(small) { @include calc( height, '100vh - 145px'); }
+  @include breakpoints(medium) { @include calc( height, '100vh - 119px'); }
+}
+  .c-404__title {
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    top: 50%; left: 50%;
+    width: 320px;
+    @include transform(translate3d(-50%,-80%,0));
+
+    @include breakpoints(small) { width: 450px; }
+
+    .o-letter {
+      overflow: hidden;
+      display: block;
+      float: left;
+      width: 100px;
+      @include font(gotham,bold);
+      font-size: rem(150);
+      line-height: rem(110);
+
+      @include breakpoints(small) {
+        width: rem(150);
+        font-size: rem(210);
+        line-height: rem(150);
+      }
+    }
+  }
+
+  .c-404__clockbox {
+    display: block;
+    float: left;
+    position: relative;
+    width: rem(120); height: rem(120);
+    margin: 0;
+
+    @include breakpoints(small) { width: rem(150); height: rem(150); }
+    svg {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      margin: auto;
+      width: rem(120); height: rem(120);
+      @include breakpoints(small) { width: rem(150); height: rem(150); }
+    }
+  }
+
+  .c-404__homelink {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    max-width: 80%;
+    margin-left: 10%;
+    @include font(tiempos,light);
+    font-size: rem(24);
+    bottom: 59px;
+    @include breakpoints(small) {
+      bottom: 110px;
+      font-size: rem(32);
+    }
+
+    @include breakpoints(medium) {
+      bottom: 90px;
+      line-height: rem(40);
+      max-width: none;
+      margin-left: 0;
+    }
+    a {
+      @include font(tiempos,lightitalic);
+      @include breakpoints(medium) {
+        display: block;
+      }
+    }
+  }

@@ -1,0 +1,187 @@
+// block
+.c-breaker--product {
+  max-height: 100%;
+  background-color: color(gray,lighter);
+  .o-container {
+    height: 100%;
+    padding-bottom: rem(10);
+    @include breakpoints(small) {
+      padding-bottom: rem(21);
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &.o-container--breaker { padding-top: 0; }
+
+    .c-breaker__content {
+      @include breakpoints(small) { padding: 0; }
+    }
+  }
+  .c-block {
+    &.o-bg--red {
+      background: none;
+      @include breakpoints(small) {
+        background-color: color(red);
+        .c-article__author > * {
+          color: color(white);
+        }
+      }
+    }
+  }
+  .c-breaker__container { height: 100%; }
+  .c-breaker__content {
+    padding: 0 rem(24);
+    @include breakpoints(small) { padding: 0 rem(40); }
+    @include breakpoints(medium) { padding: 0; }
+  }
+  .c-breaker__body {
+    display: none;
+    @include breakpoints(small) {
+      display: block;
+      padding: rem(17) 0 rem(10);
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: color(gray);
+    @include breakpoints(small) { color: color(white); }
+  }
+  h3 {
+    margin-bottom: rem(27);
+    @include breakpoints(small) { margin-bottom: 19px; }
+  }
+  h6 { margin-bottom: rem(9); }
+
+  .c-article__desc {
+    // overflow: hidden;
+    // max-height: rem(172);
+    padding: 0 rem(20);
+    margin-top: rem(30);
+    margin-bottom: rem(30);
+    max-height: rem(168);
+
+    @include breakpoints(medium) {
+      max-height: rem(212);
+    }
+  }
+  .c-article {
+    max-width: rem(440);
+    margin: 0 auto;
+  }
+  .o-meta__date {
+    margin-bottom: rem(1);
+    color: color(gray);
+    @include breakpoints(small) {
+      margin-bottom: rem(-1);
+      color: color(white);
+    }
+    @include breakpoints(medium) { margin-bottom: rem(-3); }
+  }
+  .o-meta__type {
+    color: color(red);
+    & > * { color: color(red); }
+    @include breakpoints(small) {
+      color: color(white);
+      & > * { color: color(white); }
+    }
+  }
+  .c-article__icon {
+    margin-top: rem(17);
+    svg {
+      fill: color(gray);
+      & + span { color: color(white) !important; }
+    }
+    @include breakpoints(small) {
+      margin-top: rem(3);
+      svg {
+        fill: color(white);
+        & + span { color: color(gray) !important; }
+      }
+    }
+    @include breakpoints(medium) { margin-top: rem(7); }
+  }
+
+  .c-breaker__foot { margin-bottom: 0; }
+
+  .c-product {
+    // @include breakpoints(small) { min-height: rem(600); }
+    & + .c-breaker__footer {
+      margin-top: rem(55);
+      // margin-top: rem(30);
+      margin-bottom: rem(46);
+      @include breakpoints(small) {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .o-letter--breaker {
+    @include breakpoints(small) { font-size: rem(238); }
+  }
+  .c-breaker__body {
+    @include breakpoints(small) { padding-bottom: 0; }
+  }
+
+  // modifier
+  &.c-breaker--product--fixed {
+    @include breakpoints(small) {
+      height: rem(510);
+      max-height: rem(510);
+    }
+    @include breakpoints(medium) {
+      height: rem(710);
+      max-height: rem(710);
+    }
+    .c-breaker__content--fixed {
+      @include breakpoints(small) {
+        position: absolute;
+        top: 50%; left: 50%;
+        @include transform(translate(-50%,-50%));
+      }
+    }
+    .c-product { min-height: 100%; }
+  }
+}
+
+
+
+
+// .c-breaker.c-breaker--product {
+
+  // .c-breaker__foot {
+  //   margin-bottom: 0;
+  // }
+  // .o-container {
+  //   height: 100%;
+  //   padding-bottom: rem(10);
+  //   @include breakpoints(small) {
+  //     padding-bottom: rem(21);
+  //     padding-left: 0;
+  //     padding-right: 0;
+  //   }
+  //   .c-breaker__content {
+  //     @include breakpoints(small) { padding: 0; }
+  //   }
+  // }
+  // .c-product {
+  //   & + .c-breaker__footer  {
+  //     margin-top: rem(55);
+  //     margin-bottom: 46px;
+  //     @include breakpoints(small) {
+  //       margin-bottom: 0;
+  //     }
+  //   }
+  // }
+
+  // .o-letter--breaker {
+  //   @include breakpoints(small) { font-size: rem(238); }
+  // }
+  // .c-breaker__body {
+  //   @include breakpoints(small) { padding-bottom: 0; }
+  // }
+
+// }
+  // .c-breaker--product .c-breaker__head h3 {
+  //   @include breakpoints(small) { margin-bottom: 19px; }
+  // }

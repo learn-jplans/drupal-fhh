@@ -1,0 +1,11 @@
+// block
+
+.c-filter {}
+
+  // element
+  .c-filter__clear {
+    position: absolute;
+    top: 0; right: 0;
+	height: rem(58);
+    padding-right: 60px;
+  }

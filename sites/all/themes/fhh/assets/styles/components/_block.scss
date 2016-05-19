@@ -1,0 +1,38 @@
+// block
+.c-block {
+	display: block;
+	position: relative;
+	vertical-align: top;
+	// padding: rem(30);
+	padding: rem(24);
+	@include breakpoints(small) {
+		display: table-cell !important;
+	}
+}
+
+	// element
+	.c-block__body {
+		@extend .clearfix;
+		padding: rem(40) 0 rem(20);
+	}
+
+		// modifier
+		.c-block--half {
+			// display: block;
+			width: 100%;
+			@include breakpoints(small) {
+				width: 50%  !important;
+			}
+		}
+
+		.c-block--half--m {
+			@include breakpoints(small) { width: 100% !important; }
+			@include breakpoints(medium) { width: 50% !important; }
+		}
+
+		.c-block--left {
+			@include breakpoints(small) { float: left !important; }
+		}
+		.c-block--right {
+			@include breakpoints(small) { float: right !important; }
+		}

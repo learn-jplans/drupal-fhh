@@ -1,0 +1,46 @@
+$colors: (
+  gray: (
+    base: #222222,
+    dark: #07060c,
+    light: #babcb6,
+    light-1: #8b8c88,
+    light-2: #c5c7c0,
+    light-3: #d1d1d7,
+    light-4: #C5C7C0,
+    light-5: #e4e3de,
+    light-6: #cdccc8,
+    lighter: #e7e6e0,
+    trending: #F7F6F1,
+    trendingred: #B22525
+
+  ),
+  white: (
+    base: #ffffff,
+    dirty: #f7f6f0
+  ),
+  black: (
+    base: #000000
+  ),
+  blue: (
+    base: #26262e,
+    light: #3a3a46,
+    light-s: #4c4c5c
+  ),
+  red: (
+    base: #c32929,
+    light: #f90101,
+    dark: #af2525,
+    dark-1: #4a0000,
+    darker: #780f00
+  ),
+  brown: (
+    base: #c0a15f,
+    highlight: #c0b68a,
+    light: #dcd09f,
+    light-1: #BA9C5C
+  )
+);
+
+$base-color:  color(gray);
+$link-color:  color(red);
+$hover-color: color(red,dark);

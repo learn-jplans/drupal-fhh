@@ -1,0 +1,13 @@
+
+// custom scrollbar
+.mCS-fhh-theme {
+  .mCSB_scrollTools {
+    .mCSB_dragger {
+      .mCSB_dragger_bar {
+        width: rem(5);
+        background-color: #E8E7E3;
+      }
+    }
+    .mCSB_draggerRail { background: none; }
+  }
+}

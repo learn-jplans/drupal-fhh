@@ -1,0 +1,109 @@
+// block
+.c-product {
+  overflow: hidden;
+  display: block;
+  position: relative;
+  width: 100%; height: rem(552);
+  max-width: rem(355);
+  margin: 0 auto;
+}
+
+  // element
+  .c-product__item {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    @include breakpoints(small) { top: -4px; }
+    @include breakpoints(medium) { top: 0; }
+    img {
+      display: block;
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 100%;
+      margin: auto;
+    }
+  }
+
+  .c-product__image {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-repeat: no-repeat;
+    background-position: left center;
+  }
+
+  .c-product__resize {
+    position: absolute;
+    top: 0;
+    height: 100%; width: 50%;
+    overflow: hidden;
+    @include transform(translateZ(0));
+    -webkit-backface-visibility: hidden;
+    backface-visibility:hidden;
+
+    img {
+      display: block;
+      position: absolute;
+      top: 0;
+      height: auto; width: auto;
+      max-width: none;
+    }
+
+    &--left {
+      left: 0;
+      img { left: 0; }
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        width: rem(1); height: 100%;
+        background-color: rgba(#a8a9a3,.50);
+      }
+    }
+
+    &--right {
+      right: 0;
+      img { right: 0; }
+    }
+
+    .is-visible & { width: 50%; }
+  }
+
+  .c-product__slide {
+    @include valign();
+    position: absolute;
+    left: 50%;
+    margin-left: rem(-17);
+    cursor: ew-resize;
+
+    .is-visible & { opacity: 1; }
+  }
+
+    // modifier
+    .c-product--breaker {
+      max-height: rem(400);
+      @include breakpoints(small) {
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 100%; max-height: 100%;
+      }
+
+      .c-product__item {
+        max-width: rem(306);
+
+        @include breakpoints(small) { max-width: rem(240); }
+        @include breakpoints(medium) { max-width: rem(328); }
+      }
+      .c-product__resize {
+        img {
+          max-width: rem(306);
+          @include breakpoints(small) { max-width: rem(250); }
+          @include breakpoints(medium) { max-width: rem(328); }
+        }
+      }
+    }

@@ -1,0 +1,67 @@
+// block
+.c-ads {
+  overflow: hidden;
+  display: block;
+  position: relative;
+  max-width: 100%;
+  // background: #ccc;
+  text-align: center;
+
+  iframe { width: 100% !important; }
+
+  span {
+    @include font(gotham,bold);
+    @include font-sizing(rem(70), rem(50));
+    color: color(gray,light);
+  }
+
+  img {
+    position: absolute;
+    top: 0; left: 50%;
+    margin: auto;
+    @include transform(translateX(-50%));
+  }
+}
+
+  // element
+  .c-ads__container {
+    @include valign();
+    text-align: center;
+  }
+
+    // modifier
+    .c-ads--sidebar {
+      width: rem(300);
+      height: rem(600);
+      margin: 0 auto;
+      background-color: #ccc;
+    }
+
+    .c-ads--mpu {
+      width: rem(300);
+      height: rem(250);
+    }
+
+    .c-ads--half-page {
+      width: rem(300);
+      height: rem(600);
+    }
+
+    .c-ads--full {
+      width: 100%;
+      height: auto ;
+    }
+
+    .c-ads--hero {
+      width: 100vw;
+      height: 100vh;
+    }
+    .c-ads--hm {
+      width: rem(300);
+    }
+
+    .o-ads__hm {
+      @include breakpoints(medium) {
+         width: rem(300);
+      }
+    }

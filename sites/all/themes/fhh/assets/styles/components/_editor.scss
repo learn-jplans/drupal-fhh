@@ -1,0 +1,435 @@
+// block
+.c-editor {
+  position: relative;
+  left: 0;
+  width: 100%;
+  margin-top: rem(10);
+  background-color: color(gray,lighter);
+
+  &:after {
+    content: '';
+    display: table;
+    border-left: rem(5) solid transparent;
+    border-right: rem(5) solid transparent;
+    border-bottom: rem(5) solid color(gray,lighter);
+    position: absolute;
+    top: -5px;
+    left: 50%; right: 0;
+    @include transform(translateX(-50%));
+  }
+
+  h6 {
+    margin-bottom: rem(6);
+    @include breakpoints(small) {
+      margin-bottom: rem(11);
+      line-height: rem(32);
+    }
+    @include breakpoints(medium) {
+      margin-bottom: rem(5);
+      line-height: rem(24);
+    }
+  }
+
+  h3 {
+    padding-bottom: rem(37);
+    @include breakpoints(small) { line-height: rem(32); }
+    @include breakpoints(medium) {
+      padding-bottom: rem(32);
+      line-height: rem(48);
+    }
+    a {
+      color: color(red);
+    }
+  }
+  .o-meta__date {
+    margin-bottom: rem(11);
+    line-height: rem(18);
+    @include breakpoints(small) { margin-bottom: rem(12); }
+  }
+  .o-meta__type {
+    margin-bottom: rem(4);
+    line-height: rem(18);
+    @include breakpoints(small) {
+      line-height: rem(18);
+      margin-bottom: rem(2);
+    }
+    @include breakpoints(medium) {
+      line-height: rem(18);
+      margin-bottom: rem(2);
+    }
+  }
+  .o-meta__duration { line-height: rem(18); }
+
+  .o-list--border li {
+    &:after { background-color: color(gray,light-3); }
+  }
+
+  .c-title--section {
+    &:after {
+      width: rem(62);
+    }
+  }
+  a {
+    .o-label--dropdown {
+      color: color(red);
+      &:after { border-top-color: color(red); }
+      &:hover {
+        @include breakpoints(medium) {
+          color: color(brown);
+          &:after { border-top-color: color(brown); }
+        }
+      }
+    }
+  }
+
+  .c-shareline {
+    &__head { border-bottom-color: color(gray,light-3); }
+    &__body { 
+      @include font-sizing(rem(20),rem(30)); 
+      &.ellipsis {
+        height: rem(69);
+        @include breakpoints(small) { height: rem(75); }
+        @include breakpoints(medium) { height: rem(71); }
+      }
+    }
+  }
+}
+
+  // element
+  .c-editor__container {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    // padding: rem(47) rem(35) 0;
+    padding: rem(47) 0 0;
+    margin: 0 auto;
+    text-align: center;
+
+    @include breakpoints(medium) { max-width: rem(740);}
+  }
+  .c-editor__head {
+    position: relative;
+    padding-bottom: rem(30);
+    @include breakpoints(medium) { padding-bottom: rem(23); }
+  }
+  .c-editor__body {
+    padding-bottom: rem(20);
+
+    @include breakpoints(small) { padding-bottom: rem(15); }
+    @include breakpoints(medium) { padding-bottom: rem(34); }
+
+    // p {
+      @include font(gotham);
+      @include font-sizing(rem(16),rem(26));
+    // }
+
+    .c-shareline {
+      margin-top: 0;
+      &__body {
+        p {
+          @include font-sizing(rem(20),rem(30));
+        }
+      }
+    }
+  }
+  .c-editor__close {
+    max-width: rem(60);
+    margin: rem(-3) auto rem(32);
+    svg.o-icon {
+      margin: 0 auto rem(-6);
+    }
+    .o-label { color: color(gray,light); }
+  }
+  .c-editor__foot {
+    // position: absolute;
+    left: 0; bottom: 0;
+    width: 100%;
+    text-align: center;
+
+    .o-list {
+      display: inline-block;
+      position: relative;
+      bottom: rem(-10);
+
+      li {
+        height: rem(40);
+        padding: rem(4) rem(20);
+        @include font(gotham,medium);
+        font-size: rem(10);
+        letter-spacing: -1px;
+        @include breakpoints(small) {
+          padding: rem(4) rem(52);
+          font-size: rem(12);
+          letter-spacing: 0;
+        }
+
+        &:first-child { padding-left: 0; }
+        &:last-child { padding-right: 0; }
+        &:after {
+          height: 100%;
+          // height: rem(40);
+          background-color: color(gray,light-2);
+        }
+
+        &:before {
+          @include breakpoints(medium) {
+            position: absolute;
+            left: 0; top: 0;
+          }
+        }
+
+        @include breakpoints(small) {
+          padding: rem(0) rem(50);
+          font-size: rem(14);
+        }
+
+        @include breakpoints(medium) {
+          padding: 0 rem(20) !important;
+          &:before,
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            width: rem(1); height: 100%;
+            background-color: color(gray,light);
+          }
+          &:after { right: 0; }
+          &:before { left: 0; }
+        }
+      }
+      a {
+        @include font-sizing(rem(14),rem(18));
+        color: color(gray,light-1);
+        &:hover {
+          @include breakpoints(medium) {
+            color: color(red);
+          }
+        }
+      }
+    }
+  }
+  .c-editor__photo-container {
+    overflow: hidden;
+    position: relative;
+    width: rem(162); height: rem(162);
+    -webkit-border-radius: rem(160);
+    -moz-border-radius: rem(160);
+    border-radius: rem(160);
+    margin: 0 auto rem(37);
+    transform-origin: center center;
+    @include transform(translateZ(0));
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+
+    @include breakpoints(small) { margin: 0 auto rem(44); }
+    @include breakpoints(medium) {
+      width: rem(243); height: rem(243);
+      margin: 0 auto rem(63);
+    }
+  }
+  .c-editor__photo {
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: rem(162); height: rem(162);
+    background-size: cover;
+    background-position: center;
+    background-color: $base-color;
+    @include transform(scale(1));
+    @include transition(transform .5s);
+    z-index: -1;
+
+    @include breakpoints(medium) {
+      width: rem(243); height: rem(243);
+      margin: auto;
+      &:hover { @include transform(scale(1.15)); }
+    }
+  }
+  .c-editor__name {
+    display: block;
+    @include font(notera);
+    font-size: rem(32);
+    color: color(red);
+    line-height: rem(32);
+    text-align: center;
+
+    @include breakpoints(small) { font-size: rem(36); }
+    @include breakpoints(medium) {
+      font-size: rem(48);
+      line-height: rem(24);
+    }
+  }
+  .c-editor__quote {
+    width: 100%;
+    margin: 0 auto rem(38);
+    // padding: 0 rem(10);
+    // padding: 0 rem(10);
+    @include font(tiempos,italic);
+    @include font-sizing(rem(32),rem(40));
+    overflow: hidden;
+    max-height: rem(204);
+
+    @include breakpoints(small) {
+      padding: 0 rem(30);
+      margin-bottom: rem(36);
+    }
+    @include breakpoints(medium) {
+      margin-bottom: rem(22);
+      @include font-sizing(rem(50),rem(60));
+      max-height: rem(306);
+    }
+  }
+
+  .c-editor__shareline {
+    margin: 0;
+    .c-shareline__body {
+      p {
+        @include breakpoints(medium) { @include font-sizing(rem(20),rem(30)); }
+      }
+    }
+  }
+
+  .c-editor__more {
+    display: none;
+
+    &.is-show { display: block; }
+    &.is-active {
+      span {
+        color: color(brown);
+        &:after {
+          border-top: none;
+          border-bottom: rem(4) solid color(brown);
+        }
+      }
+    }
+  }
+
+      // modifier
+      .c-editor--tile {
+        left: 0;
+        width: 100%;
+        margin-top: 0;
+        background-color: transparent;
+        text-align: left;
+        &:after { display: none; }
+        .c-editor__head {
+          height: 0;
+          // margin-bottom: rem(10);
+          padding-bottom: 66.66%;
+          &:after { display: none; }
+        }
+        .c-editor__photo {
+          position: relative;
+          width: rem(115); height: rem(115);
+          margin: 0 auto;
+          -webkit-border-radius: rem(115);
+          -moz-border-radius: rem(115);
+          border-radius: rem(115);
+          &:hover { @include transform(scale(1)); }
+        }
+        .c-editor__name {
+          position: absolute;
+          left: 0; right: 0;
+          bottom: 0;
+          margin-top: rem(28);
+          font-size: rem(48);
+          line-height: rem(30);
+        }
+      }
+      .c-editor--full {
+        left: calc(-50vw + 50%);
+        width: 100vw;
+        // margin-bottom: rem(-126);
+        z-index: 2;
+        // @include breakpoints(small) { margin-bottom: rem(-140); }
+        // @include breakpoints(medium) { margin-bottom: rem(-102); }
+        .c-editor__container {
+          padding-left: rem(18);
+          padding-right: rem(18);
+          @include breakpoints(small) {
+            padding-left: rem(40);
+            padding-right: rem(40);
+          }
+          @include breakpoints(small) {
+            max-width: rem(716);
+            padding-left: rem(34);
+            padding-right: rem(34);
+          }
+        }
+        .c-editor__head {
+          padding-bottom: rem(14);
+          @include breakpoints(medium) { padding-bottom: rem(18); }
+        }
+        .c-editor__body { padding-bottom: rem(13); }
+      }
+
+      .c-editor--pop {
+        visibility: hidden;
+        overflow: hidden;
+        max-height: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        transform: scaleY(0);
+        transition: all .6s $ease-in-out 0s;
+        transform-origin: top center;
+
+        .c-editor__container {
+          visibility: hidden;
+          opacity: 0;
+          transition-delay: 0s;
+        }
+
+        .c-editor__content {
+          overflow: hidden;
+          -webkit-overflow-scrolling: touch;
+          margin-bottom: rem(30);
+          @include breakpoints(small) { margin-bottom: 0; }
+
+          &.is-show-all {
+            overflow-y: auto;
+            max-height: rem(410);
+            @include breakpoints(small) { max-height: rem(610); }
+          }
+
+          .mCS-fhh-theme {
+            .mCSB_scrollTools {
+              .mCSB_dragger {
+                .mCSB_dragger_bar { background-color: color(gray,light); }
+              }
+            }
+          }
+          .mCSB_container {
+            -webkit-overflow-scrolling: touch;
+          }
+        }
+
+        .c-editor__body {
+          overflow: hidden;
+          max-height: rem(142);
+          padding-bottom: 0;
+          margin-top: rem(30);
+
+          &.show-all {
+            max-height: 100%;
+          }
+        }
+
+        &.is-editor--open {
+          visibility: visible;
+          margin-top: rem(10);
+          max-height: 1000px;
+          margin-bottom: rem(-126);
+          transform: none;
+          @include breakpoints(small) { margin-bottom: rem(-140); }
+          @include breakpoints(medium) { margin-bottom: rem(-110); }
+
+          .c-editor__container {
+            visibility: visible;
+            opacity: 1;
+            transition: all .3s $ease-in-out .4s;
+          }
+
+          &.finish { overflow: visible; }
+        }
+      }

@@ -1,0 +1,59 @@
+// block
+.o-letter {
+  @include font(gotham,black);
+  font-size: rem(245);
+  line-height: 1;
+  text-transform: uppercase;
+  cursor: default;
+  @extend .o-bg--texture;
+  @include breakpoints(medium) {
+    font-size: rem(375);
+  }
+}
+
+
+    // modifier
+    .o-letter--large {
+      font-size: rem(400);
+
+      @include breakpoints(small) { font-size: rem(763); }
+      @include breakpoints(medium) { font-size: rem(872); }
+    }
+      .single-fhh_events .o-letter--large {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+      }
+
+    .o-letter--medium {
+      // overflow: hidden;
+      display: block;
+      float: left;
+      width: rem(100);
+      @include font(gotham,bold);
+      font-ize: rem(150);
+      line-height: rem(110);
+      @include breakpoints(small) {
+        width: rem(150);
+        font-size: rem(210);
+        line-height: rem(150);
+      }
+    }
+
+    .o-letter--breaker {
+      font-size: rem(260);
+
+      @include breakpoints(small) { font-size: rem(300); }
+      @include breakpoints(medium) { font-size: rem(375); }
+    }
+
+    .o-letter--articles {
+      @include valign();
+      position: absolute;
+      // top: rem(-54);
+      left: 0; right: 0;
+      text-align: center;
+    }
+    .o-letter--browser {
+      font-size: rem(36);
+      @include breakpoints(small) { font-size: rem(50); }
+    }

@@ -1,0 +1,46 @@
+.notification {
+  width: 100%;
+  position: fixed;
+  z-index: $notification-index;
+  bottom: 0;
+  padding: rem(35) 0 rem(10);
+  @include opacity(90);
+
+  .notification--close {
+    position: absolute;
+    top: rem(42);
+    right: rem(18);
+    cursor: pointer;
+
+    @include breakpoints(small) { 
+      top: rem(30);
+      right: rem(30);
+    }
+
+    .o-icon {
+      width: rem(16);
+      height: rem(16);
+    }
+  }
+
+  .o-container {
+
+    h3 {
+      color: color(white);
+      font-size: rem(25);
+      line-height: rem(25);
+      margin-right: rem(30);
+      text-transform: uppercase;
+    }
+
+    p {
+      color: color(white);
+      line-height: rem(24);
+
+      @include breakpoints(small) { 
+        line-height: rem(32);
+      }
+    }
+
+  }
+}

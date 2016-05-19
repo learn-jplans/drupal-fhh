@@ -1,0 +1,1266 @@
+.login-register--container {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  z-index: 15;
+  border-bottom: 0px #000 solid;
+  top: 86px;
+  @include transition(opacity 500ms linear, max-height 100ms linear 300ms);
+  max-height: 0;
+  @include opacity(0);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  @include breakpoints(small) {
+    top: 145px;
+    max-height: 0;
+  }
+  @include breakpoints(medium) {
+    min-height: 0;
+    top: 114px;
+    max-height: 0;
+  }
+
+
+
+  &.open-login {
+
+    @include opacity(100);
+    @include transition(max-height 100ms linear, opacity 500ms linear 300ms);
+    @include calc(max-height,'100vh - 90px');
+    @include calc(height,'100vh - 90px');
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    @include breakpoints(small) {
+      @include calc(max-height,'100vh - 145px');
+      @include calc(height,'100vh - 145px');
+    }
+    @include breakpoints(medium) {
+      @include calc(max-height,'100vh - 114px');
+      @include calc(height,'100vh - 114px');
+    }
+  }
+  &.open-login-home {
+    @include opacity(100);
+    @include transition(max-height 100ms linear, opacity 500ms linear 300ms);
+    @include calc(max-height,'100vh - 90px');
+    @include calc(height,'100vh - 90px');
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    @include breakpoints(small) {
+      @include calc(max-height,'100vh - 145px');
+      @include calc(height,'100vh - 145px');
+    }
+    @include breakpoints(medium) {
+      @include calc(max-height,'100vh - 114px');
+      @include calc(height,'100vh - 114px');
+    }
+  }
+
+  .login-register--wrapper {
+    @include opacity(0);
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    @include calc(min-height,'100vh');
+    overflow: hidden;
+    max-width: none;
+    position: relative;
+    @include breakpoints(small) {
+      max-width: 688px;
+    }
+    @include breakpoints(medium) {
+      min-height: 0;
+      max-width: 1264px;
+    }
+    & > div {
+      @include transition(all 500ms linear);
+      float: none;
+      width: 100%;
+      overflow: hidden;
+      height: auto;
+      position: relative;
+      @include breakpoints(small) {
+        width: 100%;
+        float: none;
+      }
+      @include breakpoints(medium) {
+        @include calc(min-height,'789px - 90px');
+        float: left;
+        width: 50%;
+      }
+    }
+  }
+
+}
+
+.login-register-footer {
+  width: 100%;
+  max-width: 328px;
+  margin: 0 auto;
+  float: none;
+  border-top: 1px #e7e6e0 solid;
+  text-transform: uppercase;
+  text-align: center;
+  color: #babcb6;
+  letter-spacing: 0.025em;
+  font-size: 12px;
+  line-height: 30px;
+  padding: 25px 0 28px;
+  @include font(gotham,bold);
+  @include breakpoints(small) {
+    max-width: 688px;
+    padding: 29px 0;
+  }
+  @include breakpoints(medium) {
+    height: 90px;
+    width: 100%;
+    padding: 39px 0 0;
+    font-size: 12px;
+    line-height: 30px;
+    max-width: 1264px;
+  }
+  a {
+    letter-spacing: 0.01em;
+    @include breakpoints(small) {
+      letter-spacing: 0.025em;
+    }
+  }
+}
+.closelogin {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  cursor: pointer;
+  z-index: 5;
+  @include breakpoints(small) {
+    right: 40px;
+  }
+  @include breakpoints(medium) {
+    right: 35px;
+  }
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+.login-list, .register-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  max-height: 284px;
+  height: 284px;
+  @include transition(all 800ms linear);
+  @include breakpoints(small) {
+    max-height: 417px;
+    height: 417px;
+  }
+  @include breakpoints(medium) {
+    max-height: 697px;
+    height: 697px;
+  }
+
+  & > li {
+    @include transition(all 800ms linear);
+    display: block;
+    width: 100%;
+    float: none;
+    position: relative;
+    overflow: hidden;
+    height: 284px;
+    @include breakpoints(small) {
+      height: 417px;
+    }
+    @include breakpoints(medium) {
+      height: 697px;
+    }
+
+
+    &.login-intro, &.register-intro {
+      h1 {
+        @include transition(all 800ms linear);
+        width: 100%;
+        display: block;
+        color: #222;
+        letter-spacing: 0.01em;
+        @include font(gotham,bold);
+        text-align: center;
+        position: absolute;
+        font-size: 42px;
+        line-height: 30px;
+        top: 72px;
+        cursor: pointer;
+        padding-bottom: 40px;
+        @include breakpoints(small) {
+          font-size: 42px;
+          line-height: 70px;
+          top: 122px;
+          padding-bottom: 27px;
+        }
+        @include breakpoints(medium) {
+          font-size: 60px;
+          line-height: 70px;
+          top: 272px;
+          padding-bottom: 33px;
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          height: 1px;
+          background: #222;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 114px;
+          @include transform(translateX(-50%));
+          @include transition(0.5s);
+          @include breakpoints(small) {
+            width: 114px;
+          }
+          @include breakpoints(medium) {
+            width: 113px;
+          }
+        }
+      }
+      & > h2 {
+        @include font(tiempos,light);
+        color: #222;
+        letter-spacing: 0.01em;
+        text-align: center;
+        position: absolute;
+        font-size: 24px;
+        line-height: 24px;
+        margin-top: 0;
+        width: 100%;
+        top: 172px;
+        @include transition(0.5s);
+        @include breakpoints(small) {
+          font-size: 24px;
+          line-height: 40px;
+          margin-top: 0;
+          top: 248px;
+        }
+        @include breakpoints(medium) {
+          font-size: 32px;
+          line-height: 40px;
+          margin-top: 0;
+          //padding-bottom: 230px;
+          top: 426px;
+
+        }
+      }
+      &:hover {
+        @include breakpoints(medium) {
+          @include transition(0.5s);
+          h1, h2 { color: #c32929}
+          h1::after {background: #c32929 }
+        }
+
+      }
+    }
+    &.login-intro {
+
+    }
+    &.register-intro {
+      h1 {
+        top: 71px;
+        @include breakpoints(small) {
+          top: 118px;
+        }
+        @include breakpoints(medium) {
+          top: 272px;
+        }
+      }
+    }
+  }
+
+}
+.login-box {
+  position: relative;
+  &:after {
+    content: '';
+    display: block;
+    width: 328px;
+    height: 1px;
+    position: absolute;
+    bottom: 1px;
+    @include calc(left,'50% - 164px');
+    background: #e7e6e0;
+  }
+  @include breakpoints(small) {
+    border-bottom: 0px #e7e6e0 solid;
+    &:after {
+      width: 510px;
+      @include calc(left,'50% - 255px');
+    }
+  }
+  @include breakpoints(medium) {
+    border-bottom: 0px #e7e6e0 solid;
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.unhovered, .inactive {
+  .login-intro, .register-intro {
+    @include breakpoints(medium) {
+      h1, h2 {color: #e6e6e6!important}
+      h1::after {background: #e6e6e6!important }
+    }
+  }
+}
+.unhovered {
+  .moved {
+    @include breakpoints(medium) {
+      h1, h2 {color: #222!important}
+      h1::after {background: #222!important }
+    }
+  }
+}
+
+
+.login-list,.register-list{
+  input[type=text],input[type=password] {
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    outline: 0;
+    display: block;
+
+    &::-ms-reveal {
+      display: none;
+    }
+
+
+    &::-webkit-input-placeholder {
+      color: #222;
+      opacity: 1;
+    }
+    &::-moz-placeholder {
+      color: #222;
+      opacity: 1;
+    }
+  }
+
+  //LOGIN FORM
+  p {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    width: 328px;
+    height: 117px;
+    @include breakpoints(small) {
+      width: 370px;
+      height: 115px;
+    }
+    @include breakpoints(medium) {
+      width: 410px;
+      height: 117px;
+    }
+
+
+  }
+  input[type=text],input[type=password] {
+    appearance: none;
+    display: inline-block;
+    margin: 0 auto;
+    border: 1px #c5c7c0 solid;
+    width: 328px;
+    height: 57px;
+    padding: 0 42px 0 16px;
+    @include font(tiempos,light);
+    @include breakpoints(small) {
+      border: 1px #e7e6e0 solid;
+      width: 332px;
+      height: 57px;
+      padding: 0 20px;
+    }
+    @include breakpoints(medium) {
+      border: 1px #c5c7c0 solid;
+      width: 371px;
+      height: 57px;
+      padding: 0 15px;
+      line-height: 37px;
+      font-size: 18px;
+      word-spacing: 0.025em;
+      color: #222;
+    }
+    &.error {
+      border: 1px #c32929 solid!important;
+    }
+    &:focus {
+      outline: 0px;
+    }
+    &::-webkit-input-placeholder {
+      color: #222;
+      opacity: 1;
+    }
+    &::-moz-placeholder {
+      color: #222;
+      opacity: 1;
+    }
+  }
+  input[type=password] {
+    letter-spacing: 8px;
+    &::-webkit-input-placeholder {
+      color: #222;
+      opacity: 1;
+    }
+    &::-moz-placeholder {
+      color: #222;
+      opacity: 1;
+    }
+    @include breakpoints(medium) {
+      font-size: 25px;
+    }
+    &::-webkit-input-placeholder {
+      letter-spacing: 0;
+      font-size: 18px;
+    }
+    &::-moz-placeholder {
+      letter-spacing: 0;
+      font-size: 18px;
+    }
+    &:focus {
+      &::-webkit-input-placeholder {
+        font-size: 18px!important;
+        color: #222;
+      }
+      &::-moz-placeholder {
+        font-size: 18px!important;
+        color: #222;
+        letter-spacing: 0px;
+      }
+      @include breakpoints(medium) {
+        font-size: 25px;
+        letter-spacing: 8px;
+      }
+    }
+  }
+  //CUSTOM SELECT
+  .select-container {
+    margin: 0 auto 40px;
+    width: 328px;
+    @include breakpoints(small) {
+      margin: 0 auto 40px;
+      width: 332px;
+      left: rem(-19);
+    }
+    @include breakpoints(medium) {
+      width: 371px;
+    }
+    input[type=text] {
+      border: 1px #fff solid!important;
+    }
+    a {
+      color: #222;
+      border: 1px #C5C7C0 solid!important;
+      @include breakpoints(small) {
+        width: 100%;
+        border: 1px #E7E6E0 solid!important;
+      }
+      @include breakpoints(medium) {
+        border: 1px #C5C7C0 solid!important;
+      }
+      &.opened {
+        border: 1px #fff solid!important;
+      }
+      &.error {
+        border: 1px color(red) solid!important;
+      }
+    }
+    &.error {
+      a {
+        border: 1px color(red) solid!important;
+      }
+    }
+    li {
+      width: 100%;
+      float: none;
+    }
+    span {
+      top: rem(28);
+      @include breakpoints(small) {
+        left: 348px;
+      }
+      @include breakpoints(medium) {
+        left: 390px;
+      }
+      &.checked {
+        svg {
+          fill: #e7e6e0;
+        }
+      }
+    }
+    .o-icon--error, .o-icon--check {
+      width: rem(14);
+      height: rem(14);
+    }
+  }
+  //SLIDE SUBMIT
+  .slide-submit {
+    float: right;
+    width: auto;
+    border: 1px #C5C7C0 solid;
+    //margin: 0 0 27px 101px;
+    margin-bottom: 60px;
+    margin-top: 0;
+    //margin-right: 15px;
+    @include calc(margin-right,'(100vw - 330px) / 2');
+    //@include calc(margin-left,'50% - 64px');
+
+    @include breakpoints(small) {
+      margin: 0 197px 60px 0;
+      border: 1px #C5C7C0 solid;
+      width: auto;
+      float: right;
+      clear: both
+    }
+    @include breakpoints(medium) {
+      margin: 0 150px 60px 0;
+      border: 1px #C5C7C0 solid;
+      width: auto;
+    }
+  }
+  //CUSTOM CHECKBOX
+  .checkbox-custom {
+    width: 30px;
+    height: 30px;
+    display: block;
+    text-align: center;
+    line-height: 30px;
+    border: 1px #C5C7C0 solid;
+    position: relative;
+    float: left;
+    margin-right: 20px;
+    svg {
+      display: none;
+      margin: 10px auto;
+      fill: #c32929;
+    }
+    &.checked {
+      svg {
+        display: block;
+      }
+    }
+  }
+  .checkbox-label {
+    float: left;
+    display: block;
+    @include font(gotham,bold);
+    font-size: 12px;
+    color: #babcb6;
+    text-transform: uppercase;
+  }
+  .status {
+    @include font(gotham,bold);
+    display: none;
+    font-size: 11px;
+    color: #c32929;
+    word-spacing: 0.01em;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 30px;
+
+    &.show {
+      display: block;
+    }
+  }
+  .errormessage {
+    line-height: rem(17);
+    margin-top: rem(6);
+    padding-bottom: rem(35);
+  }
+}
+//INACTIVE
+.register-box.inactive {
+  .register-list {
+    .register-intro {
+      h1 {
+        @include breakpoints(medium) {
+          top: 362px;
+        }
+      }
+      &> h2 {
+        @include breakpoints(medium) {
+          top: 517px;
+        }
+      }
+    }
+  }
+}
+.login-box.inactive {
+  .login-list {
+    .login-intro {
+      h1 {
+        @include breakpoints(medium) {
+          top: 420px;
+        }
+      }
+      &> h2 {
+        @include breakpoints(medium) {
+          top: 575px;
+        }
+      }
+    }
+  }
+}
+//SHOW PASSWORD
+.showpass {
+  display: none;
+  position: absolute;
+  @include font(gotham,bold);
+  color: #babcb6;
+  font-size: 12px;
+  word-spacing: 0.025em;
+  width: auto;
+  cursor: pointer;
+  display: none;
+  text-transform: uppercase;
+  @include breakpoints(small) {
+    display: none;
+  }
+  @include breakpoints(medium) {
+    font-size: 12px;
+    height: 55px;
+    line-height: 55px;
+    top: 1px;
+    left: 299px;
+    display: block;
+    padding: 0 10px;
+    background: #fff;
+  }
+  &.phide {
+    @include breakpoints(small) {
+      display: none!important;
+    }
+    @include breakpoints(medium) {
+      display: none!important;
+    }
+  }
+}
+.lostpassword {
+  display: block;
+  float: left;
+  @include font(gotham,bold);
+  font-size: 12px;
+  color: #babcb6;
+  text-transform: uppercase;
+  word-spacing: 0.025em;
+  height: 54px;
+  cursor: pointer;
+  line-height: 54px;
+  @include breakpoints(small) {
+    height: 54px;
+    line-height: 54px;
+  }
+  @include breakpoints(medium) {
+    height: 54px;
+    line-height: 54px;
+  }
+}
+
+//REGISTER
+.register-form {
+  p {
+    height: 97px;
+    @include breakpoints(small) {
+      height: 97px;
+    }
+    @include breakpoints(medium) {
+      height: 97px;
+    }
+    &.newsletterbox {
+      @include breakpoints(medium) {
+        height: 71px;
+      }
+    }
+  }
+}
+//SUBMIT BUTTON
+.login_button {
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  display: block;
+  float: right;
+  color: #fff;
+  border: 0;
+  word-spacing: 0.025em;
+  font-size: 12px;
+  background: #babcb6;
+  padding: 0 25px;
+  width: auto;
+  height: 54px;
+  margin-left: 0;
+  cursor: none;
+  @include calc(margin-right,'50% - 165px');
+  @include transition(0.5s);
+  @include font(gotham,bold);
+  @include breakpoints(small) {
+    height: 54px;
+    line-height: 54px;
+    width: auto;
+    margin-left: 0;
+    @include calc(margin-right,'50% - 147px');
+  }
+  @include breakpoints(medium) {
+    height: 54px;
+    line-height: 54px;
+    width: auto;
+    margin-left: 0;
+    @include calc(margin-right,'50% - 165px');
+  }
+  &.active {
+    cursor: pointer;
+    @include transition(0.5s);
+    // @include breakpoints(medium) {
+      background:  #c32929;
+    // }
+  }
+}
+
+.lastfield {
+  height: 104px!important;
+  @include breakpoints(small) {
+    height: 107px!important;
+  }
+  @include breakpoints(medium) {
+    height: 107px!important;
+  }
+}
+//VERIFICATION
+.error-iconbox {
+  display: block;
+  position: absolute;
+  height: 54px;
+  line-height: 54px;
+  width: auto;
+  top: 0;
+  left: 299px;
+  @include breakpoints(small) {
+    left: 351px
+  }
+  @include breakpoints(medium) {
+    left: 391px
+  }
+  & > span {
+    display: none;
+    &.empty {
+      margin: 20px 0;
+      svg {
+        fill: #c32929;
+        width: 14px;
+        height: 14px;
+      }
+    }
+    &.checked {
+      margin: 20px 0;
+      svg {
+        fill: #e7e6e0;
+        width: 15px;
+        height: 11px;
+      }
+    }
+    &.show {
+      display: block;
+    }
+  }
+}
+.errormessage {
+  @include font(gotham,bold);
+  display: none;
+  font-size: 11px;
+  color: #c32929;
+  word-spacing: 0.01em;
+  text-transform: uppercase;
+
+  &.show {
+    display: block;
+  }
+}
+
+//SOCIAL SIGN IN
+.socialsignin {
+  overflow: hidden;
+  max-height: 0;
+  @include opacity(0);
+  @include transition(opacity 800ms ease-in-out, max-height 800ms ease-in-out 800ms);
+  border-top: 1px #e7e6e0 solid;
+  clear: both;
+
+  @include breakpoints(medium) {
+    width: 616px;
+    margin: 0 auto;
+  }
+  h2 {
+    @include font(gotham,bold);
+    color: #222;
+    text-align: center;
+    position: relative;
+    margin: 44px auto 20px;
+    font-size: 32px;
+    line-height: 40px;
+    word-spacing: 0.01em;
+    padding-bottom: 38px;
+    @include breakpoints(small) {
+      font-size: 32px;
+      line-height: 40px;
+      word-spacing: 0.01em;
+      margin: 64px auto 20px;
+      padding-bottom: 38px;
+    }
+    @include breakpoints(medium) {
+      font-size: 32px;
+      line-height: 40px;
+      word-spacing: 0.01em;
+      margin: 64px auto 20px;
+      padding-bottom: 38px;
+    }
+    &::after {
+      content: '';
+      display: block;
+      height: 1px;
+      background: #222;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 114px;
+      @include transform(translateX(-50%));
+      @include transition(0.5s);
+      @include breakpoints(small) {
+        width: 114px;
+      }
+      @include breakpoints(medium) {
+        width: 114px;
+      }
+    }
+  }
+  .social-holder {
+    text-align: center;
+    height: auto;
+    margin: 45px auto 50px;
+    @include breakpoints(small) {
+      margin: 77px auto 60px;
+    }
+    @include breakpoints(medium) {
+      margin: 77px auto 75px;
+    }
+    a {
+      display: inline-block;
+      padding: 0 42px;
+      &:nth-child(2) {
+        border-left: 1px #babcb6 solid;
+        border-right: 1px #babcb6 solid;
+      }
+    }
+  }
+  &.is-hidden {
+    display: none;
+  }
+}
+
+.slide-submit button {
+  .o-icon {
+    margin-left: 3px;
+  }
+  svg {
+    width: 23px;
+    height: 19px;
+    fill: #fff!important;
+  }
+
+}
+#slideregister button.registeredsuccess {
+  width: 205px !important;
+  @include font(gotham,bold);
+  font-size: rem(12);
+  text-transform: uppercase;
+  .registeredicon {
+    float: left;
+    margin: 0 -40px 0 30px;
+
+    svg.o-icon--submit-tick {
+      display: inline;
+    }
+  }
+  & + label {
+    width: 205px !important;
+    @include opacity(0);
+  }
+}
+
+.login-register--container.open-login {
+  .login-register--wrapper {
+    @include transition(all 500ms ease-in 1s );
+    @include opacity(100);
+  }
+}
+.login-register--container.open-login-home {
+  .login-register--wrapper{
+    @include transition(all 500ms ease-in 1.8s );
+    @include opacity(100);
+  }
+}
+
+.stopscrollIOS {
+  -webkit-overflow-scrolling: touch !important;
+}
+
+
+
+/*NEW INTERACTION*/
+#fhh_loginform {
+  max-height: 0;
+  overflow: hidden;
+  @include opacity(0);
+  @include transition(opacity 800ms ease-in-out, max-height 800ms ease-in-out 800ms);
+
+  p {
+    height: 117px;
+    @include breakpoints(small) {
+      height: 115px;
+    }
+    @include breakpoints(medium) {
+      height: 117px;
+    }
+    &.newsletterbox {
+      @include breakpoints(medium) {
+        height: 71px;
+      }
+    }
+  }
+
+}
+#fhh_registerform {
+  max-height: 0;
+  overflow: hidden;
+  @include opacity(0);
+  @include transition(opacity 800ms linear, max-height 800ms linear 800ms);
+
+  p {
+    height: 97px;
+    @include breakpoints(small) {
+      height: 97px;
+    }
+    @include breakpoints(medium) {
+      height: 97px;
+    }
+    &.newsletterbox {
+      @include breakpoints(medium) {
+        height: 71px;
+      }
+    }
+    &.error { height: auto; }
+  }
+
+  .select-container {
+    a {
+      height: rem(57);
+      line-height: rem(57);
+    }
+    &.error {
+      height: auto;
+      margin-bottom: 0;
+
+      a {
+        border-color: color(red)!important;
+      }
+    }
+  }
+
+  &.registration-success {
+    p,div {
+      display: none;
+    }
+    .status {
+      padding-right: rem(15); padding-left: rem(15);
+      text-transform: inherit;
+      @include font-sizing(rem(24), rem(40));
+      @include breakpoints(small) { @include font-sizing(rem(24), rem(40)); }
+      @include breakpoints(medium) { @include font-sizing(rem(32), rem(40)); }
+    }
+  }
+
+}
+
+
+.login-list.moved {
+  @include transition(max-height 800ms linear, height 800ms linear);
+  max-height: none!important;
+  height: auto!important;
+  min-height: 822px;
+  @include breakpoints(small) {
+    min-height: 896px;
+  }
+  @include breakpoints(medium) {
+    min-height: 955px;
+  }
+
+  & > li {
+    @include transition(all 800ms linear);
+    height: 822px;
+    overflow: hidden;
+    @include breakpoints(small) {
+      height: 896px;
+    }
+    @include breakpoints(medium) {
+      height: 955px;
+    }
+    & > h2 {
+      display: none;
+      &:hover {
+        color: #222!important;
+      }
+    }
+  }
+  h1.moveUp {
+    @include transition(all 800ms linear);
+    width: 100%;
+    display: block;
+    color: #222;
+    letter-spacing: 0.01em;
+    @include font(gotham,bold);
+    text-align: center;
+    position: absolute;
+    font-size: 42px;
+    line-height: 30px;
+    top: 74px;
+    padding-bottom: 40px;
+    margin-bottom: 50px;
+    @include breakpoints(small) {
+      font-size: 42px;
+      line-height: 70px;
+      top: 72px;
+      padding-bottom: 25px;
+      margin-bottom: 40px;
+    }
+    @include breakpoints(medium) {
+      font-size: 60px;
+      line-height: 70px;
+      top: 60px;
+      padding-bottom: 33px;
+      margin-bottom: 84px;
+    }
+
+
+    &::after {
+      content: '';
+      display: block;
+      height: 1px;
+      background: #222;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 114px;
+      @include transform(translateX(-50%));
+      @include transition(0.5s);
+      @include breakpoints(small) {
+        width: 114px;
+      }
+      @include breakpoints(medium) {
+        width: 114px;
+      }
+    }
+    &:hover {
+      color: #222!important;
+      &::after {
+        background: #222;
+      }
+    }
+  }
+  .login-intro {
+    &:hover {
+      @include breakpoints(medium) {
+        @include transition(0.5s);
+        h1, h2 { color: #222}
+        h1::after {background: #222 }
+      }
+    }
+  }
+  #fhh_loginform {
+    max-height: none;
+    @include opacity(100);
+    @include transition(max-height 800ms linear, opacity 800ms linear 1000ms );
+    margin-top: 194px;
+    @include breakpoints(small) {
+      margin-top: 206px;
+    }
+    @include breakpoints(medium) {
+      margin-top: 247px;
+    }
+  }
+  .socialsignin {
+    max-height: none;
+    @include opacity(100);
+    @include transition(max-height 800ms linear, opacity 800ms linear 1000ms );
+    & > h2 {
+      &:hover {
+        color: #222!important;
+      }
+    }
+    &:hover {
+      & > h2 {
+        color: #222!important;
+      }
+    }
+  }
+}
+.register-list.moved {
+  @include transition(max-height 800ms linear, height 800ms linear);
+  max-height: none!important;
+  height: auto!important;
+  min-height: 1223px;
+  @include breakpoints(small) {
+    min-height: 1258px;
+  }
+  @include breakpoints(medium) {
+    min-height: 1313px;
+  }
+
+  & > li {
+    @include transition(all 800ms linear);
+    height: 1223px;
+    overflow: hidden;
+    @include breakpoints(small) {
+      height: 1258px;
+    }
+    @include breakpoints(medium) {
+      height: 1313px;
+    }
+    & > h2 {
+      display: none;
+      &:hover {
+        color: #222!important;
+      }
+    }
+  }
+  h1.moveUp {
+    @include transition(all 800ms linear);
+    width: 100%;
+    display: block;
+    color: #222;
+    letter-spacing: 0.01em;
+    @include font(gotham,bold);
+    text-align: center;
+    position: absolute;
+    font-size: 42px;
+    line-height: 30px;
+    top: 74px;
+    padding-bottom: 40px;
+    margin-bottom: 50px;
+    @include breakpoints(small) {
+      font-size: 42px;
+      line-height: 70px;
+      top: 72px;
+      padding-bottom: 25px;
+      margin-bottom: 40px;
+    }
+    @include breakpoints(medium) {
+      font-size: 60px;
+      line-height: 70px;
+      top: 60px;
+      padding-bottom: 33px;
+      margin-bottom: 84px;
+    }
+
+
+    &::after {
+      content: '';
+      display: block;
+      height: 1px;
+      background: #222;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 114px;
+      @include transform(translateX(-50%));
+      @include transition(0.5s);
+      @include breakpoints(small) {
+        width: 114px;
+      }
+      @include breakpoints(medium) {
+        width: 114px;
+      }
+    }
+    &:hover {
+      color: #222!important;
+      &::after {
+        background: #222;
+      }
+    }
+  }
+  .register-intro {
+    &:hover {
+      @include breakpoints(medium) {
+        @include transition(0.5s);
+        h1, h2 { color: #222}
+        h1::after {background: #222 }
+      }
+    }
+  }
+  #fhh_registerform {
+    max-height: none;
+    @include opacity(100);
+    margin-top: 194px;
+    @include transition(max-height 800ms linear, opacity 800ms linear 1000ms );
+    @include breakpoints(small) {
+      margin-top: 206px;
+    }
+    @include breakpoints(medium) {
+      margin-top: 247px;
+    }
+  }
+  .socialsignin {
+    max-height: none;
+    @include opacity(100);
+    @include transition(max-height 800ms linear, opacity 800ms linear 1000ms );
+    & > h2 {
+      &:hover {
+        color: #222!important;
+      }
+    }
+    &:hover {
+      & > h2 {
+        color: #222!important;
+      }
+    }
+  }
+}
+
+li.account-name {
+  display: none!important;
+  @include breakpoints(small) {
+    display: block!important;
+  }
+}
+.c-menu__link__account--loggin span b {
+  font-weight: normal;
+  text-transform: capitalize;
+}
+.resetregister {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  @include opacity(0);
+}
+
+.socialerror {
+  height: 50px !important;
+  text-align: center;
+}

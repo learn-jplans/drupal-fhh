@@ -1,0 +1,49 @@
+// block
+.c-breaker--world-clock {
+  max-height: 100%;
+  .o-container {
+    max-width: rem(1088);
+  }
+  .c-breaker__content {
+    max-width: rem(384);
+    margin: rem(80) auto 0;
+    @include breakpoints(medium) {
+      max-width: 100%;
+      margin-top: rem(120);
+    }
+  }
+  .c-breaker__body { padding-bottom: 0; }
+  .c-breaker__title {
+    margin-bottom: 0;
+    text-align: center;
+    > * {
+      color: color(red);
+    }
+  }
+  .c-breaker__strike {
+    @include font(tiemposregular);
+    font-size: rem(24);
+    line-height: rem(24);
+    text-align: center;
+    &:before,
+    &:after {
+      background-color: color(red);
+    }
+    > * { color: $base-color; }
+
+    @include breakpoints(small) {
+      font-size: rem(30);
+      line-height: rem(40);
+    }
+  }
+  .slick-dots {
+    li {
+      background-color: color(gray,lighter);
+    }
+  }
+}
+
+	// element
+
+
+		// modifier

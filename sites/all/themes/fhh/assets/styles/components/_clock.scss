@@ -1,0 +1,214 @@
+// animation
+@-webkit-keyframes clockTurn {
+  0%   { transform: rotate(0deg); }
+  99% { transform: rotate(360deg); }
+}
+@-moz-keyframes clockTurn {
+  0%   { transform: rotate(0deg); }
+  99% { transform: rotate(360deg); }
+}
+@-o-keyframes clockTurn {
+  0%   { transform: rotate(0deg); }
+  99% { transform: rotate(360deg); }
+}
+@keyframes clockTurn {
+  0%   { transform: rotate(0deg); }
+  99% { transform: rotate(360deg); }
+}
+.js-carousel--clock {
+  .slick-track {
+    transform: translate3d(0,0,0) !important;
+  }
+}
+// block
+.c-clock {
+  display: inline-block;
+  width: 100%;
+  // max-width: rem(264);
+
+  // active tab
+  .c-tab__item.is-active & {
+    .c-clock__details {
+      border-bottom-color: color(red);
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0; right: 0; bottom: rem(-10);
+        width: rem(20); height: 0;
+        margin: 0 auto;
+        border-right: rem(10) solid transparent;
+        border-left: rem(10) solid transparent;
+        border-top: rem(10) solid color(red);
+      }
+      @include breakpoints(small) {
+        border-bottom-color: transparent;
+        &:after { display: none; }
+      }
+      @include breakpoints(medium) {
+        border-bottom-color: color(red);
+        &:after { display: block; }
+      }
+    }
+    .c-clock__location { color: color(red); }
+  }
+}
+
+  // element
+  .c-clock__body {
+    display: block;
+    position: relative;
+    width: rem(150);
+    height: rem(150);
+    margin: 0 auto;
+    margin-top: rem(19);
+    background-color: color(white);
+    background-image: url('../images/clock/body.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 100%;
+    background-size: 100%;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 14px;
+      height: 14px;
+      position: absolute;
+      top: calc(50% - 7px);
+      left: calc(50% - 7px);
+      background-image: url('../images/clock/centerpiece.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100%;
+    }
+
+    .c-clock__hand {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 10;
+
+      .c-clock__timer {
+        position: absolute;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+      }
+
+      &--hour {
+        .c-clock__timer {
+          width: 6px;
+          z-index: 3;
+          height: 80px;
+
+          top: calc(50% - 40px);
+          left: calc(50% - 3px);
+          background-image: url('../images/clock/hand-hour.png');
+
+          animation: clockTurn 216000s infinite;
+        }
+      }
+
+      &--min {
+        .c-clock__timer {
+          width: 4px;
+          z-index: 3;
+          height: 100px;
+
+          top: calc(50% - 50px);
+          left: calc(50% - 2px);
+          background-image: url('../images/clock/hand-min.png');
+
+          animation: clockTurn 3600s infinite;
+        }
+      }
+
+      &--sec {
+        .c-clock__timer {
+          width: 2px;
+          z-index: 3;
+          height: 126px;
+
+          top: calc(50% - 63px);
+          left: calc(50% - 1px);
+          background-image: url('../images/clock/hand-sec.png');
+        }
+      }
+    }
+
+    &.is_pm {
+      background-image: url('../images/clock/body-night.png');
+
+      &:before {
+        background-image: url('../images/clock/centerpiece-night.png');
+      }
+
+      .c-clock__hand--hour {
+        .c-clock__timer {
+          background-image: url('../images/clock/hand-hour-night.png');
+        }
+      }
+
+      .c-clock__hand--min {
+        .c-clock__timer {
+          background-image: url('../images/clock/hand-min-night.png');
+        }
+      }
+    }
+
+    @include breakpoints(small) {
+      margin-top: rem(0);
+    }
+    @include breakpoints(medium) {
+      margin-top: rem(0);
+    }
+  }
+
+  .c-clock__details {
+    display: inline-block;
+    position: relative;
+    width: rem(170);
+    // padding: rem(43) rem(20) 0;
+    padding: rem(31) 0 19px;
+    // padding-bottom: 0;
+    border-bottom: rem(1) solid transparent;
+    @include breakpoints(small) {
+      padding: 0 0 19px;
+    }
+  }
+  .c-clock__location {
+    margin-bottom: rem(-15);
+    @include font(gotham,bold);
+    @include font-sizing(rem(14),rem(48));
+    text-transform: uppercase;
+  }
+  .c-clock__weather {
+    //height: rem(43);
+    min-height: 24px;
+    @include font(tiempos,light);
+    @include font-sizing(rem(18),rem(24));
+    color: color(gray,light-1);
+  }
+  .c-clock__seconds,
+  .c-clock__minutes,
+  .c-clock__hours {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+  }
+  .c-clock__seconds {
+    height: rem(70);
+    width: rem(2);
+    -webkit-border-radius: rem(3);
+    -moz-border-radius: rem(3);
+    border-radius: rem(3);
+    background-color: color(red,light);
+  }
+  .c-clock__minutes {
+    width: rem(5);
+    height: rem(40);
+    background-color: color(black);
+  }
+  .c-clock__hours {}

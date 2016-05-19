@@ -1,0 +1,124 @@
+/*------------------------------------------*\
+  Watch Module
+\*------------------------------------------*/
+
+// block
+.c-watch {
+  position: relative;
+  width: 100%;
+  padding: rem(10) 0;
+  .slick-dots { bottom: rem(30); }
+}
+
+  // element
+  .c-watch__item {
+    width: 100%;
+    max-width: rem(640);
+    margin: 0 rem(15);
+  }
+  .c-watch__image {
+    display: block;
+    // width: 100%;
+    // max-width: rem(140);
+    width: rem(140);
+    margin: 0 auto;
+
+    img {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    // @include breakpoints(medium) { max-width: rem(140); }
+  }
+  .c-watch__details {
+    position: relative;
+    margin-top: rem(35);
+    .o-meta__title__product{@include font-sizing(rem(20));}
+    @include breakpoints(small) { padding: 0 rem(40); }
+  }
+
+    // modifier
+    .c-watch--breaker { // for breaker
+      .c-watch__item {
+        margin: 0;
+        max-width: rem(190);
+
+        @include breakpoints(small) { max-width: 100%; }
+      }
+      .c-watch__image {
+        width: 100%;
+        max-width: rem(140);
+
+        @include breakpoints(small) { margin-top: rem(115); }
+        @include breakpoints(medium) {
+          max-width: rem(240);
+          margin-top: rem(94);
+        }
+      }
+      .c-watch__details {
+        @include breakpoints(small) { margin-top: rem(30); }
+        @include breakpoints(medium) { margin-top: rem(60); }
+      }
+
+      // .c-carousel__arrows {}
+
+      .slick-dots { // slickJS override
+        bottom: rem(40);
+        li { background-color: color(brown); }
+      }
+    }
+    .c-watch--carousel { // for carousel
+      .c-watch__details {
+        visibility: hidden;
+        opacity: 0;
+        @include transition(all 300ms);
+
+        &.is-visible {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+      .slick-dots { // slickJS override
+        bottom: rem(78);
+        li {
+          background-color: color(brown);
+          &.slick-active {
+            background-color: color(red);
+          }
+        }
+      }
+    }
+    .c-watch--sidebar { // for sidebar
+      // max-width: rem(220);
+      // margin: 0 auto;
+      padding: rem(19) 0 rem(14);
+      .c-watch__image {
+        width: 100%; max-width: rem(220);
+        height: rem(275);
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+
+        img { 
+          height: 100%; 
+          position: relative;
+          top: 50%;
+          left: 50%;
+          max-width: none;
+          width: auto;
+          margin: 0;
+          @include transform(translateX(-50%) translateY(-50%));
+        }
+      }
+      .c-watch__details {
+        @include breakpoints(medium) { margin-top: rem(70); }
+
+        .o-meta__title__product { margin-bottom: rem(8); }
+      }
+
+      .c-carousel__arrows { display: none !important; }
+      .slick-dots {
+        bottom: rem(100);
+        li { background-color: color(gray,lighter); }
+      }
+    }

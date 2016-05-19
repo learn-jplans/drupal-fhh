@@ -1,0 +1,42 @@
+
+.slick-slide { outline: none; }
+
+.slick-dots {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  li {
+    display: inline-block;
+    width: rem(8); height: rem(8);
+    margin: 0 rem(6);
+    background: color(white);
+    border: none;
+    border-radius: 100%; // cross browser
+    text-indent: rem(-999);
+    outline: none;
+    button {
+      display: none;
+    }
+    &.slick-active {
+      background: color(red);
+    }
+  }
+}
+
+.slick-arrow {
+  @include transition(opacity 500ms ease-in-out);
+  &.slick-disabled {
+    // opacity: 0;
+  }
+}
+
+.slick-list {
+  &.draggable {
+    cursor: pointer;
+    cursor: hand;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+  }
+}

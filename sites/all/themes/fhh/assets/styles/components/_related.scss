@@ -1,0 +1,130 @@
+// block
+.c-related {
+  overflow: hidden;
+  position: relative;
+  max-width: rem(326);
+  margin: 0 auto;
+  @include clearfix();
+
+  @include breakpoints(small) { max-width: rem(688); }
+  @include breakpoints(medium) {
+    width: 100%;
+    max-width: rem(828);
+  }
+
+  @include breakpoints(large) {
+    width: rem(968);
+    max-width: rem(968);
+  }
+
+  .c-tile {
+    margin-bottom: rem(53);
+
+    @include breakpoints(small) {
+      width: 50%;
+      padding: 0 rem(12);
+      margin: 0 0 rem(73) 0;
+    }
+
+    @include breakpoints(medium) {
+      width: calc(100% / 3);
+      padding: 0 rem(40) 0 0;
+      box-sizing: border-box;
+    }
+
+    @include breakpoints(large) {
+      width: 296px;
+      box-sizing: content-box;
+
+      &:nth-child(3n) {
+        padding-right: 0;
+      }
+    }
+  }
+  .c-title {
+    max-width: rem(146);
+    margin: rem(35) auto;
+    line-height: rem(36);
+    letter-spacing: ls(10);
+    text-align: center;
+    color: color(brown);
+
+    @include breakpoints(small) {
+      max-width: rem(284);
+      margin-bottom: rem(53);
+    }
+  }
+
+  .c-article__image {
+    margin-bottom: rem(10);
+  }
+  .o-meta__tag {}
+  .o-meta__title {
+    overflow: hidden;
+    max-height: 72px;
+    @include breakpoints(medium) {
+      max-height: 84px;
+      @include font-sizing(rem(18),rem(28));
+    }
+    * { color: color(white); }
+  }
+  .o-meta__date { margin-bottom: rem(6); }
+  .o-meta__type {
+    margin-bottom: rem(-3);
+    line-height: rem(30);
+  }
+
+  .c-article__body {
+    overflow: hidden;
+    height: rem(100);
+    max-height: rem(100);
+    padding-bottom: 0;
+    margin: rem(6) 0 rem(30);
+    @include font-sizing(rem(14),rem(24),10);
+    color: color(white);
+    p { margin: 0; }
+
+    @include breakpoints(small) { margin-top: rem(16); }
+  }
+
+  .c-article__icon {
+    margin-top: rem(7);
+    svg + span {
+      left: rem(18);
+      width: rem(20); height: rem(20);
+      text-align: center;
+      text-indent: 0;
+    }
+  }
+}
+
+  // element
+  .c-related__body {
+    @include clearfix();
+
+    display: flex;
+    flex-flow: row wrap;
+
+    @include breakpoints(small) {
+      // margin: 0 rem(-12);
+    }
+    @include breakpoints(medium) {
+      // margin: 0 rem(-20);
+    }
+  }
+  .c-related__foot {
+    position: relative;
+    height: rem(112);
+    text-align: center;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      width: 100%; height: rem(1);
+      background-color: color(blue,light-s);
+    }
+  }
+
+    // modifier

@@ -1,0 +1,14 @@
+// block
+.c-caption {
+  @include font(tiempos,lightitalic);
+  @include font-sizing(rem(14), rem(24));
+
+  @include breakpoints(small) {
+    font-size: rem(16);
+  }
+}
+
+    // modifier
+    .c-caption--gray-light {
+      color: color(gray,light-1);
+    }

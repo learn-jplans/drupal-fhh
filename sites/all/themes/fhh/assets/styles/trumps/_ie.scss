@@ -1,0 +1,48 @@
+
+.ie {
+  .c-hero__scroll {
+    width: rem(180);
+  }
+}
+
+.gt-ie9 {
+  .c-breaker {
+    .c-block {
+      width: 50%;
+      float: left;
+    }
+  }
+  .c-breaker__image {
+    -ms-overflow-style: none;
+    overflow: hidden !important;
+    position: relative;
+    // height:100%;
+    height: expression( this.scrollHeight < 501 ? "500px" : "auto" );
+    max-height: 800px;
+    img {
+      position: relative;
+      top: 0; bottom: 0; left: 0; right: 0;
+      @include transform(translate(0,0));
+    }
+  }
+  .c-breaker--product {
+    .o-container {
+      height: 720px;
+    }
+  }
+}
+
+.ie11 {
+  .c-breaker {
+    .c-breaker__image { height: rem(800); }
+  }
+  .c-breaker--slant {
+    .c-breaker__image { height: rem(720); }
+  }
+  .c-hero__image {
+    animation: none !important;
+  }
+  .c-breaker--product {
+    .c-product { min-height: rem(560); }
+  }
+}

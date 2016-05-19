@@ -1,0 +1,76 @@
+
+.c-breaker--event {
+  max-height: inherit;
+  .o-container {
+    max-width: rem(500);
+    padding-bottom: rem(23);
+
+    @include breakpoints(small) {
+      padding-top: rem(35);
+      padding-bottom: rem(33);
+    }
+    @include breakpoints(medium) {
+      max-width: rem(630);
+      padding-top: rem(46);
+      padding-bottom: rem(23);
+    }
+  }
+  .c-article__title { margin-bottom: rem(15); }
+  .c-breaker__body {
+    padding: rem(60) 0 rem(13);
+
+    @include breakpoints(small) { padding-top: 0; }
+    @include breakpoints(medium) { padding-top: rem(22); }
+    // margin-top: rem(39);
+    // margin-bottom: rem(25);
+
+    // @include breakpoints(small) {
+    //   margin-top: rem(25);
+    //   margin-bottom: rem(34);
+    // }
+    // @include breakpoints(medium) {
+    //   margin-top: rem(36);
+    //   margin-bottom: rem(24);
+    // }
+    .c-article__letter {
+      margin: rem(-35) 0 rem(-39);
+      @include breakpoints(small) { margin: rem(-25) 0; }
+      @include breakpoints(small) { margin: rem(-25) 0 rem(-44); }
+    }
+
+    .o-letter--breaker {
+      font-size: rem(192);
+      @include breakpoints(small) { font-size: rem(300); }
+      @include breakpoints(medium) { font-size: rem(375); }
+    }
+  }
+
+  .c-breaker__strike {
+    font-size: rem(12);
+    white-space: nowrap;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include breakpoints(medium) { font-size: rem(20); }
+
+    &:before,
+    &:after {
+      top: rem(-3);
+      max-width: rem(16);
+      @include breakpoints(small) { max-width: rem(48); }
+      @include breakpoints(medium) { top: rem(-6); }
+    }
+  }
+
+  h3 {
+    margin-bottom: rem(18);
+    @include breakpoints(medium) { margin-bottom: rem(14); }
+  }
+  h6 {
+    margin-bottom: rem(7);
+    @include breakpoints(small) { margin-bottom: rem(10); }
+    @include breakpoints(medium) { margin-bottom: rem(8); }
+  }
+}

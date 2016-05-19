@@ -1,0 +1,53 @@
+// block
+.o-tags {
+  // display: inline-block;
+  // margin: 0 rem(3);
+  // padding: 0 rem(18);
+  // font-size: rem(14);
+  // background-color: color(gray-lighter);
+}
+
+
+  // element
+  .o-tags__list {
+    @extend .clearfix;
+    margin: rem(-3) rem(-10) 0;
+    @include breakpoints(small) { margin: rem(-3) rem(-5) 0; }
+  }
+  .o-tags__label {
+    line-height: rem(30);
+    letter-spacing: 0.05em;
+  }
+  .o-tags__item {
+    display: block;
+    float: left;
+    margin: rem(12) rem(10);
+    @include font-sizing(rem(14),rem(32),10);
+    background-color: color(gray,lighter);
+    @include transition(all $speed-trans);
+
+    @include breakpoints(small) {
+      line-height: rem(30);
+      margin: rem(12) rem(5);
+    }
+    a {
+      display: block;
+      width :100%;
+      height: 100%;
+      padding: rem(2) rem(20);
+      color: $base-color;
+    }
+    span {
+      display: block;
+      width :100%;
+      height: 100%;
+      padding: rem(2) rem(20);
+      color: $base-color;
+    }
+    &:hover {
+      @include breakpoints(medium) {
+        background-color: color(white,dirty);
+        a { color: $base-color; }
+      }
+    }
+  }

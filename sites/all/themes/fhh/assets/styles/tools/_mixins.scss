@@ -1,0 +1,141 @@
+/*
+ *
+ *	MIXINS
+ *
+ */
+
+
+// Breakpoint
+// for breakpoint sizes refer to settings/config.scss -> $breakpoints maps
+// USAGE: @include breakpoint($breakpoint) {}
+@mixin breakpoints($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from '#{$breakpoint}'. "
+        + "Please make sure it is defined in '$breakpoints' map.";
+  }
+}
+
+
+// Vertically align
+@mixin valign() {
+	position: relative;
+	top: 50%;
+	@include transform(translateY(-50%));
+}
+
+
+// Opacity
+// use whole numbers from 0 - 100
+@mixin opacity($value) {
+  $val: ($value / 100);
+
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$value})"; // IE8
+  filter: alpha(opacity=$value); // IE 5-7
+  opacity: $val; // All modern browser
+}
+
+
+// Font
+// USAGE: @include font($font)
+@mixin font($font, $default: 'default') {
+  @if map-has-key($fonts, $font) {
+    font-family: #{map-get(map-get($fonts, $font), $default)};
+    // font-size: rem($size);
+  } @else {
+    @warn "Unknown '#{$font}' in $fonts.";
+  }
+}
+
+
+// Font sizing
+// font-size ,line-height and letter spacing($ls);
+// USAGE: @include font-sizing(rem(14), rem(14), 25);
+@mixin font-sizing($size, $line-height: false, $ls: false) {
+  font-size: $size;
+  @if $line-height {
+    line-height: $line-height;
+  }
+  @if $ls {
+    letter-spacing: ls($ls);
+  }
+}
+
+
+// Ellipsis
+@mixin ellips($height, $lines: false, $bg: false) {
+  overflow: hidden;
+  display: block; // fallback for non-webkit
+  display: -webkit-box;
+  max-height: rem($height);
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+
+  // fallback for firefox
+  @-moz-document url-prefix() {
+    overflow: hidden;
+    position: relative;
+    &:before {
+      content: '\2026';
+      position: absolute;
+      bottom: 0; right: rem(14);
+      float: right;
+      width: rem(14);
+      // margin-left: rem(-16);
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      height: 50px; width: 100%;
+      background: $bg;
+      z-index: 1;
+    }
+  }
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+}
+
+
+//Calc
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+
+
+// video play button
+@mixin video-icon($width, $height, $color: 'red') {
+  &:before {
+    content: '';
+    display: table;
+    border-top: rem($height/2) solid transparent;
+    border-bottom: rem($height/2) solid transparent;
+    border-left: rem($width) solid $color;
+    @include opacity(80);
+  }
+}
+
+
+

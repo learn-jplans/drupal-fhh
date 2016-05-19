@@ -1,0 +1,41 @@
+// block
+.o-quote {
+  display: block;
+  @include font(tiempos,italic);
+  @include font-sizing(rem(28),rem(32),10);
+  word-wrap: break-word;
+
+  @include breakpoints(small) { @include font-sizing(rem(50),rem(60));
+  }
+  &:before,
+  &:after { @include font(tiempos,italic); }
+  &:before { content: '\201C'; }
+  &:after { content: '\201D'; }
+  .c-article__body & {
+    padding-left: rem(18);
+    @include breakpoints(small) { padding-left: rem(40); }
+    @include breakpoints(medium) { padding-left: rem(30); }
+  }
+}
+
+      // modifier
+      .o-quote--red {
+        color: color(red);
+      }
+      .o-quote--bg {
+        @extend .o-bg--texture;
+      }
+      .o-quote--normal {
+        padding: rem(21) 0 0;
+        @include font(tiempos);
+        @include font-sizing(rem(18),rem(24),10);
+        p { margin: 0 !important; }
+
+        @include breakpoints(small) {
+          padding: rem(11) 0 0;
+          @include font-sizing(rem(20),rem(32));
+        }
+        @include breakpoints(medium) {
+          @include font-sizing(rem(18),rem(30));
+        }
+      }

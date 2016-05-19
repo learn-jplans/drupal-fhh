@@ -1,0 +1,58 @@
+// block
+.c-countdown {
+  width: 100%;
+  height: rem(65);
+  @include font(gotham,thin);
+  @include font-sizing(rem(50),rem(40));
+  color: color(white);
+
+  @include breakpoints(small) {
+    height: rem(90);
+    @include font-sizing(rem(80),rem(56));
+  }
+}
+
+  // elements
+  .c-countdown__container {
+    display: inline-block;
+    margin-top:-2rem;
+
+    & > * {
+      display: inline-block;
+      float: left;
+      position: relative;
+      font-size:rem(43);
+      padding: 0 0.45rem;
+
+      &:first-child { padding-left: 0;}
+      &:last-child { padding-right: 0;}
+      &:not(:last-child) {
+        &:after {
+          content: ':';
+          display: block;
+          position: absolute;
+          right: rem(-5); top: 0; bottom: 0;
+          margin: auto;
+        }
+      }
+
+      span {
+        display: block;
+      }
+
+      @include breakpoints(small) {
+        font-size:rem(80);
+        padding:0 rem(16);
+      }
+    }
+
+    @include breakpoints(small) {
+      margin-top:0;
+    }
+  }
+  .c-countdown__days {}
+  .c-countdown__hours {}
+  .c-countdown__minutes {}
+  .c-countdown__seconds {}
+
+    // modifier

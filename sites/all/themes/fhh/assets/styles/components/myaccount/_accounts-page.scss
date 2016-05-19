@@ -1,0 +1,349 @@
+.account-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0,0,0,0.8);
+  z-index: -1;
+  left: 0;
+  top: 0;
+  display: none;
+}
+.accounts-container {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  @include calc(height,'100vh - 85px');
+  background: #fff;
+  z-index: 14;
+  border-bottom: 0px #000 solid;
+  top: 87px;
+  max-height: 0;
+  @include opacity(0);
+  @include transition(opacity 500ms linear, max-height 100ms linear 300ms);
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  @include breakpoints(small) {
+    top: 146px;
+    @include calc(height,'100vh - 149px');
+  }
+  @include breakpoints(medium) {
+    @include calc(height,'100vh - 115px');
+    top: 115px;
+  }
+  &.show {
+    @include opacity(100);
+    @include calc(max-height,'100vh - 85px');
+    @include transition(max-height 100ms linear, opacity 500ms linear 300ms);
+
+    @include breakpoints(small) {
+      @include calc(max-height,'100vh - 149px');
+    }
+    @include breakpoints(medium) {
+      @include calc(max-height,'100vh - 115px');
+    }
+  }
+  &.show-home {
+    @include opacity(100);
+    @include calc(max-height,'100vh - 85px');
+    @include transition(max-height 100ms linear, opacity 500ms linear 300ms);
+
+    @include breakpoints(small) {
+      @include calc(max-height,'100vh - 149px');
+    }
+    @include breakpoints(medium) {
+      @include calc(max-height,'100vh - 115px');
+    }
+  }
+}
+.account-menu-container {
+  @include opacity(0);
+  @include font(gotham,bold);
+  font-size: 12px;
+  letter-spacing: 0.025em;
+  text-align: center;
+  padding: 85px 0 0;
+  line-height: 14px;
+  @include breakpoints(small) {
+    padding: 78px 0 0;
+  }
+  @include breakpoints(medium) {
+    padding: 61px 0 0;
+    position: relative;
+    z-index: 2;
+  }
+  a {
+    color: #babcb6;
+    display: block;
+    padding: 0 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    @include breakpoints(small) {
+      display: inline-block;
+      border-right: 1px color(gray, lighter) solid;
+      margin-bottom: 0;
+    }
+    &:last-child {
+      border-right: 0px color(gray, lighter) solid;
+    }
+    &:hover {
+      @include breakpoints(medium) {
+        color: #C32929;
+        @include transition(all 0.25s ease-in-out);
+      }
+    }
+    &.active {
+      color: #C32929;
+    }
+  }
+}
+.account-header-name {
+  position: relative;
+  font-size: 32px;
+  line-height: 32px;
+  color: #333;
+  letter-spacing: 0.01em;
+  padding-bottom: 35px;
+  margin-bottom: 34px;
+  @include breakpoints(small) {
+    font-size: 42px;
+    line-height: 60px;
+    padding-bottom: 25px;
+    margin-bottom: 50px;
+
+  }
+  @include breakpoints(medium) {
+    font-size: 60px;
+    line-height: 70px;
+    padding-bottom: 34px;
+    margin-bottom: 57px
+  }
+  &::after {
+    content: '';
+    display: block;
+    width: 113px;
+    height: 1px;
+    background: #222;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -56px;
+  }
+}
+.account-header-info {
+  @include font(tiempos,light);
+  font-size: 18px;
+  line-height: 24px;
+  color: #222;
+  letter-spacing: 0.01em;
+  position: relative;
+  text-transform: none;
+  display: block;
+  margin: 0 auto 15px;
+  width: 80%;
+  @include breakpoints(small) {
+    width: 100%;
+    font-size: 24px;
+    line-height: 32px;
+    margin: 0 auto 0;
+  }
+}
+.accounts-tab {
+  @include opacity(0);
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  overflow: hidden;
+  display: none;
+
+}
+.bookmark {
+  @include opacity(0);
+  text-align: center;
+  display: block;
+  margin: 52px auto 24px;
+  width: 32px;
+  height: 25px;
+  @include breakpoints(small) {
+    margin: 40px auto 4px;
+  }
+  @include breakpoints(medium) {
+    margin: 41px auto 9px;
+  }
+  svg {
+    width: 32px;
+    height: 25px;
+    fill: #000!important;
+  }
+}
+
+.close-account {
+  @include opacity(0);
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  cursor: pointer;
+  z-index: 3;
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.myaccount-filter {
+  @include font(gotham,bold);
+  font-size: 12px;
+  letter-spacing: 0.025em;
+  text-align: center;
+  padding: 30px 0 0;
+  line-height: 14px;
+  height: 62px;
+  position: relative;
+  max-width: 354px;
+  margin: 0 auto 15px;
+  width: 100%;
+  &.opened {
+    &::before {
+      content: '';
+      width: 100%;
+      height: 50px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-left: 1px #e7e6e0 solid;
+      border-top: 1px #e7e6e0 solid;
+      border-right: 1px #e7e6e0 solid;
+      @include breakpoints(small) {
+        display: none;
+      }
+    }
+  }
+
+  @include breakpoints(small) {
+    height: 44px;
+    margin-bottom: 90px;
+    max-width: none;
+    width: auto;
+    overflow: hidden;
+  }
+  @include breakpoints(medium) {
+    margin-bottom: 45px;
+    padding: 40px 0 0;
+    height: 54px;
+  }
+  ul {
+    padding: 0;
+    list-style: none;
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 354px;
+    overflow: hidden;
+    background: #fff;
+    z-index: 5;
+    height: auto;
+    max-height: 0;
+    border-left: 1px #e7e6e0 solid;
+    border-bottom: 1px #e7e6e0 solid;
+    border-right: 1px #e7e6e0 solid;
+    @include opacity(0);
+    @include transition(all 0.5s);
+    &.opened {
+      @include opacity(100);
+      max-height: 800px;
+      @include transition(all 0.5s);
+      padding: 20px 0;
+    }
+    @include breakpoints(small) {
+      border: 0!important;
+      width: 100%;
+      @include opacity(100);
+      position: relative;
+      top: auto;
+      left: auto;
+      right: auto;
+      max-height: none;
+      &.opened {
+        @include opacity(100);
+        max-height: 800px;
+        @include transition(all 0.5s);
+        padding: 0 0;
+      }
+
+    }
+
+  }
+  li {
+    color: #babcb6;
+    display: block;
+    cursor: pointer;
+    height: 30px;
+    line-height: 30px;
+    text-transform: uppercase;
+    @include breakpoints(small) {
+      height: 14px;
+      line-height: 14px;
+      padding: 0 20px;
+      display: inline-block;
+      border-right: 1px #babcb6 solid;
+      margin-bottom: 0;
+      &:last-child {
+        border-right: 0 #babcb6 solid;
+      }
+    }
+    &:hover {
+      @include breakpoints(medium) {
+        color: #C32929;
+        @include transition(all 0.25s ease-in-out);
+      }
+    }
+    &.active {
+      color: #C32929;
+    }
+  }
+}
+.account-filterBtn {
+  @include font(gotham,bold);
+  font-size: 24px;
+  color: #222;
+  letter-spacing: 0.01em;
+  text-transform: capitalize;
+  cursor: pointer;
+  position: relative;
+  span {
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    margin-left: 10px;
+    width: 0px;
+    height: 0px;
+    @include transform(translateY(-50%));
+    border-style: solid;
+    border-width: 8px 6px 0px;
+    border-color: #222 transparent transparent;
+  }
+  &.opened {
+    span {
+      border-width: 0px 6px 8px;
+      border-color: transparent transparent #222;
+    }
+  }
+  @include breakpoints(small) {
+    display: none;
+  }
+}
+.accounts-container.show {
+  .bookmark,.account-menu-container,.close-account,.accounts-tab {
+    @include transition(all 0.5s ease-in 0.5s);
+    @include opacity(100);
+  }
+}
+.accounts-container.show-home {
+  .bookmark,.account-menu-container,.close-account,.accounts-tab {
+    @include transition(all 0.5s ease-in 1300ms);
+    @include opacity(100);
+  }
+}

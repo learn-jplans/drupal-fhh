@@ -1,0 +1,184 @@
+// block
+body:not(.front){
+  .js-header-parent {
+    height: 90px !important;
+    @include breakpoints(small) {
+      height: 145px !important;
+    }
+    @include breakpoints(medium) {
+      height: 118px !important;
+    }
+  }
+}
+.js-header-parent {
+  @include breakpoints(medium) {
+    height: 118px !important;
+  }
+}
+.o-header {
+  position: relative;
+  width: 100%;
+  top: 0;
+	background-color: color(white);
+  z-index: $header-index;
+	@include clearfix();
+
+    &.super-stuck {
+      position: fixed !important;
+      margin-top: -100px;
+      padding-top: 100px;
+    }
+
+    &.is-header--fixed,
+    &.is-header--force-fixed,
+    &.stuck {
+      position: fixed;
+      top: 0;
+      z-index: $header-fixed-index;
+      // @include transform(translateY(0) !important);
+    }
+
+  body:not(.front) & {
+    position: fixed;
+  }
+}
+
+
+  // element
+  .o-header__top {
+    display: none;
+    height: rem(50);
+    background-color: color(white);
+    position: relative;
+    z-index: 2;
+
+    @include breakpoints(small) {
+      display: block;
+      border-bottom: rem(1) solid color(gray,lighter);
+    }
+    @include breakpoints(medium) { border-color: color(white); }
+  }
+  .o-header__main {
+    position: relative;
+    height: rem(72);
+    background-color: color(white);
+    position: relative;
+    z-index: 1;
+
+    @include breakpoints(small) { height: rem(81); }
+    @include breakpoints(medium) { height: rem(50); }
+  }
+  .o-header__bottom {
+    height: rem(15);
+    background-color: color(red);
+    transition-delay: 0s;
+  }
+
+
+    // modifier
+    .o-header--article { // header article
+      position: fixed;
+      top: -50%;
+      display: none;
+      width: 100%;
+      min-height: rem(48);
+      padding: rem(15) 0 rem(12);
+      background-color: color(white);
+      border-bottom: 1px solid color(gray,lighter);
+      z-index: 6;
+      @include transition(all 300ms);
+
+      @include breakpoints(small) {
+        display: block;
+        height: rem(53);
+        padding: 0;
+      }
+      @include breakpoints(medium) {
+        height: rem(49);
+      }
+      .o-container { height: 100%; }
+      &__content {
+        @include breakpoints(small) {
+          @include valign();
+          line-height: 1;
+        }
+      }
+      &__title {
+        overflow: hidden;
+        display: block;
+        max-height: rem(37);
+        max-width: calc(100% - 30px);
+        margin-bottom: rem(20);
+        @include font(gotham,bold);
+        @include font-sizing(rem(14),rem(20));
+        @include breakpoints(small) {
+          display: inline-block;
+          max-width: calc(50% - 30px);
+          margin-bottom: 0;
+          width: rem(265);
+          overflow: hidden;
+          height: rem(18);
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        @include breakpoints(medium) { 
+          max-width: 42%; 
+          width: initial;
+          height: initial;
+          white-space: initial;
+        }
+      }
+      &__link {
+        margin-top: rem(-5);
+
+        @include breakpoints(small) { margin-top: 0; }
+      }
+      &__close {
+        position: absolute;
+        top: rem(19); right: rem(18);
+        cursor: pointer;
+        svg.o-icon {
+          width: rem(17); height: rem(18);
+        }
+        @include breakpoints(small) {
+          top: 0; right: 0; bottom: 0;
+          height: rem(17);
+          margin: auto;
+        }
+        @include breakpoints(medium) {
+          svg.o-icon {
+            &:hover { fill: color(red); }
+          }
+        }
+      }
+      .o-list {
+        display: inline-block;
+        @include breakpoints(small) {
+          display: block;
+          position: relative;
+          float: right;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          height: rem(22);
+          margin: auto;
+        }
+        @include breakpoints(medium) {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        li {
+          padding: 0 rem(27);
+          @include breakpoints(small) { padding: 0 rem(21); }
+          &:first-child { padding-left: 0; }
+          &:last-child { padding-right: 0; }
+        }
+      }
+    }
+    .has-open-nav {
+      .o-header__bottom {
+        background-color: color(white);
+        transition: all .2s $ease-in-out;
+      }
+    }

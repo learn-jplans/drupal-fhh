@@ -1,0 +1,172 @@
+// block
+.c-title { position: relative; }
+
+  // element
+
+    // modifier
+    .c-title--section {
+      @extend .o-align-c;
+
+      @include breakpoints(medium) {
+        margin-bottom: rem(80);
+        padding: rem(48) 0;
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0; right: 0; bottom: 0;
+        width: rem(115); height: rem(1);
+        margin: 0 auto;
+        background-color: $base-color;
+      }
+    }
+
+    .c-title--secondary {
+      @include font(gotham,bold);
+      margin: 0 0 1.5rem 0;
+      text-transform: none;
+      text-align: center;
+      font-size: rem(18);
+      letter-spacing: 0;
+      line-height: 1;
+      padding: 0;
+
+      & + .c-title {
+        padding-top: 0;
+      }
+    }
+
+    .c-title--underscore {
+      padding-left: rem(20);
+      font-size: rem(32);
+      color: color(red);
+      line-height: rem(32);
+      text-transform: uppercase;
+
+      @include breakpoints(medium) {
+        font-size: rem(40);
+        line-height: rem(48);
+      }
+      &:before {
+        content: '';
+        display: inline-block;
+        position: relative;
+        width: rem(63);
+        margin-left: rem(-20);
+        margin-right: rem(7);
+        border-bottom: rem(1) solid color(red);
+
+        @include breakpoints(medium) {
+          width: rem(120);
+        }
+      }
+      &.c-section__title {
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      &.c-title--written {
+        &:before { width: rem(44); }
+      }
+    }
+
+    .c-title--strike {
+      @include font(gotham,bold);
+      @include font-sizing(rem(30),rem(32));
+      &:before,
+      &:after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: rem(16);
+        width: rem(30); height: rem(1);
+        margin: 0 rem(-10);
+        background-color: color(red);
+      }
+      &:before {
+        left: 0;
+        margin-left: rem(-30);
+      }
+      &:after {
+        right: 0;
+        margin-right: rem(-30);
+      }
+    }
+
+    .c-title--sub {
+      // margin-top: rem(3);
+      @include font(gotham,medium);
+      color: color(brown);
+      text-transform: uppercase;
+    }
+
+    .c-title--featured {
+      margin-bottom: 0;
+      padding-top: 0;
+      color: color(red);
+      &:after { background-color: color(red); }
+    }
+
+    .c-title--flexible {
+      max-height: rem(310);
+      margin-bottom: 0;
+      padding: 0;
+      @include font(gotham,black);
+      color: color(gray,lighter);
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    // colors
+    .c-title--brown {
+      color: color(brown);
+      &:after,
+      &:before {
+        background-color: color(brown);
+      }
+    }
+
+    .c-title--other {
+      max-width: rem(220);
+      margin: 0 auto;
+      color: color(brown) !important;
+      text-align: center;
+      @include breakpoints(small) {
+        max-width: rem(360);
+        padding-bottom: 0;
+        margin-bottom: rem(45);
+      }
+      @include breakpoints(medium) {
+        max-width: rem(260);
+        padding: 0 rem(30);
+        margin-bottom: rem(56);
+      }
+      &:before,
+      &:after {
+        width: rem(85);
+        background-color: color(blue,light-s) !important;
+
+        @include breakpoints(medium) { width: rem(100); }
+      }
+      &:before { margin-left: rem(-92); }
+      &:after { margin-right: rem(-92); }
+    }
+
+    .c-title--wym {
+      margin-bottom: rem(-35);
+      line-height: rem(36);
+      @include breakpoints(medium) { margin-bottom: 0; }
+    }
+
+    .c-title--brand {
+      max-width: rem(158);
+      margin-bottom: rem(37);
+      line-height: rem(36);
+    }
+
+    // sizes
+    .c-title--small { font-size: rem(24); }
+    .c-title--medium { font-size: rem(30); }
+    .c-title--large { font-size: rem(40); }

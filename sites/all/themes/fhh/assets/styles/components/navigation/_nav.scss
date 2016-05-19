@@ -1,0 +1,198 @@
+.c-nav {}
+
+	// element
+	// .c-nav__menu {}
+
+  .c-nav__links {
+    display: block;
+    float: left;
+    width: rem(277);
+    padding: 0 rem(45);
+    margin-top: rem(-6);
+  }
+
+  .c-nav__tiles {
+    display: block;
+    float: left;
+    width: calc(100% - 277px);
+    padding-left: rem(42);
+
+    border-left: 1px solid color(gray,light);
+
+    .c-tile {
+      padding: 0 rem(9);
+    }
+  }
+  .c-nav__title {
+    display: block;
+    width: 100%;
+    padding: 0 0 rem(10) rem(327);
+
+    span {
+      @include font(gotham,black);
+      font-size: rem(50);
+      color: color(gray,light-6);
+      text-transform: uppercase;
+      @include breakpoints(large) {
+        font-size: rem(50);
+      }
+    }
+  }
+
+  .c-nav__title {}
+
+		// modifiers
+    .c-nav--dropdown {
+      position: absolute;
+      left: 0; right: 0;
+      margin: 0 auto;
+      opacity: 1;
+      &:before {
+        content: '';
+        visibility: hidden;
+        opacity: 0;
+        z-index: -1;
+      }
+      .c-menu__item {
+        padding-top: rem(8);
+        padding-bottom: rem(8);
+        &.is-active {
+          .c-menu--sub {
+            visibility: visible;
+            opacity: 1;
+            z-index: 1;
+            .c-tile {
+              opacity: 1;
+              @for $i from 0 through 4 {
+                $ii: $i * 2;
+                &:nth-child(#{$i}) {
+                  // opacity: 0;
+                  @include transition(opacity 500ms ease-in #{$ii}00ms)
+                }
+              }
+            }
+          }
+        }
+
+        &.js-menu__item { position: static; }
+      }
+      &__close {
+        position: absolute;
+        top: 0; right: rem(34);
+        width: rem(18); height: rem(18);
+        cursor: pointer;
+
+        svg { fill: color(gray); }
+
+        &-container {
+          position: absolute;
+          left: calc(-50vw + 50%);
+          width: 100vw;
+          height: rem(18);
+        }
+        &-content {
+          position: relative;
+          width: 100%;
+          max-width: rem(1440);
+          height: 100%;
+          margin: 0 auto;
+        }
+      }
+      .c-menu--sub {
+        display: block;
+        visibility: hidden;
+        position: absolute; //fixed
+        top: rem(52); left: 0;
+        width: 100vw;
+        border-top: rem(1) solid color(gray,lighter);
+        opacity: 0;
+        @include transition(opacity 200ms ease-in);
+        z-index: -999;
+        .c-menu__item { padding: 0; }
+      }
+      .c-tile {
+        opacity: 0;
+        transition-delay: 0s;
+      }
+      .c-article {
+        .o-meta__category {
+          @include font(tiempos,light);
+          font-size: rem(16);
+          padding: 0;
+          margin: 0;
+          text-align: center;
+          &:after { display: none; }
+        }
+        .o-meta__title {
+          height: rem(48);
+          max-height: rem(48);
+          margin: rem(8) 0 0;
+          @include font(gotham);
+          @include font-sizing(rem(14),rem(24));
+          text-align: center;
+        }
+      }
+    }
+
+    .c-nav--burger {
+      padding: rem(43) 0 0;
+
+      @include breakpoints(small) { padding: rem(35) 0 rem(20); }
+      @include breakpoints(medium) { padding: rem(35) 0 rem(26); }
+
+      .c-menu__item {
+        opacity: 0;
+        transition-delay: 0s;
+
+      }
+      .c-menu__link {
+        @include font(tiempos,light);
+        @include font-sizing(rem(30), rem(72));
+
+        @include breakpoints(small) { @include font-sizing(rem(48), rem(96)); }
+        @include breakpoints(medium) { @include font-sizing(rem(50), rem(85)); }
+      }
+        .c-menu--sub {
+
+          .c-menu__item {
+            @include breakpoints(medium) {
+              display: inline-block;
+              // float: left;
+              position: relative;
+              padding: 0 rem(15);
+              &:not(:last-child):after {
+                content: '/';
+                @include valign();
+                position: absolute;
+                right: rem(-8);
+                font-size: rem(30);
+                color: $link-color;
+              }
+            }
+
+            & {
+              &:not(:first-child) { margin-left: rem(-10); }
+            }
+          }
+          .c-menu__link {
+            @include font(tiempos,lightitalic);
+            @include font-sizing(rem(20),rem(56));
+            color: $link-color;
+            @include breakpoints(small) { @include font-sizing(rem(30),rem(72)); }
+            @include breakpoints(medium) { @include font-sizing(rem(30),rem(58)); }
+          }
+        }
+    }
+    .c-nav--hidden {
+      &:before {
+        visibility: visible;
+        opacity: 1;
+        position: absolute;
+        // top: rem(10); left: 0; right: 0; bottom: 0;
+        top: 0; left: 0; right: 0; bottom: 0;
+        width: 100%; height: calc(100% + 12px);
+        z-index: 2;
+        @include transition(opacity .2s $ease-in-out, visibility .2s $ease-in-out);
+        background-color: color(white);
+      }
+    }

@@ -1,0 +1,28 @@
+// block
+.c-timeline {
+  position: relative;
+  height: rem(3);
+  opacity: 1;
+  z-index: -1;
+  @include transition(all .2s $ease-in-out );
+
+  &.is-hidden {
+    opacity: 0;
+
+    .c-timeline__progress {
+      opacity: 0;
+    }
+  }
+}
+
+  .c-timeline__progress,
+  .c-timeline__progress[role] {
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%; width: 100%;
+    &::-webkit-progress-bar { background: color(gray,lighter); }
+    &::-webkit-progress-value { background: color(gray); }
+    &::-moz-progress-bar { background: color(gray); }
+  }
+
+      // modifier

@@ -1,0 +1,128 @@
+// block
+.c-landing {
+  position: relative;
+  width: 100%;
+  // background: #f90;
+
+
+  // override dropdown sort
+  .c-dropdown--small {
+    position: absolute;
+    bottom: 0; right: 0;
+  }
+
+  .c-dropdown-container {
+    position: relative;
+    height: rem(58);
+  }
+}
+  // element
+  // .c-landing__featured {}
+  .c-landing__container {
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%;
+    // height: rem(315);
+    padding: 0 rem(24);
+    @include breakpoints(small) {
+      // height: rem(340);
+      padding: 0 rem(40);
+    }
+    // @include breakpoints(medium) { height: rem(290); }
+  }
+  .c-landing__content {
+    position: relative;
+    width: 100%; height: 100%;
+    padding: rem(28) rem(20) 0;
+    background-color: color(white);
+
+    @include breakpoints(small) { padding: rem(32) rem(20) 0; }
+    @include breakpoints(medium) { padding: rem(39) rem(20) 0; }
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      margin: auto;
+      width: 100%; height: rem(1);
+      max-width: rem(290);
+      background-color: color(gray,lighter);
+
+      @include breakpoints(small) { max-width: rem(510); }
+      @include breakpoints(small) { max-width: rem(1088); }
+    }
+
+    h3 {
+      margin-bottom: rem(23);
+      @include breakpoints(small) {
+        margin-bottom: rem(15);
+        @include font-sizing(rem(40),rem(48));
+      }
+    }
+    h6 {
+      margin-bottom: rem(-1);
+      @include breakpoints(small) { margin-bottom: rem(13); }
+      @include breakpoints(medium) { margin-bottom: rem(5); }
+    }
+    .o-meta__date { margin-bottom: rem(5); }
+    .o-meta__type { margin-bottom: rem(-4); }
+  }
+
+  // landing no result
+  .no-result {
+    height: calc(100vh - 72px);
+    margin-top: -34px; margin-bottom: -34px;
+    padding-top: 57px;
+
+    @include breakpoints(small) {
+      height: calc(100vh - 118px);
+    }
+
+
+    &__container {
+      @include valign();
+      word-wrap: break-word;
+    }
+    &__header {
+      @include font(tiempos,lightitalic);
+      font-size: rem(44);
+      line-height: rem(44);
+
+      @include breakpoints(small) {
+        font-size: rem(60);
+        line-height: rem(60);
+      }
+
+      @include breakpoints(medium) {
+        font-size: rem(100);
+        line-height: rem(100);
+      }
+
+      // @include font-sizing($font-size,$line-height);
+      text-align: center;
+      padding-bottom: 60px;
+    }
+    &__text {
+      @include font(tiempos,light);
+      @include font-sizing(20px, 26px);
+
+      @include breakpoints(small) {
+        @include font-sizing(24px, 30px);
+      }
+
+      @include breakpoints(medium) {
+        font-size: rem(32);
+        line-height: rem(40);
+      }
+      text-align: center;
+
+      span {
+        color: color(red);
+        @include font(tiempos,lightitalic);
+      }
+    }
+  }
+
+
+
+    // modifier

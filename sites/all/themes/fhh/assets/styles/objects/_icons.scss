@@ -1,0 +1,259 @@
+  // block
+.o-icon,
+svg.o-icon {
+  display: block;
+  &:hover {
+    @include breakpoints(medium) { fill: color(red); }
+  }
+}
+      // modifier
+
+      // color modifier
+      svg.o-icon--white,
+      .o-icon--white {
+        fill: color(white);
+        & + .o-icon--gallery__count { color: color(gray) !important; }
+        &:hover { @include breakpoints(medium) { fill: color(white); } }
+      }
+      .o-icon--red { fill: color(red); }
+      .o-icon--gray { fill: color(gray,lighter); }
+
+      // icon type modifier
+      .o-icon--hamburger {
+        width: rem(24); height: rem(16);
+        background-image: none;
+        z-index: 1;
+        @include transition(background 0.25s);
+        &:hover { span { @include breakpoints(medium) { background-color: color(red); } } }
+        span {
+          display: block;
+          width: 100%;
+          height: rem(2);
+          margin: rem(5) 0;
+          background-color: color(black);
+          @include transition(all 300ms linear);
+          &:first-child { margin-top: 0; }
+          &:last-child { margin-bottom: 0; }
+        }
+      }
+      .o-icon--close {
+        span {
+          &:first-child {
+            @include transform(
+              rotate(-45deg)
+              translateY(6px)
+              translateX(-4px)
+            );
+          }
+          &:not(:first-child) {
+            @include transform(
+              rotate(45deg)
+              translateY(-6px)
+              translate(-4px)
+            );
+          }
+          &:nth-child(2) { opacity: 0; }
+        }
+      }
+      .o-icon--bookmark {
+        width: rem(26); height: rem(21);
+        &.o-icon--bookmark--small {
+          width: rem(21); height: rem(20);
+
+          &:hover,
+          .active & {
+
+            fill: color(red,dark);
+
+          }
+        }
+      }
+      .o-icon--search {
+        width: rem(21); height: rem(23);
+      }
+      .o-icon--outbound {
+        display: inline-block !important;
+        width: rem(9); height: rem(9);
+        fill: color(brown);
+      }
+      .o-icon--twitter {
+        width: rem(19);
+        height: rem(17);
+        &.o-icon--small {
+          width: rem(16);
+          height: rem(12);
+        }
+      }
+      .o-icon--facebook {
+        width: rem(10);
+        height: rem(18);
+        &.o-icon--small {
+          width: rem(7);
+          height: rem(14);
+        }
+      }
+      .o-icon--youtube {
+        width: rem(21);
+        height: rem(15);
+      }
+      .o-icon--pinterest {
+        width: rem(15);
+        height: rem(20);
+      }
+      .o-icon--instagram {
+        width: rem(21);
+        height: rem(21);
+        &.o-icon--small {
+          width: rem(15);
+          height: rem(15);
+        }
+        &.o-icon--medium {
+          width: rem(20);
+          height: rem(18);
+        }
+      }
+      .o-icon--gplus {
+        width: rem(25);
+        height: rem(21);
+        &.o-icon--small {
+          width: rem(15);
+          height: rem(11);
+        }
+      }
+      .o-icon--image {
+        width: rem(25);
+        height: rem(18);
+      }
+      .o-icon--interview {
+        width: rem(34);
+        height: rem(36);
+      }
+      .o-icon--gallery {
+        width: rem(38);
+        height: rem(32);
+
+        & + &__count {
+          position: relative;
+          top: rem(-13); left: rem(8);
+          @include font(gotham,bold);
+          @include font-sizing(rem(10),rem(20));
+          color: color(white);
+        }
+      }
+      .o-icon--play {
+        width: rem(26);
+        height: rem(26);
+        margin-top: -2px;
+      }
+      .o-icon--arrow-down {
+        width: rem(17);
+        height: rem(10);
+      }
+      .o-icon--next-r {
+        width: rem(56);
+        height: rem(48);
+        fill: color(red);
+      }
+      .o-icon--next-l {
+        width: rem(56);
+        height: rem(48);
+        fill: color(red);
+      }
+      .o-icon--arrow-left {
+        width: rem(10); height: rem(18);
+      }
+      .o-icon--arrow-right {
+        width: rem(10); height: rem(18);
+      }
+      .o-icon--arrow-right-c {
+        width: rem(24); height: rem(15);
+        stroke: color(red);
+        stroke-width: rem(3);
+      }
+      .o-icon--scrubber {
+        width: rem(36);
+        height: rem(36);
+        fill: color(red);
+
+        &:hover {
+          @include breakpoints(medium) {
+            fill: color(red,dark);
+          }
+        }
+      }
+      .o-icon--check,
+      .o-icon--success {
+        width: rem(13);
+        height: rem(10);
+      }
+      .o-icon--checkbox {
+        width: rem(15);
+        height: rem(11);
+      }
+      .o-icon--error,
+      .o-icon--cross {
+        width: rem(12); height: rem(12);
+
+        &.o-icon--medium { width: rem(18); height: rem(18); }
+      }
+      .o-icon--contact {
+        width: rem(18);
+        height: rem(12);
+      }
+      .o-icon--follow {
+        width: rem(17);
+        height: rem(17)
+      }
+      .o-icon--load-more {
+        width: rem(28);
+        height: rem(28);
+      }
+      .o-icon--calendar {
+        width: rem(20); height: rem(22);
+      }
+      .o-icon--slide-arrow {
+        width: rem(56);
+        height: rem(48);
+        fill: color(red);
+      }
+      .o-icon--submit-tick{
+        width: rem(56);
+        height: rem(48);
+        display: inline !important;
+      }
+
+//loadmore article profile
+.loadmoreBtn {
+  display: block;
+  width: 28px;
+  height: 28px;
+  border: 2px #222 solid;
+  margin: 0 auto;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  position: relative;
+  &::before {
+    content: '';
+    width: 10px;
+    height: 2px;
+    background: #222;
+    position: absolute;
+    //@include transform(rotate(90deg));
+    left: 50%;
+    top: 50%;
+    -moz-transform: translate(-50%,-50%) rotate(90deg);
+    -webkit-transform: translate(-50%,-50%) rotate(90deg);
+    transform: translate(-50%,-50%) rotate(90deg);
+  }
+  &::after {
+    content: '';
+    width: 10px;
+    height: 2px;
+    background: #222;
+    display: block;
+    margin: 11px auto;
+  }
+
+}

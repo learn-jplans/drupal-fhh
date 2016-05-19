@@ -1,0 +1,81 @@
+// block
+.c-stream {
+  a {
+    display: block;
+  }
+}
+
+  // element
+  .c-stream__image {
+    overflow: hidden;
+    width: 100%;
+    max-width: rem(208);
+    margin: 0 auto rem(25) auto;
+    height: auto;
+    padding-bottom: 0;
+
+    img {
+      position: relative;
+      left: 50%;
+      @include transform(translateX(-50%));
+      max-width: 100%;
+    }
+  }
+  .c-stream__category {
+    height: rem(66);
+    svg {
+      top: 0;
+      margin: 0 auto rem(5);
+    }
+
+    &:hover {
+      svg {
+        transform: none;
+        fill: color(white);
+      }
+    }
+  }
+  .c-stream__title {
+    max-width: none;
+    margin: 0 auto rem(18) auto;
+
+    @include breakpoints(small) {
+      max-width: rem(208);
+    }
+
+    @include breakpoints(medium) {
+      max-width: none;
+    }
+
+    @include font-sizing(rem(16),rem(24),1);
+  }
+  .c-stream__duration {
+    max-width: none;
+    margin: 0 auto rem(2) auto;
+
+    @include breakpoints(small) {
+      max-width: rem(208);
+    }
+
+    @include breakpoints(medium) {
+      max-width: none;
+    }
+
+    color: color(gray,light);
+  }
+  .c-stream__account {
+    @include font(gotham,bold);
+    @include font-sizing(rem(14),rem(30),1);
+  }
+
+  .c-stream__follow {
+    display: block;
+    line-height: rem(16);
+  }
+
+    // modifier
+    .c-stream--facebook {
+      .c-stream__title {
+        @include font-sizing(rem(12),rem(18));
+      }
+    }

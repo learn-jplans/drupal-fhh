@@ -1,0 +1,1296 @@
+// block
+.c-article {
+  position: relative;
+  @include selection {
+    background: color(brown, highlight);
+  }
+  .c-highlight {
+    padding: rem(7) 0;
+    //background-color: transparent !important;
+    background: color(brown, highlight);
+    color: color(gray);
+  }
+  &.hasHiglights {
+    @include selection {
+      background: transparent!important;
+    }
+  }
+}
+
+// element
+.c-article__head {
+  padding-top: rem(44);
+  padding-bottom: rem(6);
+  transform-origin: top center;
+  transition: all .3s $ease-in-out-cubic 0s;
+  @include breakpoints(medium) {
+    padding-bottom: rem(50);
+  }
+  .o-meta__category {
+    margin-top: 0;
+    margin-bottom: rem(34);
+    @include breakpoints(medium) {
+      margin-bottom: rem(28);
+    }
+  }
+  .c-article__title {
+    @include breakpoints(medium) {
+      margin-bottom: rem(20);
+    }
+  }
+  .o-meta__date {
+    margin-bottom: rem(4);
+    @include breakpoints(small) {
+      margin-bottom: rem(7);
+    }
+  }
+  .o-meta__type {
+    margin-bottom: rem(2);
+    @include breakpoints(small) {
+      line-height: rem(20);
+    }
+    @include breakpoints(medium) {
+      line-height: rem(30);
+    }
+  }
+}
+
+
+.single-fhh_events {
+  .c-article__head {
+    padding-bottom: 0;
+  }
+}
+
+.c-article__main {
+  position: relative;
+  width: 100%;
+  max-width: rem(1054);
+  margin-bottom: rem(50);
+  @include breakpoints(medium) {
+    padding-left: rem(360);
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: rem(320);
+      width: rem(1);
+      height: 100%;
+      background-color: color(gray, lighter);
+    }
+  }
+}
+
+.c-article--event {
+  .c-article__main {
+    max-width: rem(1188);
+    .c-article__body {
+      max-width: rem(694);
+    }
+    .c-tile {
+      .o-meta__tag {
+        line-height: rem(30);
+      }
+      .o-meta__date,
+      .o-meta__duration {
+        line-height: rem(16);
+      }
+      .o-meta__title {
+        max-height: rem(48);
+        @include breakpoints(small) {
+          height: rem(48);
+        }
+        @include breakpoints(medium) {
+          height: rem(56);
+          max-height: rem(56);
+        }
+      }
+      .c-article__body {
+        max-height: rem(100);
+        @include breakpoints(medium) {
+          height: rem(100);
+        }
+        p {
+          line-height: rem(24);
+        }
+      }
+    }
+  }
+}
+
+.c-article__body {
+  padding-bottom: rem(4);
+  @include breakpoints(medium) {
+    // padding-bottom: rem(4)
+  }
+  & > p, // & > h1, & > h2, & > h3, & > h4, & > h5, & > h6,
+  & > .o-image,
+  & > .o-quote,
+  & > .o-intro,
+  & > .c-shareline,
+  & > .c-interview {
+    &:first-child:first-of-type {
+      @include breakpoints(medium) {
+        /*padding-top: rem(10);*/
+        margin-top: 0;
+      }
+    }
+  }
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+    // margin-top: rem(16);
+    // margin-bottom: rem(16);
+    // font-size: rem(33);
+    @include font(tiempos, light);
+    @include font-sizing(rem(20), rem(26), 10);
+    color: color(gray);
+    text-transform: initial;
+    @include breakpoints(small) {
+      // @include font-sizing(rem(50), rem(60));
+      @include font-sizing(rem(28), rem(36));
+    }
+    @include breakpoints(medium) {
+      @include font-sizing(rem(33), rem(42));
+    }
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 rem(5);
+    li {
+      position: relative;
+      margin: rem(13) 0 rem(34);
+      // &:first-letter { margin-left: rem(36); }
+      &:first-letter {
+        margin-left: 0;
+      }
+      &:before {
+        content: '';
+        display: block;
+        float: left;
+        position: relative;
+        left: rem(-5);
+        width: rem(32);
+        height: rem(1);
+        margin-top: rem(17);
+        background-color: color(red);
+
+        @include breakpoints(small) { margin-top: rem(19); }
+        @include breakpoints(medium) { margin-top: rem(21); }
+      }
+    }
+  }
+  // paragraph or js-content-share wrapper
+  p,
+  .js-content-share {
+    &:first-of-type {
+      @include breakpoints(medium) {
+        padding-top: 0 !important;
+      }
+    }
+    @include font(gotham);
+    @include font-sizing(rem(14), rem(26), 10);
+
+    @include breakpoints(small) {
+      @include font-sizing(rem(16),rem(28));
+    }
+    @include breakpoints(medium) {
+      @include font-sizing(rem(18),rem(32));
+    }
+    & + .js-content-share {
+      margin-top: rem(38);
+    }
+    & + .o-image {
+      margin-top: rem(44);
+      @include breakpoints(small) {
+        margin-top: rem(50);
+      }
+    }
+    & + .o-image--right {
+      @include breakpoints(small) {
+        margin-top: rem(33);
+      }
+    }
+    & + .c-interview {
+      margin-top: rem(36);
+    }
+    & + .c-shareline {
+      margin-top: rem(45);
+    }
+    & + .c-video-basic {
+      margin-top: rem(44);
+      @include breakpoints(small) {
+        margin-top: rem(54);
+      }
+    }
+    & + .c-shareline--quote {
+      margin-top: rem(18);
+      @include breakpoints(small) {
+        margin-top: rem(28);
+      }
+    }
+    & + h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: rem(43);
+      @include breakpoints(small) {
+        margin-top: rem(38);
+      }
+    }
+  }
+  // headings
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    padding: 0;
+    margin: 0;
+  }
+  // intro
+  .o-intro {
+    padding: 0 !important;
+    margin: 0 !important;
+    p {
+      @include font(tiempos, light);
+      @include font-sizing(rem(18), rem(28), 10);
+      @include breakpoints(small) {
+        @include font-sizing(rem(24), rem(36));
+      }
+      @include breakpoints(medium) {
+        @include font-sizing(rem(32), rem(48));
+      }
+    }
+  }
+  // quote
+  .o-quote {
+    //padding: 0;
+    margin: 0;
+    position: relative;
+    @include font-sizing(rem(24),rem(30));
+
+    @include breakpoints(small) {
+      @include font-sizing(rem(42),rem(52));
+    }
+    @include breakpoints(medium) {
+      left: 0;
+      width: 100%;
+      max-width: rem(590);
+      @include font-sizing(rem(50),rem(60));
+    }
+    @media (min-width: 1080px) {
+      left: calc(100% - 555px);
+      max-width: rem(610);
+    }
+    @media (min-width: 1220px) {
+      max-width: rem(690);
+    }
+    @media (min-width: 1280px) {
+      max-width: rem(720);
+    }
+    & + p,
+    & + .js-content-share {
+      margin-top: rem(42);
+      @include breakpoints(small) {
+        margin-top: rem(30);
+      }
+      @include breakpoints(medium) {
+        margin-top: rem(40);
+      }
+    }
+    & + .o-image {
+      margin-top: rem(42);
+    }
+    & + .c-shareline {
+      margin-top: rem(50);
+    }
+    & + .c-shareline--quote {
+      margin-top: rem(25);
+    }
+    & + .c-interview {
+      margin-top: rem(42);
+    }
+    &:before {
+      margin-right: rem(5);
+      @include breakpoints(small) { margin-right: rem(10); }
+    }
+    &:after {
+      margin-right: rem(5);
+      @include breakpoints(small) { margin-right: rem(10); }
+    }
+  }
+  // image
+  .o-image {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    & + .js-content-share {
+      margin-top: rem(40);
+      @include breakpoints(small) {
+        padding-top: rem(30);
+        margin-top: 0;
+      }
+    }
+    & + .o-image {
+      margin-top: rem(50);
+      @include breakpoint(small) {
+        margin-top: rem(35);
+      }
+    }
+    & + .c-interview {
+      margin-top: rem(44);
+    }
+    & + .c-video-basic {
+      margin-top: rem(45);
+    }
+    & + .c-shareline {
+      margin-top: rem(48);
+    }
+    & + .c-shareline--quote {
+      margin-top: rem(22);
+    }
+  }
+  .o-image--right {
+    // & +
+  }
+  .c-video-basic {
+    padding: 0;
+    margin: 0;
+    & + p,
+    & + .js-content-share {
+      margin-top: rem(30);
+      @include breakpoints(small) {
+        margin-top: rem(0);
+        padding-top: rem(41);
+      }
+      // @include breakpoints(medium) { margin-top: rem(); }
+    }
+    & + .c-video-basic {
+      margin-top: rem(30);
+      @include breakpoints(small) {
+        margin-top: rem(43);
+      }
+      &.left,
+      &.right {
+        @include breakpoints(small) {
+          margin-top: rem(60);
+        }
+      }
+    }
+    & + .o-image {
+      margin-top: rem(39);
+      @include breakpoints(small) {
+        margin-top: rem(60);
+      }
+    }
+    & + .o-quote {
+      margin-top: rem(42);
+      @include breakpoints(small) {
+        margin-top: 0;
+        padding-top: rem(16);
+      }
+    }
+    & + .c-shareline {
+      margin-top: rem(40);
+      @include breakpoints(small) {
+        margin-top: 0;
+        padding-top: rem(50);
+      }
+    }
+    & + .c-shareline--quote {
+      margin-top: rem(19);
+      @include breakpoints(small) {
+        margin-top: 0;
+        padding-top: rem(29);
+      }
+    }
+    & + .c-interview {
+      margin-top: rem(33);
+      @include breakpoints(small) {
+        margin-top: 0;
+        padding-top: rem(41);
+      }
+    }
+  }
+  // shareline
+  .c-shareline {
+    margin: 0;
+    padding-left: rem(24);
+    padding-right: rem(24);
+
+    @include breakpoints(small) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .c-shareline__body,
+    .c-shareline__body p {
+      @include font-sizing(rem(14),rem(22));
+
+      @include breakpoints(small) {
+        @include font-sizing(rem(16),rem(28));
+      }
+      @include breakpoints(medium) {
+        @include font-sizing(rem(18),rem(30));
+      }
+    }
+
+    & + .js-content-share {
+      margin-top: rem(36);
+      @include breakpoints(small) {
+        margin-top: rem(43);
+      }
+    }
+    & + .c-shareline {
+      margin-top: rem(50);
+    }
+    & + .c-shareline--quote {
+      margin-top: rem(24);
+    }
+    & + .o-image {
+      margin-top: rem(50);
+      @include breakpoints(small) {
+        margin-top: rem(52);
+      }
+    }
+    & + .c-interview {
+      margin-top: rem(42);
+    }
+    & + .c-video-basic {
+      margin-top: rem(42);
+      @include breakpoints(small) {
+        margin-top: rem(45);
+      }
+    }
+    & + .o-quote {
+      margin-top: rem(45);
+      @include breakpoints(small) {
+        margin-top: rem(40);
+      }
+    }
+  }
+  .c-shareline--quote {
+    & + .c-shareline {
+      margin-top: rem(44);
+    }
+  }
+  // interview
+  .c-interview {
+    padding: 0;
+    margin: 0;
+    // & + p,
+    // & + .js-content-share {}
+    // & + h1, & + h2, & + h3, & + h4, & + h5, & + h6 {}
+    // & + .o-image {}
+    // & + .o-image--right {}
+    & + .o-quote {
+      margin-top: rem(42);
+      @include breakpoints(small) {
+        margin-top: rem(40);
+      }
+    }
+    // & + .c-shareline {}
+    & + .c-shareline--quote {
+      @include breakpoints(small) {
+        margin-top: rem(29);
+      }
+    }
+    // & + .c-interview {}
+  }
+}
+
+.c-article__foot {
+  position: relative;
+  padding-top: rem(44);
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: rem(328);
+    height: rem(1);
+    background-color: color(gray, lighter);
+    @include breakpoints(small) {
+      max-width: rem(648);
+    }
+    @include breakpoints(medium) {
+      max-width: rem(646);
+    }
+  }
+  @include breakpoints(small) {
+    padding-top: rem(18);
+  }
+}
+
+.c-article__hero {
+  position: relative;
+  width: 100vw;
+  min-height: rem(30);
+  left: calc(-50vw + 50%);
+  .c-carousel--hero-image {
+    .c-carousel__item {
+      max-width: none;
+      width: 100%;
+      margin: 0;
+      @include breakpoints(small) {
+        max-width: rem(560);
+      }
+      @include breakpoints(medium) {
+        max-width: rem(910);
+      }
+      .c-carousel__container {
+        max-height: none;
+        .c-carousel__image {
+          max-height: none;
+          height: auto;
+          img {
+            position: relative;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.c-article__image {
+  -webkit-perspective: 1000;
+  img {
+    position: absolute;
+    top: 50%;
+    @include transform(scale(1) translateY(-50%));
+    @include transition(all 1s ease-in-out);
+  }
+  a {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+  &:hover {
+    img {
+      @include breakpoints(medium) {
+        @include transform(scale(1.15) translateY(-50%));
+        @include filter(grayscale(100%));
+      }
+    }
+  }
+  &__icon {
+    @include valign();
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: rem(64);
+    height: rem(90);
+    margin: 0 auto;
+    @include video-icon(64, 90, color(red));
+  }
+  &.is-hover {
+    img {
+      @include breakpoints(medium) {
+        @include transform(scale(1.15) translateY(-50%));
+        @include filter(grayscale(100%));
+      }
+    }
+  }
+}
+
+.c-article__title {
+  position: relative;
+  max-width: rem(912);
+  margin: rem(35) auto rem(36);
+  z-index: 1;
+  @include breakpoints(small) {
+    margin-top: rem(-3);
+    margin-bottom: rem(23);
+  }
+}
+
+.c-article__letter {
+  margin: rem(-40) 0;
+}
+
+.c-article__link {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.c-article__icon {
+  @extend .o-valign;
+  height: rem(50);
+  text-indent: 101%;
+  span,
+  svg {
+    display: block;
+    overflow: hidden;
+    color: color(white);
+    text-indent: 0;
+  }
+}
+
+.c-article__social {
+  display: inline-block;
+  position: relative;
+  padding: rem(41) 0 rem(35);
+  z-index: 1;
+  @include clearfix();
+  @include breakpoints(small) {
+    padding: rem(33) 0 rem(47);
+  }
+  @include breakpoints(medium) {
+    padding-bottom: rem(27);
+  }
+  li {
+    padding: 0 rem(27);
+    @include breakpoints(medium) {
+      padding: 0 rem(21);
+    }
+  }
+}
+
+.c-article__intro {
+  display: block;
+  width: calc(100% - 52px);
+  margin: 0 auto;
+  padding: rem(35) 0 rem(35) rem(18);
+  @include font(tiempos, light);
+  @include breakpoints(small) {
+    width: 100%;
+    max-width: rem(652);
+    padding: rem(35) rem(18) rem(35) rem(28);
+  }
+  @include breakpoints(medium) {
+    max-width: rem(944);
+    padding: rem(47) rem(24) rem(74);
+  }
+  &:before {
+    @include breakpoints(small) {
+      left: rem(-17);
+    }
+    @include breakpoints(medium) {
+      left: rem(-82);
+    }
+  }
+}
+
+// modifier
+.c-article--tile {
+  width: 100%;
+  p {
+    @include font-sizing(rem(14), rem(24));
+    @include breakpoints(small) {
+      font-size: rem(16);
+    }
+  }
+  .c-article__body {
+    overflow: hidden;
+    // min-height: rem(48);
+    max-height: rem(98);
+    padding-bottom: 0;
+    margin: rem(10.4) 0 rem(5);
+    p {
+      margin: 0;
+    }
+    @include breakpoints(small) {
+      height: rem(98);
+    }
+    @include breakpoints(medium) {
+      margin: rem(14) 0;
+    }
+  }
+  .c-article__image {
+    margin-bottom: rem(18);
+    &:hover {
+      @include breakpoints(medium) {
+        & ~ .o-meta__title {
+          a {
+            color: color(red, dark);
+          }
+        }
+      }
+    }
+    .o-sidebar__item--wym & {
+      width: rem(258);
+      height: rem(173);
+      margin: 0 auto;
+      margin-bottom: rem(27);
+    }
+  }
+  .c-article__letter {
+    font-size: rem(320);
+  }
+  .c-article__icon {
+    svg {
+      &:hover {
+        fill: color(gray);
+      }
+      & + span {
+        left: rem(19);
+        width: rem(18);
+        height: rem(18);
+        text-align: center;
+        text-indent: 0;
+      }
+    }
+  }
+  // .o-meta__tag {}
+  .o-meta__title {
+    overflow: hidden;
+    max-height: rem(48);
+    @include breakpoints(medium) {
+      max-height: rem(72);
+    }
+  }
+  .o-meta__date {
+    margin-bottom: rem(3px);
+    font-size: rem(12);
+  }
+}
+
+// article profile layout
+.c-article--profile {
+  .c-article__head {
+    @include breakpoints(medium) {
+      padding-top: rem(36);
+      padding-bottom: 0;
+    }
+    .o-meta__category {
+      margin-bottom: rem(32);
+      @include breakpoints(small) {
+        margin-bottom: rem(40);
+      }
+      @include breakpoints(medium) {
+        margin-bottom: rem(27);
+      }
+      &--secondary {
+        margin-top: rem(-29);
+        margin-bottom: 0;
+      }
+    }
+  }
+  .c-article__main {
+    &:before {
+      display: none;
+    }
+    @include breakpoints(medium) {
+      float: right;
+      min-height: rem(909);
+      max-width: rem(620);
+      padding-left: 0;
+      margin-top: rem(12);
+    }
+  }
+  .c-article__body {
+    .o-intro {
+      padding-bottom: 0;
+      & + .o-intro {
+        margin-top: rem(41);
+        @include breakpoints(small) {
+          margin-top: rem(59);
+        }
+      }
+      & + .c-shareline {
+        margin-top: rem(49);
+        @include breakpoints(small) {
+          margin-top: rem(67);
+        }
+      }
+      & + .c-shareline--quote {
+        margin-top: rem(21);
+        @include breakpoints(small) {
+          margin-top: rem(39);
+        }
+      }
+      & + .o-quote {
+        margin-top: rem(42);
+        @include breakpoints(small) {
+          margin-top: rem(60);
+        }
+      }
+      // & + .o-image {}
+      & + p,
+      & + .js-content-share {
+        margin-top: rem(40);
+        @include breakpoints(small) {
+          margin-top: rem(58);
+        }
+      }
+    }
+    .c-shareline {
+      margin-top: 0;
+      margin-bottom: 0;
+      & + .c-shareline {
+        margin-top: rem(51);
+        @include breakpoints(small) {
+          margin-top: rem(56);
+        }
+      }
+      & + .c-shareline--quote {
+        margin-top: rem(24);
+        @include breakpoints(small) {
+          margin-top: rem(32);
+        }
+      }
+      & + .o-intro {
+        margin-top: rem(45);
+        @include breakpoints(small) {
+          margin-top: rem(43);
+        }
+      }
+      & + .o-quote {
+        margin-top: rem(45);
+        @include breakpoints(small) {
+          margin-top: rem(42);
+        }
+      }
+      // & + .o-image {}
+      & + p,
+      & + .js-content-share {
+        margin-top: rem(42);
+        @include breakpoints(small) {
+          margin-top: rem(44);
+        }
+      }
+    }
+    .c-shareline--quote {
+      @include breakpoints(medium) {
+        left: 0;
+        padding-left: rem(60);
+        .o-quote {
+          padding-left: 0;
+        }
+      }
+    }
+    .o-quote {
+      margin-top: 0;
+      margin-bottom: 0;
+      @include breakpoints(medium) {
+        left: 0;
+        padding-left: rem(60);
+      }
+      & + .o-quote {
+        margin-top: rem(46);
+        @include breakpoints(small) {
+          margin-top: rem(41);
+        }
+      }
+      & + .o-intro {
+        margin-top: rem(46);
+        @include breakpoints(small) {
+          margin-top: rem(44);
+        }
+      }
+      & + .c-shareline {
+        margin-top: rem(52);
+        @include breakpoints(small) {
+          margin-top: rem(56);
+        }
+      }
+      & + .c-shareline--quote {
+        margin-top: rem(25);
+        @include breakpoints(small) {
+          margin-top: rem(31);
+        }
+      }
+      // & + .o-image {}
+      & + p,
+      & + .js-content-share {
+        margin-top: rem(43);
+        @include breakpoints(small) {
+          margin-top: rem(46);
+        }
+      }
+    }
+    .o-image {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    p,
+    .js-content-share {
+      margin-top: 0;
+      margin-bottom: 0;
+      & + p,
+      & + .js-content-share {
+        margin-top: rem(36);
+        @include breakpoints(small) {
+          margin-top: rem(54);
+        }
+        @include breakpoints(medium) {
+          margin-top: rem(40);
+        }
+      }
+      & + .o-intro {
+        margin-top: rem(41);
+        @include breakpoints(small) {
+          margin-top: rem(59);
+        }
+      }
+      & + .c-shareline {
+        margin-top: rem(45);
+        @include breakpoints(small) {
+          margin-top: rem(63);
+        }
+        @include breakpoints(small) {
+          margin-top: rem(48);
+        }
+      }
+      & + .c-shareline--quote {
+        margin-top: rem(19);
+        @include breakpoints(small) {
+          margin-top: rem(30);
+        }
+      }
+      & + .o-quote {
+        margin-top: rem(38);
+        @include breakpoints(small) {
+          margin-top: rem(41);
+        }
+      }
+      // & + .o-image {}
+    }
+  }
+  .o-quote,
+  // .c-shareline,
+  .o-intro {
+    width: 100%;
+    @include breakpoints(small) {
+      max-width: 100%;
+      padding-left: rem(40);
+    }
+    @include breakpoints(medium) {
+      padding-left: 0;
+    }
+  }
+  .c-article__title {
+    margin-top: rem(38);
+    @include breakpoints(small) {
+      margin-bottom: rem(33);
+    }
+    @include breakpoints(medium) {
+      margin-top: 0;
+    }
+  }
+  .c-article__social {
+    padding: rem(20) 0 rem(22);
+    @include breakpoints(small) {
+      padding: rem(40) 0 rem(30);
+    }
+    @inlcude breakpoints(medium) {
+      padding: rem(40) 0 rem(20);
+    }
+  }
+  .c-article__intro {
+
+    padding: 0 rem(26) !important;
+    &:before {
+      left: 0;
+      width: rem(36);
+      @include breakpoints(small) {
+        // left: rem(-2);
+        width: rem(66);
+      }
+      @include breakpoints(medium) {
+        left: rem(-54);
+        width: rem(144);
+      }
+    }
+    > * {
+      &:first-letter {
+        // margin-left: rem(44);
+        @include breakpoints(small) { margin-left: rem(46); }
+        @include breakpoints(medium) { margin-left: rem(76); }
+      }
+    }
+    @include breakpoints(medium) { margin-bottom: rem(-19); }
+  }
+  .c-card__photo {
+    width: rem(115);
+    height: rem(115);
+    margin-bottom: rem(-8);
+
+    @include breakpoints(small) {
+      width: rem(133);
+      height: rem(133);
+
+      img { width: 100%; }
+    }
+  }
+  .c-article__profile__photo {
+    position: absolute;
+    top: 0;
+    max-width: rem(636);
+    margin-left: rem(-706);
+    margin-top: rem(35);
+  }
+}
+
+// article no image layout
+.c-article--no-image {
+  overflow: hidden;
+  .c-article__head {
+    padding-bottom: rem(13);
+    @include breakpoints(medium) {
+      padding-bottom: rem(50);
+    }
+    .o-meta__date {
+      margin-bottom: rem(2);
+      @include breakpoints(small) {
+        margin-bottom: rem(7);
+      }
+    }
+    .o-meta__type {
+      margin-bottom: 0;
+      @include breakpoints(small) {
+        margin-bottom: rem(2);
+      }
+    }
+    .o-meta__duration {
+      margin-top: rem(-3);
+      @include breakpoints(small) {
+        margin-top: 0;
+      }
+    }
+  }
+  .c-article__hero {
+    margin-top: rem(175);
+    padding: 0;
+
+    @include breakpoints(small) { margin-top: rem(340); }
+    @include breakpoints(medium) { margin-top: rem(292); }
+
+    &.o-bg--gray-lighter .c-article__intro {
+      color: color(gray);
+      &:before { background-color: color(gray); }
+    }
+  }
+  .c-article__letter {
+    position: relative;
+    top: rem(-194);
+
+    @include breakpoints(small) { top: rem(-403); }
+    @include breakpoints(medium) {
+      top: rem(-395);
+      width: rem(800);
+      margin: 0 auto;
+    }
+  }
+  .c-article__intro {
+    margin-top: rem(-255);
+    color: color(white);
+    padding: rem(35) rem(18) rem(33);
+
+    &:before { background-color: color(white); }
+
+    & > *:first-letter {
+      @include breakpoints(small) { margin-left: rem(36); }
+    }
+
+    @include breakpoints(small) {
+      margin-top: rem(-519);
+      padding: rem(35) rem(19) rem(32);
+    }
+    @include breakpoints(medium) {
+      margin-top: rem(-549);
+      padding: rem(47) rem(24) rem(74);
+    }
+  }
+  .c-article__social {
+    padding-bottom: rem(39);
+    @include breakpoints(medium) {
+      padding-bottom: rem(37);
+    }
+  }
+}
+
+// article no image secondary layout
+.c-article--no-image--secondary {
+  overflow: hidden;
+  .c-article__head {
+    .o-meta__date {
+      margin-bottom: rem(2);
+      @include breakpoints(small) {
+        margin-bottom: rem(7);
+      }
+      @include breakpoints(medium) {
+        margin-bottom: rem(2);
+      }
+    }
+    .o-meta__type {
+      margin-bottom: 0;
+      @include breakpoints(small) {
+        margin-bottom: rem(2);
+      }
+      @include breakpoints(medium) {
+        margin-bottom: 0;
+      }
+    }
+    .o-meta__duration {
+      margin-top: rem(-3);
+      @include breakpoints(small) {
+        margin-top: 0;
+      }
+      @include breakpoints(medium) {
+        margin-top: rem(-3);
+      }
+    }
+  }
+  .c-article__hero {
+    margin-top: rem(175);
+    padding: 0;
+    &.o-bg--gray-lighter .c-article__intro {
+      color: color(gray);
+      &:before {
+        background-color: color(gray);
+      }
+    }
+    @include breakpoints(small) {
+      min-height: rem(242);
+      padding: rem(80) rem(80) 0;
+      margin-top: rem(55);
+      z-index: 0;
+    }
+    @include breakpoints(medium) {
+      min-height: rem(254);
+      padding: rem(57) 0 rem(36);
+      margin-top: rem(19);
+    }
+  }
+  .c-article__letter {
+    position: relative;
+    top: rem(-194);
+    @include breakpoints(small) {
+      position: absolute;
+      top: auto;
+      left: calc(100vw - 50%);
+      margin-top: rem(-540);
+      font-size: rem(765);
+    }
+    @include breakpoints(medium) {
+      left: calc(100vw - 50% + 60px);
+      // margin-top: rem(-673);
+      margin-top: rem(-603);
+      font-size: rem(880);
+    }
+  }
+  .c-article__intro {
+    margin-top: rem(-255);
+    // padding: rem(35) rem(14) rem(31);
+    padding: rem(35) rem(16) rem(33) rem(16);
+    color: color(white);
+
+    &:before {
+      left: rem(-8);
+      background-color: color(white);
+
+      @include breakpoints(small) { left: rem(-40); }
+      @include breakpoints(medium) { left: rem(-106); }
+    }
+
+    @include breakpoints(small) {
+      margin-top: 0;
+      padding: rem(35) 0;
+      padding-top: rem(40);
+    }
+    @include breakpoints(medium) { padding: 0; }
+  }
+  .c-article__social {
+    padding-bottom: rem(39);
+
+    @include breakpoints(small) { padding-bottom: rem(47); }
+    @include breakpoints(small) { padding-bottom: rem(3); }
+  }
+}
+
+// article event layout
+.c-article--event {
+  .c-article__head {
+    padding-top: 0;
+  }
+  .c-article__main {
+    &:before {
+      background-color: color(blue, light-s);
+    }
+  }
+  .c-article__body {
+    p {
+      @include breakpoints(small) {
+        line-height: rem(33);
+      }
+      @include breakpoints(medium) {
+        line-height: rem(32);
+      }
+    }
+    .o-image {
+      & + p {
+        margin-top: rem(22);
+        @include breakpoints(small) {
+          margin-top: 0;
+        }
+      }
+    }
+    .o-image--right {
+      & + p {
+        @include breakpoints(small) {
+          padding-top: rem(37);
+        }
+      }
+    }
+    svg.o-icon,
+    .o-icon {
+      fill: color(white);
+    }
+    .o-quote {
+      color: color(white);
+    }
+  }
+  .c-article__intro {
+    padding-top: rem(54);
+    padding-bottom: rem(44);
+    @include breakpoints(small) {
+      padding-bottom: rem(63);
+    }
+    @include breakpoints(medium) {
+      padding-top: rem(87);
+      padding-bottom: rem(78);
+    }
+    &:before {
+      left: rem(-8);
+      width: rem(44);
+      background-color: color(blue, light-s);
+      @include breakpoints(small) {
+        left: rem(-19);
+        width: rem(66);
+      }
+      @include breakpoints(medium) {
+        left: rem(-94);
+        width: rem(142);
+      }
+    }
+  }
+}
+
+&.hide-on-mobile {
+  display: none;
+  & + .o-meta__date {
+    margin-top: rem(4);
+  }
+  @include breakpoints(small) {
+    display: block;
+  }
+}

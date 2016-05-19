@@ -1,0 +1,62 @@
+// block
+.o-intro {
+  position: relative;
+  padding: rem(35) rem(18);
+  @include font(tiempos);
+  // @include font-sizing(rem(24),rem(32),10);
+  @include font-sizing(rem(18),rem(28),10);
+
+  @include breakpoints(small) {
+    // @include font-sizing(rem(30),rem(40));
+    @include font-sizing(rem(24),rem(36));
+  }
+  @include breakpoints(medium) {
+    @include font-sizing(rem(32), rem(48));
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: rem(-8);
+    width: rem(37); height: rem(1);
+    // margin-top: rem(24);
+    margin-top: rem(20);
+    background-color: $base-color;
+    @include breakpoints(small) {
+      // left: rem(-17);
+      left: rem(-11);
+      width: rem(66);
+      margin-top: rem(26);
+    }
+    @include breakpoints(medium) {
+      left: rem(-92);
+      width: rem(130);
+      margin-top: rem(35);
+    }
+  }
+  > * {
+    margin: 0;
+    &:first-letter {
+      margin-left: rem(20);
+
+      @include breakpoints(small) { margin-left: rem(32); }
+    }
+  }
+}
+
+
+  .o-intro--max {
+    &:before {
+      @include breakpoints(medium) {
+        left: rem(-45);
+      }
+    }
+    > * {
+      &:first-letter {
+
+        @include breakpoints(medium) {
+          margin-left: rem(100);
+        }
+      }
+    }
+  }

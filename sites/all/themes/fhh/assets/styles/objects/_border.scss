@@ -1,0 +1,19 @@
+// block
+.o-border {
+  border-width: rem(1);
+  border-style: solid;
+  border-color: color(gray,lighter);
+
+  &--no-mobile {
+    border: none;
+
+    @include breakpoints(small) {
+      border-width: rem(1);
+      border-style: solid;
+      border-color: color(gray,lighter);
+    }
+  }
+}
+
+
+    // modifier

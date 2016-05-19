@@ -1,0 +1,51 @@
+
+// fonts
+// $font-family: 'Sans-serif', arial;
+// $secondary-font-family: 'Sans-serif', arial;
+// $tertiary-font-family: 'Sans-serif', arial;
+
+// font sizes
+$base-font-size: 16;
+
+
+// Media Query Breakpoints
+$small: 650px; // mobile
+$medium: 960px; // tablet
+$large: 1440px; // desktop
+
+$breakpoints: (
+	small: $small,
+	medium: $medium,
+	large: $large
+);
+
+// Container Widths
+// $container: (
+
+// );
+
+// For looping transitions
+$nav-items: 7;
+
+
+// z-indexing
+$hero-index: 1;
+$hero-item-index: 2;
+$snacks-index: 3; //6
+$main-index: 4; //7
+$burger-index: 6; //8
+$header-index: 7; //9
+$header-fixed-index: 11;//7; //10
+$header-item-index: 8; //11
+$overlay-index: 9; //12
+$modal-index: 19;//10; //13
+$notification-index: 1000;
+
+
+
+// Bourbon
+$disable-warnings: true !default;
+
+
+// Transitions
+$speed-trans: 0.25s;

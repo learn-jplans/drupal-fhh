@@ -1,0 +1,59 @@
+{
+  "dependencies": {
+    "main.js": {
+      "files": [
+        "bower_components/jquery/dist/jquery.js",
+        "bower_components/mustache.js/mustache.min.js",
+        "bower_components/waypoints/lib/jquery.waypoints.min.js",
+        "bower_components/slick-carousel/slick/slick.js",
+        "bower_components/equalize/js/equalize.min.js",
+        "bower_components/jquery.countdown/dist/jquery.countdown.min.js",
+        "bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js",
+        "scripts/lib/utils/jquery.dotdotdot.min.js",
+        "scripts/lib/utils/sticky.min.js",
+        "scripts/lib/utils/fastClick.js",
+        "scripts/lib/utils/background-clip-text-polyfill.js",
+        "scripts/lib/utils/jquery.history.js",
+        "scripts/lib/utils/jquery.cookie.js",
+        "scripts/lib/utils/jquery.tooltipster.js",
+        "scripts/lib/utils/contentshare.js",
+        "scripts/lib/helper.js",
+        "scripts/lib/core.js",
+        "scripts/behavior/hero.js",
+        "scripts/behavior/nav.js",
+        "scripts/behavior/notificationCookies.js",
+        "scripts/behavior/tiles.js",
+        "scripts/behavior/accordion.js",
+        "scripts/behavior/timeline.js",
+        "scripts/behavior/shortStories.js",
+        "scripts/behavior/carousel.js",
+        "scripts/behavior/sidebar.js",
+        "scripts/behavior/dropdown.js",
+        "scripts/behavior/tab.js",
+        "scripts/behavior/modal.js",
+        "scripts/behavior/gallery.js",
+        "scripts/behavior/productComparison.js",
+        "scripts/behavior/snackable.js"
+        
+      ],
+      "main": true
+    },
+    "main.css": {
+      "files": [
+        "styles/main.scss"
+      ],
+      "main": true
+    },
+    "editor-style.css": {
+      "files": [
+        "styles/editor-style.scss"
+      ]
+    },
+    "modernizr.js": {
+      "bower": ["modernizr"]
+    }
+  },
+  "config": {
+    "devUrl": "http://drupal-fhh.dev/"
+  }
+}

@@ -1,0 +1,318 @@
+// block
+.c-carousel {
+  width: 100%;
+  @include clearfix();
+  text-align: center;
+
+  .slick-list {
+    @include breakpoints(small) { height: rem(500); }
+    @include breakpoints(medium) { height: auto; }
+  }
+}
+
+  // element
+  .c-carousel__item {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    max-width: rem(400);
+    margin: 0 rem(12);
+
+    @include breakpoints(small) {
+      max-width: rem(560);
+      margin: 0 rem(20);
+    }
+    @include breakpoints(medium) {
+      max-width: rem(912);
+      // max-width: 100%;
+      margin: 0 rem(30);
+    }
+    &__caption {
+      @include breakpoints(small) {
+        text-align: left;
+        padding-right: rem(45);
+        // font-size: rem(18);
+        @include font-sizing(rem(18),rem(24));
+        color: color(gray,light-1);
+      }
+      @include breakpoints(medium) {
+        position: absolute;
+        left: rem(30); right: rem(30); bottom: rem(49);
+        padding-right: 0;
+        margin: auto;
+        color: color(gray);
+        text-align: center;
+      }
+    }
+    &:hover {
+      .c-carousel__image {
+        &:after {
+          opacity: .5;
+        }
+      }
+    }
+  }
+  .c-carousel__content {
+    // display: none;
+    visibility: hidden;
+    opacity: 0;
+    @include transition(visibility .25s);
+  }
+  .c-carousel__container {
+    overflow: hidden;
+    max-height:rem(256);
+
+    @include breakpoints(small) { max-height: rem(411); }
+    @include breakpoints(medium) { max-height: rem(618); }
+  }
+  .c-carousel__arrows {
+    position: absolute;
+    top: 0; bottom: 0;
+    // width: rem(104);
+    width: rem(56);
+    margin: auto;
+    // padding: 0 rem(24);
+    z-index: 2;
+    cursor: pointer;
+    > svg {
+      position: absolute;
+      top: 0; bottom: 0; left: 0;
+      margin: auto;
+      @include transition(all $speed-trans);
+      &:hover {
+        @include breakpoints(medium) {
+          fill: color(brown);
+        }
+      }
+    }
+
+    &--left {
+      @include breakpoints(small) {
+        left: rem(20);
+      }
+      @include breakpoints(medium) {
+        left: rem(68);
+      }
+    }
+    &--right {
+      @include breakpoints(small) {
+        right: rem(20);
+      }
+      @include breakpoints(medium) {
+        right: rem(68);
+      }
+    }
+  }
+  .c-carousel__image {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    height: rem(256);
+    max-height: rem(256);
+    background-size: cover;
+    background-position: center center;
+
+    @include breakpoints(small) {
+      height: rem(411); max-height: rem(411);
+    }
+    @include breakpoints(medium) {
+      height: rem(618); max-height: rem(618);
+    }
+
+    .c-carousel--hero-image .c-carousel__item & {
+      height: rem(215); max-height: rem(215);
+      @media (min-width: 375px) {
+        height: rem(256); max-height: rem(256);
+      }
+      @include breakpoints(small) {
+        height: rem(411); max-height: rem(411);
+      }
+      @include breakpoints(medium) {
+        height: rem(618); max-height: rem(618);
+      }
+    }
+
+    img {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      max-width: 100%;
+      margin: auto;
+      display: none;
+    }
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: color(white);
+      @include transition(opacity .25s);
+      opacity: 0;
+    }
+  }
+  .c-carousel__open {
+    display: none;
+    position: absolute;
+    top: 50%; left: 50%;
+    @include transform(translate(-50%, -50%));
+    svg.o-icon { margin: 0 auto; }
+    .o-icon--gallery__count {
+      position: absolute;
+      top: rem(1); right: rem(33); left: auto;
+      width: rem(20);
+    }
+    svg, span { @include transition(all 0.25s); }
+    &:hover {
+      @include breakpoints(medium) {
+        svg { fill: color(red); }
+        span { color: color(red); }
+        .o-icon--gallery__count { color: color(white); }
+      }
+    }
+
+    @include breakpoints(medium) {
+      display: inline-block;
+    }
+  }
+  .c-carousel__info {
+    display: block;
+    position: relative;
+    width: 100%; max-width: rem(436);
+    padding: 0 rem(18);
+    margin: rem(15) auto 0;
+
+    @include breakpoints(small) { max-width: rem(596); }
+    @include breakpoints(medium) { max-width: rem(956); }
+  }
+  .c-carousel__caption {
+    height: rem(48);
+    padding-right: rem(45);
+    text-align: left;
+  }
+  .c-carousel__slides {
+    position: absolute;
+    right: rem(18);
+    line-height: 1.4;
+
+    // &__current {}
+    &__total {
+      &:before {
+        content: '/';
+        margin: 0 rem(3) 0 rem(1);
+      }
+    }
+  }
+  .c-carousel__controls {
+    display: block;
+    padding-top: rem(11);
+    @include breakpoints(small) { display: none; }
+  }
+  .c-carousel__ctrl {
+    display: block;
+
+    &__current {}
+
+    &__total {
+      &:before {
+        content: '/';
+        margin: 0 rem(3) 0 rem(1);
+      }
+    }
+    .o-list {
+      max-width: rem(220);
+      margin: 0 auto;
+      // li:first-child { padding-left: rem(91); }
+      // li:last-child { padding-right: rem(91); }
+    }
+  }
+
+    // modifier
+    .c-carousel--rollover {
+      .c-carousel__item.slick-active {
+        .c-carousel__image {
+          &:after {
+            visibility: hidden;
+            opacity: 0;
+          }
+        }
+        @include breakpoints(small) {
+          // .c-carousel__content { display: block; }
+          .c-carousel__content {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+        @include breakpoints(medium) {
+          // .c-carousel__content { display: none; }
+          .c-carousel__content {
+            visibility: hidden;
+            opacity: 0;
+            @include transition(all .25s);
+          }
+          &:hover {
+            // @include breakpoints(medium) {
+              // .c-carousel__content { display: block; }
+              .c-carousel__content {
+                visibility: visible;
+                opacity: 1;
+              }
+            // }
+          }
+        }
+      }
+      .c-carousel__content {
+        @include breakpoints(small) {
+          position: absolute;
+          left: 0; bottom: rem(-93);
+          width: 100%;
+          height: rem(72); max-height: rem(72);
+          // margin-top: rem(18);
+        }
+        @include breakpoints(medium) {
+          position: absolute;
+          top: 0; bottom: auto;
+          height: 100%; max-height: 100%;
+          padding: rem(30);
+          margin-top: 0;
+          background-color: rgba(color(white), 0.8);
+        }
+      }
+
+      // .c-carousel
+    }
+
+
+.o-section--world {
+  .o-icon.o-icon--next-l {
+    left: -2px;
+    height: auto!important;
+    width: 52px;
+    @include breakpoints(small) {
+      left: 0;
+      height: 33px;
+    }
+  }
+}
+.o-section--world {
+  .o-icon.o-icon--next-r {
+    left: 4px;
+    height: auto!important;
+    width: 52px;
+    @include breakpoints(small) {
+      left: 0;
+      height: 33px;
+    }
+  }
+}
+.c-tile--world {
+  .c-article__icon {
+    .o-icon--interview {
+      width: 28px;
+      height: 30px;
+      @include breakpoints(small) {
+        width: rem(36);
+        height: rem(36);
+      }
+    }
+  }
+}

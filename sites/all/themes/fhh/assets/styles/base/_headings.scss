@@ -1,0 +1,71 @@
+/*----------------------------*\
+  Base headings
+\*----------------------------*/
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: normal;
+  color: $base-color;
+
+  a { color: $base-color; }
+}
+
+h1 {
+  @include font(gotham,bold);
+  @include font-sizing(rem(30),rem(32));
+  @include breakpoints(small) {
+    @include font-sizing(rem(40),rem(48));
+  }
+  @include breakpoints(medium) {
+    @include font-sizing(rem(60),rem(70));
+  }
+}
+
+h2 {
+  @include font(tiempos,light);
+  @include font-sizing(rem(42),rem(48));
+
+  @include breakpoints(medium) {
+    @include font-sizing(rem(60),rem(42));
+  }
+}
+
+h3 {
+  @include font(tiempos,light);
+  @include font-sizing(rem(32),rem(32),50);
+  text-transform: uppercase;
+
+  @include breakpoints(small) {
+    @include font-sizing(rem(30),rem(30));
+  }
+  @include breakpoints(medium) {
+    @include font-sizing(rem(40),rem(48));
+  }
+}
+
+h4 {
+  @include font(gotham,bold);
+  color: $link-color;
+
+  @include breakpoints(medium) {
+    @include font-sizing(rem(30),rem(36));
+  }
+}
+
+h5 {
+  @include font(tiempos);
+
+  @include breakpoints(medium) {
+    @include font-sizing(rem(28),rem(24));
+  }
+}
+
+h6 {
+  @include font(notera);
+  @include font-sizing(rem(32),rem(32));
+  @include breakpoints(small) {
+    @include font-sizing(rem(36),rem(24));
+  }
+  @include breakpoints(medium) {
+    font-size: rem(48);
+  }
+}
